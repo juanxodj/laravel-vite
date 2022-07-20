@@ -1,5 +1,7 @@
 <template>
-  <button type="button" class="btn btn-primary" @click="getStudents">Get Students</button>
+  <router-link :to="{ name: 'table.add' }">
+    <button type="button" class="btn btn-primary">Add Student</button>
+  </router-link>
   <table class="table table-hover table-responsive">
     <thead>
       <tr>
@@ -39,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, Ref } from 'vue'
+import { Ref } from 'vue'
 import Swal from "sweetalert2"
 import api from "./../services/api"
 import { Student } from "./../models/student.model"
@@ -63,7 +65,6 @@ function deleteStudent(id: number | undefined) {
     confirmButtonText: 'Yes',
     denyButtonText: `Don't delete`,
   }).then((result) => {
-    /* Read more about isConfirmed, isDenied below */
     if (result.isConfirmed) {
       api.delete("/students/" + id)
         .then((res) => {

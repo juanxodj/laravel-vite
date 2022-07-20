@@ -14,6 +14,9 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 import VueSweetalert2 from 'vue-sweetalert2'
 import 'sweetalert2/dist/sweetalert2.min.css'
 
+/* import api from "./services/api"
+window.api = api */
+
 const app = createApp(App)
 library.add(fas, fab, far)
 app.component("font-awesome-icon", FontAwesomeIcon)

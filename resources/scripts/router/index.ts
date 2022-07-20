@@ -21,6 +21,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("./../components/Table.vue"),
       },
       {
+        path: "table/add",
+        name: "table.add",
+        component: () => import("./../components/TableAdd.vue"),
+      },
+      {
         path: "table/:id/edit",
         name: "table.edit",
         component: () => import("./../components/TableEdit.vue"),
