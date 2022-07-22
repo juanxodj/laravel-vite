@@ -23,9 +23,13 @@ return new class extends Migration
             $table->decimal('ending_balance', 12, 2)->default(0);
             $table->enum('status', ['open', 'close']);
             $table->unsignedBigInteger('cash_register_id');
+            $table->unsignedBigInteger('user_open_id')->nullable();
+            $table->unsignedBigInteger('user_close_id')->nullable();
             $table->timestamps();
 
             $table->foreign('cash_register_id')->references('id')->on('cash_registers');
+            $table->foreign('user_open_id', '')->references('id')->on('users');
+            $table->foreign('user_close_id', '')->references('id')->on('users');
         });
     }
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\CashRegisterController;
+use App\Http\Controllers\Api\MovementController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,9 @@ Route::middleware('localization')->group(function () {
 
     Route::middleware('auth:api')->group(function () {
         Route::apiResource('cash-registers', CashRegisterController::class);
+        Route::post('cash-registers/{cash_register}/open', [CashRegisterController::class, 'open'])->name('cash-registers.open');
+        Route::post('cash-registers/{cash_register}/close', [CashRegisterController::class, 'close'])->name('cash-registers.close');
         Route::apiResource('products', ProductController::class);
+        Route::apiResource('movements', MovementController::class);
     });
 });

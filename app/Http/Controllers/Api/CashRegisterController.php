@@ -6,7 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CashRegisterRequest;
 use App\Http\Resources\CashRegisterResource;
 use App\Models\CashRegister;
+use App\Models\CashRegisterDetail;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class CashRegisterController extends Controller
 {
@@ -43,5 +48,44 @@ class CashRegisterController extends Controller
         $cash_register->delete();
 
         return new CashRegisterResource($cash_register);
+    }
+
+    public function open(Request $request, CashRegister $cash_register)
+    {
+        $request->validate([
+            'initial_balance' => 'required',
+        ]);
+
+        $details = DB::table('cash_register_details')
+            ->where('cash_register_id', $cash_register->id)
+            ->where('status', 'open')
+            ->get();
+
+        if ($details->contains('status', 'open')) {
+            return abort(500, 'No puede abrir una caja porque existe una abierta.');
+        }
+
+        $detail = new CashRegisterDetail();
+        $detail->opening = Carbon::now();
+        $detail->initial_balance = $request->initial_balance;
+        $detail->status = 'open';
+        $detail->cash_register_id = $cash_register->id;
+        $detail->user_open_id = Auth::id();
+        $detail->save();
+
+        return response()->json($detail);
+    }
+
+    public function close(CashRegisterDetail $cash_register)
+    {
+        //FALTA CALCULAR EL BALANCA DE LA CAJA DEL DÍA
+
+        $cash_register->closing = Carbon::now();
+        $cash_register->ending_balance = 3510;
+        $cash_register->status = 'close';
+        $cash_register->user_close_id = Auth::id();
+        $cash_register->update();
+
+        return response()->json($cash_register);
     }
 }
