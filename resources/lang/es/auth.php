@@ -18,6 +18,6 @@ return [
     'throttle' => 'Demasiados intentos de acceso. Inténtelo de nuevo en :seconds segundos.',
     'unauthorized' => 'No autorizado',
     'user-logged-in' => '¡Usuario registrado!',
-    'user-successfully-registered' => '¡Usuario registrado con éxito!'
+    'user-successfully-registered' => '¡Usuario registrado con éxito!',
 
 ];

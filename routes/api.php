@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StudentController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('localization')->group(function () {
-  Route::post('login', [AuthController::class, 'login']);
-  Route::post('register', [AuthController::class, 'register']);
+    Route::post('login', [AuthController::class, 'login']);
+    Route::post('register', [AuthController::class, 'register']);
 
-  Route::middleware('auth:api')->group(function () {
-    Route::apiResource('students', StudentController::class);
+    Route::middleware('auth:api')->group(function () {
+        Route::apiResource('students', StudentController::class);
 
-    Route::post('books/{book}/reviews', [BookController::class, 'addReview']);
-    Route::delete('reviews/{review}', [ReviewController::class, 'destroy']);
-  });
+        Route::post('books/{book}/reviews', [BookController::class, 'addReview']);
+        Route::delete('reviews/{review}', [ReviewController::class, 'destroy']);
+    });
 });

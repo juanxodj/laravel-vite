@@ -2,6 +2,6 @@
 
 return [
 
-    'removed-successfully' => 'Removed successfully.'
+    'removed-successfully' => 'Removed successfully.',
 
 ];

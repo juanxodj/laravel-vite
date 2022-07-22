@@ -18,6 +18,6 @@ return [
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'unauthorized' => 'Unauthorized',
     'user-logged-in' => 'User logged-in!',
-    'user-successfully-registered' => 'User successfully registered!'
+    'user-successfully-registered' => 'User successfully registered!',
 
 ];
