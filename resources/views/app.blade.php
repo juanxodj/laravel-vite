@@ -15,5 +15,7 @@
 <body class="antialiased">
     <div id="app"></div>
 </body>
+{{-- <script src="/resources/js/oneui.app.min.js"></script> --}}
+{{-- <script src="{{ asset('js/oneui.app.min.js') }}"></script> --}}
 
 </html>
