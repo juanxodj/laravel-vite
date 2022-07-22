@@ -3,9 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\CashRegister;
+use App\Models\CashRegisterDetail;
 use App\Models\Movement;
 use App\Models\Product;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,7 +19,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        if (!User::where('email', 'admin@laravel.io')->exists()) {
+        if (! User::where('email', 'admin@laravel.io')->exists()) {
             User::create([
                 'email' => 'admin@laravel.io',
                 'name' => 'Admin',
@@ -37,6 +39,15 @@ class DatabaseSeeder extends Seeder
         Product::create(['description' => 'Producto 03', 'price' => 150]);
         Product::create(['description' => 'Producto 04', 'price' => 200]);
         Product::create(['description' => 'Producto 05', 'price' => 250]);
+
+        CashRegisterDetail::create(
+            [
+                'opening' => Carbon::now(),
+                'initial_balance' => 150,
+                'status' => 'open',
+                'cash_register_id' => 1,
+            ]
+        );
 
         Movement::factory(100)->create();
     }

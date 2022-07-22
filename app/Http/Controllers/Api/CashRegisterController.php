@@ -78,10 +78,25 @@ class CashRegisterController extends Controller
 
     public function close(CashRegisterDetail $cash_register)
     {
-        //FALTA CALCULAR EL BALANCA DE LA CAJA DEL DÍA
+        //FALTA CALCULAR EL BALANCE DE LA CAJA DEL DÍA
+
+        $movements = DB::table('movements')
+            ->where('cash_register_id', $cash_register->id)
+            ->get();
+
+        $income = 0;
+        $expenses = 0;
+
+        foreach ($movements->toArray() as $value) {
+            if ($value->type === 'expenses') {
+                $expenses += $value->total;
+            } else {
+                $income += $value->total;
+            }
+        }
 
         $cash_register->closing = Carbon::now();
-        $cash_register->ending_balance = 3510;
+        $cash_register->ending_balance = $cash_register->initial_balance + $income - $expenses;
         $cash_register->status = 'close';
         $cash_register->user_close_id = Auth::id();
         $cash_register->update();
