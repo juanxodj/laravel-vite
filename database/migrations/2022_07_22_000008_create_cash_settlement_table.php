@@ -15,7 +15,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cash_settlement', function (Blueprint $table) {
+        Schema::create('cash_settlements', function (Blueprint $table) {
             $table->id();
             $table->integer('200')->default(0);
             $table->integer('100')->default(0);
@@ -25,6 +25,7 @@ return new class extends Migration
             $table->integer('5')->default(0);
             $table->integer('1')->default(0);
             $table->unsignedBigInteger('cash_register_details_id');
+            $table->timestamps();
 
             $table->foreign('cash_register_details_id')->references('id')->on('cash_register_details');
         });
@@ -37,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cash_settlement');
+        Schema::dropIfExists('cash_settlements');
     }
 };

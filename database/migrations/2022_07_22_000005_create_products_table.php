@@ -19,6 +19,7 @@ return new class extends Migration
             $table->id();
             $table->string('description');
             $table->decimal('price', 12, 2)->default(0);
+            $table->timestamps();
         });
     }
 

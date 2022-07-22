@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\CashRegister;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -22,12 +23,16 @@ class DatabaseSeeder extends Seeder
                 'is_active' => true,
             ]);
         }
+        User::factory(4)->create();
 
-        \App\Models\User::factory(4)->create();
+        /* \App\Models\User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+        ]); */
 
-        // \App\Models\User::factory()->create([
-    //     'name' => 'Test User',
-    //     'email' => 'test@example.com',
-    // ]);
+        CashRegister::create(['description' => 'Caja 01']);
+        CashRegister::create(['description' => 'Caja 02']);
+        CashRegister::create(['description' => 'Caja 03']);
+        CashRegister::create(['description' => 'Caja 04']);
     }
 }

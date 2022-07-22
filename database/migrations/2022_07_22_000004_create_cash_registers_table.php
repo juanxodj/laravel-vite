@@ -18,6 +18,7 @@ return new class extends Migration
         Schema::create('cash_registers', function (Blueprint $table) {
             $table->id();
             $table->string('description');
+            $table->timestamps();
         });
     }
 

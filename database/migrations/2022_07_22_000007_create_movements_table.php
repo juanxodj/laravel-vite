@@ -24,6 +24,7 @@ return new class extends Migration
             $table->unsignedBigInteger('cash_register_id');
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('user_id');
+            $table->timestamps();
 
             $table->foreign('cash_register_id')->references('id')->on('cash_registers');
             $table->foreign('product_id')->references('id')->on('products');
