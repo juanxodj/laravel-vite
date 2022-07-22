@@ -7,6 +7,7 @@ use App\Http\Requests\CashRegisterRequest;
 use App\Http\Resources\CashRegisterResource;
 use App\Models\CashRegister;
 use App\Models\CashRegisterDetail;
+use App\Models\CashSettlement;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -78,8 +79,6 @@ class CashRegisterController extends Controller
 
     public function close(CashRegisterDetail $cash_register)
     {
-        //FALTA CALCULAR EL BALANCE DE LA CAJA DEL DÍA
-
         $movements = DB::table('movements')
             ->where('cash_register_id', $cash_register->id)
             ->get();
@@ -102,5 +101,33 @@ class CashRegisterController extends Controller
         $cash_register->update();
 
         return response()->json($cash_register);
+    }
+
+    public function settlement(Request $request, CashRegisterDetail $cash_register)
+    {
+        $request->validate([
+            'bill_200' => 'required',
+            'bill_100' => 'required',
+            'bill_50' => 'required',
+            'bill_20' => 'required',
+            'bill_10' => 'required',
+            'bill_5' => 'required',
+            'bill_1' => 'required',
+            'total' => 'required',
+        ]);
+
+        $settlement = new CashSettlement();
+        $settlement->bill_200 = $request->bill_200;
+        $settlement->bill_100 = $request->bill_100;
+        $settlement->bill_50 = $request->bill_50;
+        $settlement->bill_20 = $request->bill_20;
+        $settlement->bill_10 = $request->bill_10;
+        $settlement->bill_5 = $request->bill_5;
+        $settlement->bill_1 = $request->bill_1;
+        $settlement->total = $request->total;
+        $settlement->cash_register_details_id = $cash_register->id;
+        $settlement->save();
+
+        return response()->json($settlement);
     }
 }

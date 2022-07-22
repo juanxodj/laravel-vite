@@ -25,6 +25,7 @@ Route::middleware('localization')->group(function () {
         Route::apiResource('cash-registers', CashRegisterController::class);
         Route::post('cash-registers/{cash_register}/open', [CashRegisterController::class, 'open'])->name('cash-registers.open');
         Route::post('cash-registers/{cash_register}/close', [CashRegisterController::class, 'close'])->name('cash-registers.close');
+        Route::post('cash-registers/{cash_register}/settlement', [CashRegisterController::class, 'settlement'])->name('cash-registers.settlement');
         Route::apiResource('products', ProductController::class);
         Route::apiResource('movements', MovementController::class);
     });
