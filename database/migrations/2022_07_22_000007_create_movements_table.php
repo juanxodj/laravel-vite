@@ -15,16 +15,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cash_register_details', function (Blueprint $table) {
+        Schema::create('movements', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('opening');
-            $table->dateTime('closing')->nullable();
-            $table->decimal('initial_balance', 12, 2)->default(0);
-            $table->decimal('ending_balance', 12, 2)->default(0);
-            $table->enum('status', ['open', 'close']);
+            $table->enum('type', ['income', 'expenses']);
+            $table->integer('quantity');
+            $table->decimal('amount', 12, 2)->default(0);
+            $table->decimal('total', 12, 2)->default(0);
             $table->unsignedBigInteger('cash_register_id');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('user_id');
 
             $table->foreign('cash_register_id')->references('id')->on('cash_registers');
+            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('user_id', '')->references('id')->on('users');
         });
     }
 
@@ -35,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cash_register_details');
+        Schema::dropIfExists('movements');
     }
 };

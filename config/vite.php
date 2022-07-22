@@ -1,7 +1,7 @@
 <?php
 
 return [
-  /*
+    /*
     |--------------------------------------------------------------------------
     | Configurations
     |--------------------------------------------------------------------------
@@ -10,29 +10,29 @@ return [
     | bundles, using separate configuration files is necessary.
     | https://laravel-vite.dev/configuration/laravel-package.html#configs
     */
-  'configs' => [
-    'default' => [
-      'entrypoints' => [
-        'ssr' => 'resources/scripts/ssr.ts',
-        'paths' => [
-          'resources/scripts/main.ts',
+    'configs' => [
+        'default' => [
+            'entrypoints' => [
+                'ssr' => 'resources/scripts/ssr.ts',
+                'paths' => [
+                    'resources/scripts/main.ts',
+                ],
+                'ignore' => '/\\.(d\\.ts|json)$/',
+            ],
+            'dev_server' => [
+                'enabled' => true,
+                'url' => env('DEV_SERVER_URL', 'http://localhost:5173'),
+                'ping_before_using_manifest' => true,
+                'ping_url' => null,
+                'ping_timeout' => 1,
+                'key' => env('DEV_SERVER_KEY'),
+                'cert' => env('DEV_SERVER_CERT'),
+            ],
+            'build_path' => 'build',
         ],
-        'ignore' => '/\\.(d\\.ts|json)$/',
-      ],
-      'dev_server' => [
-        'enabled' => true,
-        'url' => env('DEV_SERVER_URL', 'http://localhost:5173'),
-        'ping_before_using_manifest' => true,
-        'ping_url' => null,
-        'ping_timeout' => 1,
-        'key' => env('DEV_SERVER_KEY'),
-        'cert' => env('DEV_SERVER_CERT'),
-      ],
-      'build_path' => 'build',
     ],
-  ],
 
-  /*
+    /*
     |--------------------------------------------------------------------------
     | Aliases
     |--------------------------------------------------------------------------
@@ -41,11 +41,11 @@ return [
     | can know how to resolve them.
     | https://laravel-vite.dev/configuration/laravel-package.html#aliases
     */
-  'aliases' => [
-    '@' => 'resources',
-  ],
+    'aliases' => [
+        '@' => 'resources',
+    ],
 
-  /*
+    /*
     |--------------------------------------------------------------------------
     | Commands
     |--------------------------------------------------------------------------
@@ -54,17 +54,17 @@ return [
     | define what to run, automatically.
     | https://laravel-vite.dev/configuration/laravel-package.html#commands
     */
-  'commands' => [
-    'artisan' => [
-      'vite:tsconfig',
-      // 'typescript:generate'
+    'commands' => [
+        'artisan' => [
+            'vite:tsconfig',
+            // 'typescript:generate'
+        ],
+        'shell' => [
+            //
+        ],
     ],
-    'shell' => [
-      //
-    ],
-  ],
 
-  /*
+    /*
     |--------------------------------------------------------------------------
     | Testing
     |--------------------------------------------------------------------------
@@ -73,11 +73,11 @@ return [
     | the manifest should be used in the "testing" environment.
     | https://laravel-vite.dev/configuration/laravel-package.html#testing
     */
-  'testing' => [
-    'use_manifest' => false,
-  ],
+    'testing' => [
+        'use_manifest' => false,
+    ],
 
-  /*
+    /*
     |--------------------------------------------------------------------------
     | Environment variable prefixes
     |--------------------------------------------------------------------------
@@ -85,9 +85,9 @@ return [
     | have in order to be accessible from the front-end.
     | https://laravel-vite.dev/configuration/laravel-package.html#env_prefixes
     */
-  'env_prefixes' => ['VITE_', 'MIX_', 'SCRIPT_'],
+    'env_prefixes' => ['VITE_', 'MIX_', 'SCRIPT_'],
 
-  /*
+    /*
     |--------------------------------------------------------------------------
     | Default interfaces
     |--------------------------------------------------------------------------
@@ -95,13 +95,13 @@ return [
     | their associated logic.
     | https://laravel-vite.dev/configuration/laravel-package.html#interfaces
     */
-  'interfaces' => [
-    'heartbeat_checker' => Innocenzi\Vite\HeartbeatCheckers\HttpHeartbeatChecker::class,
-    'tag_generator' => Innocenzi\Vite\TagGenerators\CallbackTagGenerator::class,
-    'entrypoints_finder' => Innocenzi\Vite\EntrypointsFinder\DefaultEntrypointsFinder::class,
-  ],
+    'interfaces' => [
+        'heartbeat_checker' => Innocenzi\Vite\HeartbeatCheckers\HttpHeartbeatChecker::class,
+        'tag_generator' => Innocenzi\Vite\TagGenerators\CallbackTagGenerator::class,
+        'entrypoints_finder' => Innocenzi\Vite\EntrypointsFinder\DefaultEntrypointsFinder::class,
+    ],
 
-  /*
+    /*
     |--------------------------------------------------------------------------
     | Default configuration
     |--------------------------------------------------------------------------
@@ -109,5 +109,5 @@ return [
     | to use as your default one.
     | https://laravel-vite.dev/configuration/laravel-package.html#default
     */
-  'default' => env('VITE_DEFAULT_CONFIG', 'default'),
+    'default' => env('VITE_DEFAULT_CONFIG', 'default'),
 ];
