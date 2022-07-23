@@ -6,13 +6,14 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CashRegisterResource extends JsonResource
+class UserResource extends JsonResource
 {
     public function toArray($request): array
     {
         return [
-            'description' => $this->description,
-            'details' => $this->details,
+            'name' => $this->name,
+            'email' => $this->email,
+            'is_active' => $this->is_active,
         ];
     }
 }

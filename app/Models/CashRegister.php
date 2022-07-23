@@ -14,6 +14,10 @@ class CashRegister extends Model
         'description',
     ];
 
+    public static $rules = [
+        'description' => 'required|string|max:100',
+    ];
+
     public function details(): HasMany
     {
         return $this->hasMany(CashRegisterDetail::class);

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Requests;
 
+use App\Models\CashRegister;
 use Illuminate\Foundation\Http\FormRequest;
 
 class CashRegisterRequest extends FormRequest
@@ -15,11 +16,7 @@ class CashRegisterRequest extends FormRequest
 
     public function rules(): array
     {
-        $rules = [
-            'description' => 'required|string|max:100',
-        ];
-
-        return $rules;
+        return CashRegister::$rules;
     }
 
     public function attributes()

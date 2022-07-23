@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\CashRegisterController;
 use App\Http\Controllers\Api\MovementController;
 use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,11 +23,12 @@ Route::middleware('localization')->group(function () {
     Route::post('register', [AuthController::class, 'register']);
 
     Route::middleware('auth:api')->group(function () {
-        Route::apiResource('cash-registers', CashRegisterController::class);
+        Route::apiResource('cash-registers', CashRegisterController::class)->except(['create', 'edit']);
         Route::post('cash-registers/{cash_register}/open', [CashRegisterController::class, 'open'])->name('cash-registers.open');
         Route::post('cash-registers/{cash_register}/close', [CashRegisterController::class, 'close'])->name('cash-registers.close');
         Route::post('cash-registers/{cash_register}/settlement', [CashRegisterController::class, 'settlement'])->name('cash-registers.settlement');
-        Route::apiResource('products', ProductController::class);
-        Route::apiResource('movements', MovementController::class);
+        Route::apiResource('products', ProductController::class)->except(['create', 'edit']);
+        Route::apiResource('movements', MovementController::class)->except(['create', 'edit']);
+        Route::apiResource('users', UserController::class)->except(['create', 'edit']);
     });
 });
