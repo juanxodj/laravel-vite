@@ -17,7 +17,7 @@ return [
     'password' => 'La contraseña es incorrecta.',
     'throttle' => 'Demasiados intentos de acceso. Inténtelo de nuevo en :seconds segundos.',
     'unauthorized' => 'No autorizado',
-    'user-logged-in' => '¡Usuario registrado!',
+    'user-logged-in' => '¡Inicio de Sesión Correcto!',
     'user-successfully-registered' => '¡Usuario registrado con éxito!',
 
 ];

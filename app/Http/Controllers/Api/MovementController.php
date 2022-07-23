@@ -5,43 +5,46 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\MovementRequest;
 use App\Http\Resources\MovementResource;
+use App\Models\CashRegister;
 use App\Models\Movement;
+use App\Models\Product;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class MovementController extends Controller
 {
     public function index()
     {
-        $cash = Movement::all();
+        $product = Product::all();
+        $cashRegister = CashRegister::all();
 
-        return response()->json($cash);
+        return response()->json(compact('product', 'cashRegister'));
     }
 
     public function store(MovementRequest $request): JsonResource
     {
-        $cash = new Movement();
-        $cash->fill($request->all());
-        $cash->save();
+        $movement = new Movement();
+        $movement->fill($request->all());
+        $movement->save();
 
-        return new MovementResource($cash);
+        return new MovementResource($movement);
     }
 
-    public function show(Movement $cash_register): JsonResource
+    public function show(Movement $movement): JsonResource
     {
-        return new MovementResource($cash_register);
+        return new MovementResource($movement);
     }
 
-    public function update(MovementRequest $request, Movement $cash_register): JsonResource
+    public function update(MovementRequest $request, Movement $movement): JsonResource
     {
-        $cash_register->update($request->all());
+        $movement->update($request->all());
 
-        return new MovementResource($cash_register);
+        return new MovementResource($movement);
     }
 
-    public function destroy(Movement $cash_register): JsonResource
+    public function destroy(Movement $movement): JsonResource
     {
-        $cash_register->delete();
+        $movement->delete();
 
-        return new MovementResource($cash_register);
+        return new MovementResource($movement);
     }
 }

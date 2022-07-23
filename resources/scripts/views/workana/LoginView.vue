@@ -5,44 +5,30 @@
       <div class="row justify-content-center push">
         <div class="col-md-8 col-lg-6 col-xl-4">
           <!-- Sign In Block -->
-          <BaseBlock title="Sign In" class="mb-0">
-            <template #options>
-              <RouterLink :to="{ name: 'auth-reminder' }" class="btn-block-option fs-sm">Forgot Password?</RouterLink>
-              <RouterLink :to="{ name: 'auth-signup' }" class="btn-block-option">
-                <i class="fa fa-user-plus"></i>
-              </RouterLink>
-            </template>
-
+          <BaseBlock title="Iniciar Sesión" class="mb-0">
             <div class="p-sm-3 px-lg-4 px-xxl-5 py-lg-5">
               <h1 class="h2 mb-1">OneUI</h1>
-              <p class="fw-medium text-muted">Welcome, please login.</p>
+              <p class="fw-medium text-muted">Bienvenido, por favor inicie sesión.</p>
 
               <!-- Sign In Form -->
               <form @submit.prevent="onSubmit">
                 <div class="py-3">
                   <div class="mb-4">
-                    <input type="text" class="form-control form-control-alt form-control-lg" id="login-username"
-                      name="login-username" placeholder="Username" :class="{
-                        'is-invalid': v$.username.$errors.length,
-                      }" v-model="state.username" @blur="v$.username.$touch" />
-                    <div v-if="v$.username.$errors.length" class="invalid-feedback animated fadeIn">
-                      Please enter your username
+                    <input type="email" class="form-control form-control-alt form-control-lg" id="login-email"
+                      name="login-email" placeholder="Correo Electrónico" :class="{
+                        'is-invalid': v$.email.$errors.length,
+                      }" v-model="form.email" @blur="v$.email.$touch" />
+                    <div v-if="v$.email.$errors.length" class="invalid-feedback animated fadeIn">
+                      Por favor, introduzca su correo electrónico
                     </div>
                   </div>
                   <div class="mb-4">
                     <input type="password" class="form-control form-control-alt form-control-lg" id="login-password"
-                      name="login-password" placeholder="Password" :class="{
+                      name="login-password" placeholder="Contraseña" :class="{
                         'is-invalid': v$.password.$errors.length,
-                      }" v-model="state.password" @blur="v$.password.$touch" />
+                      }" v-model="form.password" @blur="v$.password.$touch" />
                     <div v-if="v$.password.$errors.length" class="invalid-feedback animated fadeIn">
-                      Please enter your password
-                    </div>
-                  </div>
-                  <div class="mb-4">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="login-remember"
-                        name="login-remember" />
-                      <label class="form-check-label" for="login-remember">Remember Me</label>
+                      Por favor, introduzca su contraseña
                     </div>
                   </div>
                 </div>
@@ -50,7 +36,7 @@
                   <div class="col-md-6 col-xl-5">
                     <button type="submit" class="btn w-100 btn-alt-primary">
                       <i class="fa fa-fw fa-sign-in-alt me-1 opacity-50"></i>
-                      Sign In
+                      Iniciar
                     </button>
                   </div>
                 </div>
@@ -70,29 +56,31 @@
   <!-- END Page Content -->
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { reactive, computed } from "vue";
-import { useRouter } from "vue-router";
-import { useTemplateStore } from "@/stores/template";
+import { useTemplateStore } from "@/scripts/stores/template";
 
 // Vuelidate, for more info and examples you can check out https://github.com/vuelidate/vuelidate
 import useVuelidate from "@vuelidate/core";
 import { required, minLength } from "@vuelidate/validators";
+import { useUserStore } from "@/scripts/stores/user";
+import { useRouter } from "vue-router";
 
 // Main store and Router
 const store = useTemplateStore();
+const userStore = useUserStore();
 const router = useRouter();
 
-// Input state variables
-const state = reactive({
-  username: null,
-  password: null,
+// Input form variables
+const form = reactive({
+  email: "admin@laravel.io",
+  password: "123456",
 });
 
 // Validation rules
 const rules = computed(() => {
   return {
-    username: {
+    email: {
       required,
       minLength: minLength(3),
     },
@@ -104,7 +92,7 @@ const rules = computed(() => {
 });
 
 // Use vuelidate
-const v$ = useVuelidate(rules, state);
+const v$ = useVuelidate(rules, form);
 
 // On form submission
 async function onSubmit() {
@@ -115,7 +103,9 @@ async function onSubmit() {
     return;
   }
 
-  // Go to dashboard
-  router.push({ name: "backend-pages-auth" });
+  const res = await userStore.login(form.email, form.password);
+  if (res === 200) {
+    router.push({ name: "dashboard" });
+  }
 }
 </script>

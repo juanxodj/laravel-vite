@@ -1,9 +1,9 @@
 <template>
   <BasePageHeading title="Dashboard" subtitle="Welcome Admin!">
     <template #extra>
-      <button type="button" class="btn btn-alt-primary" v-click-ripple>
+      <button type="button" class="btn btn-alt-primary" v-click-ripple @click="logout">
         <i class="fa fa-plus opacity-50 me-1"></i>
-        Agregar
+        Cerrar Sessión
       </button>
     </template>
   </BasePageHeading>
@@ -28,4 +28,17 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+import { useUserStore } from "@/scripts/stores/user";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+const userStore = useUserStore();
+
+async function logout() {
+  userStore.logout();
+  router.push({ name: "login" });
+}
+
+
+</script>

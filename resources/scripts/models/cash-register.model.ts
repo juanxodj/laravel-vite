@@ -1,4 +1,4 @@
 export interface CashRegister {
-  id?: number,
-  description: string
+  id?: Number,
+  description: String
 }
