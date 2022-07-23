@@ -1,30 +1,24 @@
 <template>
-  <!-- Hero -->
-  <BasePageHeading title="Table Helpers" subtitle="Custom functionality to further enrich your tables.">
+  <BasePageHeading title="Cajas">
     <template #extra>
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb breadcrumb-alt">
-          <li class="breadcrumb-item">
-            <a class="link-fx" href="javascript:void(0)">Tables</a>
-          </li>
-          <li class="breadcrumb-item" aria-current="page">Helpers</li>
-        </ol>
-      </nav>
+      <router-link :to="{ name: 'cash-register.add' }">
+        <button type="button" class="btn btn-alt-primary" v-click-ripple>
+          <i class="fa fa-plus opacity-50 me-1"></i>
+          Agregar
+        </button>
+      </router-link>
     </template>
   </BasePageHeading>
-  <!-- END Hero -->
 
-  <!-- Page Content -->
   <div class="content">
-    <BaseBlock title="Vue Dataset" content-full>
-      <Dataset v-slot="{ ds }" :ds-data="users" :ds-sortby="sortBy"
-        :ds-search-in="['name', 'email', 'company', 'birthdate']">
+    <BaseBlock title="Lista de Cajas" content-full>
+      <Dataset v-slot="{ ds }" :ds-data="cashRegisters" :ds-sortby="sortBy" :ds-search-in="['description']">
         <div class="row" :data-page-count="ds.dsPagecount">
           <div id="datasetLength" class="col-md-8 py-2">
             <DatasetShow />
           </div>
           <div class="col-md-4 py-2">
-            <DatasetSearch ds-search-placeholder="Search..." />
+            <DatasetSearch ds-search-placeholder="Buscar..." />
           </div>
         </div>
         <hr />
@@ -45,10 +39,23 @@
                   <template #default="{ row, rowIndex }">
                     <tr>
                       <th scope="row">{{ rowIndex + 1 }}</th>
-                      <td style="min-width: 150px">{{ row.name }}</td>
-                      <td>{{ row.email }}</td>
-                      <td style="min-width: 150px">{{ row.company }}</td>
-                      <td style="min-width: 150px">{{ row.birthdate }}</td>
+                      <td style="min-width: 150px">{{ row.description }}</td>
+                      <td>
+                        <div class="btn-group">
+                          <router-link :to="{
+                            name: 'cash-register.edit',
+                            params: { id: row.id }
+                          }">
+                            <button type="button" class="btn btn-sm btn-alt-secondary">
+                              <i class="fa fa-fw fa-pencil-alt"></i>
+                            </button>
+                          </router-link>
+                          <button type="button" class="btn btn-sm btn-alt-secondary"
+                            @click.prevent="deleteCashRegister(row.id)">
+                            <i class="fa fa-fw fa-times"></i>
+                          </button>
+                        </div>
+                      </td>
                     </tr>
                   </template>
                 </DatasetItem>
@@ -63,13 +70,14 @@
       </Dataset>
     </BaseBlock>
   </div>
-  <!-- END Page Content -->
 </template>
 
-<script setup>
-import { reactive, computed, onMounted } from "vue";
-
-// Vue Dataset, for more info and examples you can check out https://github.com/kouts/vue-dataset/tree/next
+<script setup lang="ts">
+import { CashRegister } from '@/scripts/models/cash-register.model'
+import { onMounted, Ref, ref } from 'vue'
+import api from '@/scripts/services/api'
+import Swal from "sweetalert2"
+import { Toast } from "@/scripts/mixins/toast"
 import {
   Dataset,
   DatasetItem,
@@ -77,31 +85,18 @@ import {
   DatasetPager,
   DatasetSearch,
   DatasetShow,
-} from "vue-dataset";
-
-// Get example data
-import users from "@/data/usersDataset.json";
+} from "vue-dataset"
 
 // Helper variables
 const cols = reactive([
   {
-    name: "Name",
-    field: "name",
+    name: "Descripción",
+    field: "description",
     sort: "",
   },
   {
-    name: "Email",
-    field: "email",
-    sort: "",
-  },
-  {
-    name: "Company",
-    field: "company",
-    sort: "",
-  },
-  {
-    name: "Birth date",
-    field: "birthdate",
+    name: "Acciones",
+    field: "action",
     sort: "",
   },
 ]);
@@ -146,6 +141,7 @@ function onSort(event, i) {
 
 // Apply a few Bootstrap 5 optimizations
 onMounted(() => {
+  getCashRegisters()
   // Remove labels from
   document.querySelectorAll("#datasetLength label").forEach((el) => {
     el.remove();
@@ -158,6 +154,43 @@ onMounted(() => {
   selectLength.classList.add("form-select");
   selectLength.style.width = "80px";
 });
+
+const cashRegisters: Ref<CashRegister[]> = ref([])
+
+const getCashRegisters = async () => {
+  const { data } = await api.get("/cash-registers");
+  cashRegisters.value = data;
+}
+
+function deleteCashRegister(id: number | undefined) {
+  Swal.fire({
+    title: '¿Estás segurx de eliminar?',
+    showDenyButton: false,
+    showCancelButton: true,
+    confirmButtonText: 'Si',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      api.delete(`/cash-registers/${id}`)
+        .then((res) => {
+          if (res.status === 200) {
+            Toast.fire({
+              icon: 'success',
+              title: 'Eliminado correctamente'
+            })
+            getCashRegisters();
+          }
+        })
+        .catch((error) => {
+          console.log(error.response.data.message)
+          Toast.fire({
+            icon: 'error',
+            title: error.message
+          })
+        });
+    }
+  })
+}
 </script>
 
 <style lang="scss" scoped>

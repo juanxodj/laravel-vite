@@ -15,11 +15,7 @@
             This is a simple layout based page which you can use as a base for
             your landing, authentication, status or error pages.
           </p>
-          <RouterLink
-            :to="{ name: 'backend-dashboard' }"
-            class="btn btn-primary px-4 py-3"
-            v-click-ripple
-          >
+          <RouterLink :to="{ name: 'dashboard' }" class="btn btn-primary px-4 py-3" v-click-ripple>
             Enter Dashboard
             <i class="fa fa-fw fa-arrow-right ms-1 opacity-50"></i>
           </RouterLink>

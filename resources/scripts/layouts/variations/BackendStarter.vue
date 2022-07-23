@@ -38,7 +38,7 @@ store.mainContent({ mode: "narrow" });
         <BaseNavigation :nodes="[
           {
             name: 'Dashboard',
-            to: 'backend-dashboard',
+            to: 'dashboard',
             icon: 'fa fa-gauge',
           },
           {

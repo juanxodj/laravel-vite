@@ -2,10 +2,7 @@
 
 <template>
   <!-- Hero -->
-  <BasePageHeading
-    title="Form Layouts"
-    subtitle="Multiple layouts to match any design requirement."
-  >
+  <BasePageHeading title="Form Layouts" subtitle="Multiple layouts to match any design requirement.">
     <template #extra>
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-alt">
@@ -31,33 +28,16 @@
         </div>
         <div class="col-lg-8 space-y-2">
           <!-- Form Inline - Default Style -->
-          <form
-            class="row row-cols-lg-auto g-3 align-items-center"
-            @sumbit.prevent
-          >
+          <form class="row row-cols-lg-auto g-3 align-items-center" @sumbit.prevent>
             <div class="col-12">
-              <label class="visually-hidden" for="example-if-email"
-                >Email</label
-              >
-              <input
-                type="email"
-                class="form-control"
-                id="example-if-email"
-                name="example-if-email"
-                placeholder="Email"
-              />
+              <label class="visually-hidden" for="example-if-email">Email</label>
+              <input type="email" class="form-control" id="example-if-email" name="example-if-email"
+                placeholder="Email" />
             </div>
             <div class="col-12">
-              <label class="visually-hidden" for="example-if-password"
-                >Password</label
-              >
-              <input
-                type="password"
-                class="form-control"
-                id="example-if-password"
-                name="example-if-password"
-                placeholder="Password"
-              />
+              <label class="visually-hidden" for="example-if-password">Password</label>
+              <input type="password" class="form-control" id="example-if-password" name="example-if-password"
+                placeholder="Password" />
             </div>
             <div>
               <button type="submit" class="btn btn-primary">Login</button>
@@ -66,33 +46,16 @@
           <!-- END Form Inline - Default Style -->
 
           <!-- Form Inline - Alternative Style -->
-          <form
-            class="row row-cols-lg-auto g-3 align-items-center"
-            @sumbit.prevent
-          >
+          <form class="row row-cols-lg-auto g-3 align-items-center" @sumbit.prevent>
             <div class="col-12">
-              <label class="visually-hidden" for="example-if-email2"
-                >Email</label
-              >
-              <input
-                type="email"
-                class="form-control form-control-alt"
-                id="example-if-email2"
-                name="example-if-email2"
-                placeholder="Email"
-              />
+              <label class="visually-hidden" for="example-if-email2">Email</label>
+              <input type="email" class="form-control form-control-alt" id="example-if-email2" name="example-if-email2"
+                placeholder="Email" />
             </div>
             <div class="col-12">
-              <label class="visually-hidden" for="example-if-password2"
-                >Password</label
-              >
-              <input
-                type="password"
-                class="form-control form-control-alt"
-                id="example-if-password2"
-                name="example-if-password2"
-                placeholder="Password"
-              />
+              <label class="visually-hidden" for="example-if-password2">Password</label>
+              <input type="password" class="form-control form-control-alt" id="example-if-password2"
+                name="example-if-password2" placeholder="Password" />
             </div>
             <div class="col-12">
               <button type="submit" class="btn btn-dark">Login</button>
@@ -118,25 +81,13 @@
           <form @sumbit.prevent>
             <div class="mb-4">
               <label class="form-label" for="example-ltf-email">Email</label>
-              <input
-                type="email"
-                class="form-control"
-                id="example-ltf-email"
-                name="example-ltf-email"
-                placeholder="Your Email.."
-              />
+              <input type="email" class="form-control" id="example-ltf-email" name="example-ltf-email"
+                placeholder="Your Email.." />
             </div>
             <div class="mb-4">
-              <label class="form-label" for="example-ltf-password"
-                >Password</label
-              >
-              <input
-                type="password"
-                class="form-control"
-                id="example-ltf-password"
-                name="example-ltf-password"
-                placeholder="Your Password.."
-              />
+              <label class="form-label" for="example-ltf-password">Password</label>
+              <input type="password" class="form-control" id="example-ltf-password" name="example-ltf-password"
+                placeholder="Your Password.." />
             </div>
             <div class="mb-4">
               <button type="submit" class="btn btn-primary">Login</button>
@@ -148,25 +99,13 @@
           <form @sumbit.prevent>
             <div class="mb-4">
               <label class="form-label" for="example-ltf-email2">Email</label>
-              <input
-                type="email"
-                class="form-control form-control-alt"
-                id="example-ltf-email2"
-                name="example-ltf-email2"
-                placeholder="Your Email.."
-              />
+              <input type="email" class="form-control form-control-alt" id="example-ltf-email2"
+                name="example-ltf-email2" placeholder="Your Email.." />
             </div>
             <div class="mb-4">
-              <label class="form-label" for="example-ltf-password2"
-                >Password</label
-              >
-              <input
-                type="password"
-                class="form-control form-control-alt"
-                id="example-ltf-password2"
-                name="example-ltf-password2"
-                placeholder="Your Password.."
-              />
+              <label class="form-label" for="example-ltf-password2">Password</label>
+              <input type="password" class="form-control form-control-alt" id="example-ltf-password2"
+                name="example-ltf-password2" placeholder="Your Password.." />
             </div>
             <div class="mb-4">
               <button type="submit" class="btn btn-dark">Login</button>
@@ -190,31 +129,17 @@
           <!-- Form Horizontal - Default Style -->
           <form class="space-y-4" @sumbit.prevent>
             <div class="row">
-              <label class="col-sm-4 col-form-label" for="example-hf-email"
-                >Email</label
-              >
+              <label class="col-sm-4 col-form-label" for="example-hf-email">Email</label>
               <div class="col-sm-8">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="example-hf-email"
-                  name="example-hf-email"
-                  placeholder="Your Email.."
-                />
+                <input type="email" class="form-control" id="example-hf-email" name="example-hf-email"
+                  placeholder="Your Email.." />
               </div>
             </div>
             <div class="row">
-              <label class="col-sm-4 col-form-label" for="example-hf-password"
-                >Password</label
-              >
+              <label class="col-sm-4 col-form-label" for="example-hf-password">Password</label>
               <div class="col-sm-8">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="example-hf-password"
-                  name="example-hf-password"
-                  placeholder="Your Password.."
-                />
+                <input type="password" class="form-control" id="example-hf-password" name="example-hf-password"
+                  placeholder="Your Password.." />
               </div>
             </div>
             <div class="row">
@@ -228,31 +153,17 @@
           <!-- Form Horizontal - Alternative Style -->
           <form class="space-y-4" @sumbit.prevent>
             <div class="row">
-              <label class="col-sm-4 col-form-label" for="example-hf-email2"
-                >Email</label
-              >
+              <label class="col-sm-4 col-form-label" for="example-hf-email2">Email</label>
               <div class="col-sm-8">
-                <input
-                  type="email"
-                  class="form-control form-control-alt"
-                  id="example-hf-email2"
-                  name="example-hf-email2"
-                  placeholder="Your Email.."
-                />
+                <input type="email" class="form-control form-control-alt" id="example-hf-email2"
+                  name="example-hf-email2" placeholder="Your Email.." />
               </div>
             </div>
             <div class="row">
-              <label class="col-sm-4 col-form-label" for="example-hf-password2"
-                >Password</label
-              >
+              <label class="col-sm-4 col-form-label" for="example-hf-password2">Password</label>
               <div class="col-sm-8">
-                <input
-                  type="password"
-                  class="form-control form-control-alt"
-                  id="example-hf-password2"
-                  name="example-hf-password2"
-                  placeholder="Your Password.."
-                />
+                <input type="password" class="form-control form-control-alt" id="example-hf-password2"
+                  name="example-hf-password2" placeholder="Your Password.." />
               </div>
             </div>
             <div class="row">
@@ -305,67 +216,31 @@
                 <input type="text" class="form-control" placeholder="col-3" />
               </div>
               <div class="col-3">
-                <input
-                  type="text"
-                  class="form-control form-control-alt"
-                  placeholder="col-3"
-                />
+                <input type="text" class="form-control form-control-alt" placeholder="col-3" />
               </div>
               <div class="col-3">
-                <input
-                  type="text"
-                  class="form-control form-control-alt"
-                  placeholder="col-3"
-                />
+                <input type="text" class="form-control form-control-alt" placeholder="col-3" />
               </div>
               <div class="col-3">
-                <input
-                  type="text"
-                  class="form-control form-control-alt"
-                  placeholder="col-3"
-                />
+                <input type="text" class="form-control form-control-alt" placeholder="col-3" />
               </div>
               <div class="col-3">
-                <input
-                  type="text"
-                  class="form-control form-control-alt"
-                  placeholder="col-3"
-                />
+                <input type="text" class="form-control form-control-alt" placeholder="col-3" />
               </div>
               <div class="col-8">
-                <input
-                  type="text"
-                  class="form-control form-control-alt"
-                  placeholder="col-8"
-                />
+                <input type="text" class="form-control form-control-alt" placeholder="col-8" />
               </div>
               <div class="col-4">
-                <input
-                  type="text"
-                  class="form-control form-control-alt"
-                  placeholder="col-4"
-                />
+                <input type="text" class="form-control form-control-alt" placeholder="col-4" />
               </div>
               <div class="col-3">
-                <input
-                  type="text"
-                  class="form-control form-control-alt"
-                  placeholder="col-3"
-                />
+                <input type="text" class="form-control form-control-alt" placeholder="col-3" />
               </div>
               <div class="col-6">
-                <input
-                  type="text"
-                  class="form-control form-control-alt"
-                  placeholder="col-6"
-                />
+                <input type="text" class="form-control form-control-alt" placeholder="col-6" />
               </div>
               <div class="col-3">
-                <input
-                  type="text"
-                  class="form-control form-control-alt"
-                  placeholder="col-3"
-                />
+                <input type="text" class="form-control form-control-alt" placeholder="col-3" />
               </div>
             </div>
           </form>

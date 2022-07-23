@@ -18,7 +18,7 @@ class CashRegisterController extends Controller
 {
     public function index()
     {
-        $cash = CashRegister::paginate(10);
+        $cash = CashRegister::all();
 
         return response()->json($cash);
     }

@@ -12,7 +12,10 @@ const Landing = () => import("@/scripts/views/workana/LandingView.vue");
 // Backend: Dashboard
 const Dashboard = () => import("@/scripts/views/workana/DashboardView.vue");
 
-const CashRegister = () => import("@/scripts/views/workana/CashRegisterView.vue");
+const CashRegisterIndex = () => import("@/scripts/views/workana/cash-register/IndexView.vue");
+const CashRegisterAdd = () => import("@/scripts/views/workana/cash-register/AddView.vue");
+const CashRegisterEdit = () => import("@/scripts/views/workana/cash-register/EditView.vue");
+
 const Movement = () => import("@/scripts/views/workana/MovementView.vue");
 const Product = () => import("@/scripts/views/workana/ProductView.vue");
 const User = () => import("@/scripts/views/workana/UserView.vue");
@@ -37,13 +40,23 @@ const routes = [
     children: [
       {
         path: "dashboard",
-        name: "backend-dashboard",
+        name: "dashboard",
         component: Dashboard,
       },
       {
         path: "cash-register",
         name: "cash-register",
-        component: CashRegister,
+        component: CashRegisterIndex,
+      },
+      {
+        path: "cash-register/add",
+        name: "cash-register.add",
+        component: CashRegisterAdd,
+      },
+      {
+        path: "cash-register/:id/edit",
+        name: "cash-register.edit",
+        component: CashRegisterEdit,
       },
       {
         path: "movement",

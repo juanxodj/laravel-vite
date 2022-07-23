@@ -26,7 +26,7 @@
               <span class="text-body-color fw-semibold">Pinia</span> and
               <span class="text-body-color fw-semibold">Composition API</span>.
             </p>
-            <RouterLink :to="{ name: 'backend-dashboard' }" class="btn btn-primary py-2 px-3 m-1" v-click-ripple>
+            <RouterLink :to="{ name: 'dashboard' }" class="btn btn-primary py-2 px-3 m-1" v-click-ripple>
               <i class="fa fa-fw fa-eye opacity-50 me-1"></i> Live preview
             </RouterLink>
             <a class="btn btn-alt-primary py-2 px-3 m-1" href="https://1.envato.market/AVD6j" v-click-ripple>
@@ -840,7 +840,7 @@
             <i class="fa fa-fw fa-shopping-cart opacity-50"></i>
             <span class="ms-2">Purchase</span>
           </a>
-          <RouterLink :to="{ name: 'backend-dashboard' }" class="btn btn-primary py-2 px-3 m-1" v-click-ripple>
+          <RouterLink :to="{ name: 'dashboard' }" class="btn btn-primary py-2 px-3 m-1" v-click-ripple>
             <i class="fa fa-fw fa-eye opacity-50 me-1"></i> Live preview
           </RouterLink>
         </div>

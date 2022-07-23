@@ -12,10 +12,7 @@ import VueCountdown from "@chenfengyuan/vue-countdown";
             <div class="row justify-content-center">
               <div class="col-md-6 py-3 text-center">
                 <div class="push">
-                  <RouterLink
-                    :to="{ name: 'backend-dashboard' }"
-                    class="link-fx fw-bold fs-1"
-                  >
+                  <RouterLink :to="{ name: 'dashboard' }" class="link-fx fw-bold fs-1">
                     <span class="text-white">OneUI Vue Edition</span>
                   </RouterLink>
                   <p class="text-white-75">
@@ -24,10 +21,7 @@ import VueCountdown from "@chenfengyuan/vue-countdown";
                 </div>
 
                 <!-- Countdown -->
-                <VueCountdown
-                  :time="408 * 24 * 60 * 60 * 955"
-                  v-slot="{ days, hours, minutes, seconds }"
-                >
+                <VueCountdown :time="408 * 24 * 60 * 60 * 955" v-slot="{ days, hours, minutes, seconds }">
                   <div class="row items-push py-3 text-center">
                     <div class="col-6 col-md-3">
                       <div class="fs-1 fw-bold text-white">{{ days }}</div>
@@ -52,15 +46,8 @@ import VueCountdown from "@chenfengyuan/vue-countdown";
                 <form @submit.prevent class="push">
                   <div class="row justify-content-center mb-4">
                     <div class="col-md-10 col-xl-6">
-                      <div
-                        class="input-group input-group-lg bg-primary-dark-op p-3 rounded-3 mb-2"
-                      >
-                        <input
-                          type="email"
-                          class="form-control border-0"
-                          placeholder="Enter your email.."
-                          required
-                        />
+                      <div class="input-group input-group-lg bg-primary-dark-op p-3 rounded-3 mb-2">
+                        <input type="email" class="form-control border-0" placeholder="Enter your email.." required />
                         <button type="submit" class="btn btn-primary">
                           Subscribe
                         </button>
@@ -71,10 +58,7 @@ import VueCountdown from "@chenfengyuan/vue-countdown";
                     </div>
                   </div>
                 </form>
-                <RouterLink
-                  :to="{ name: 'backend-pages-generic-blank' }"
-                  class="btn btn-dark"
-                >
+                <RouterLink :to="{ name: 'backend-pages-generic-blank' }" class="btn btn-dark">
                   <i class="fa fa-arrow-left opacity-50 me-1"></i> Go Back to
                   Dashboard
                 </RouterLink>

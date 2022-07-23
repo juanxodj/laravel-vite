@@ -8,7 +8,7 @@ export default {
   main: [
     {
       name: "Dashboard",
-      to: "backend-dashboard",
+      to: "dashboard",
       icon: "si si-speedometer",
     },
     {
@@ -719,7 +719,7 @@ export default {
     },
     {
       name: "Go Back",
-      to: "backend-dashboard",
+      to: "dashboard",
       icon: "si si-action-undo",
     },
   ],
