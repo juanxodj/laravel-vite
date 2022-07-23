@@ -9,6 +9,7 @@ use App\Models\CashRegister;
 use App\Models\Movement;
 use App\Models\Product;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Auth;
 
 class MovementController extends Controller
 {
@@ -24,6 +25,7 @@ class MovementController extends Controller
     {
         $movement = new Movement();
         $movement->fill($request->all());
+        $movement->user_id = Auth::id();
         $movement->save();
 
         return new MovementResource($movement);

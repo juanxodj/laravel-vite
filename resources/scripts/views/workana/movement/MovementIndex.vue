@@ -63,6 +63,7 @@ const initialForm = {
   amount: 0,
   cash_register_id: 1,
   product_id: 1,
+  total: 0
 }
 const form = reactive<Movement>({ ...initialForm })
 const router = useRouter()
@@ -80,9 +81,8 @@ const getData = async () => {
 
 function addData() {
   api.post(`/movements`, form)
-    .then((res) => {
-      Object.assign(form, res.data.data)
-      router.push({ name: 'movement' })
+    .then(() => {
+      Object.assign(form, initialForm)
       Toast.fire({
         icon: 'success',
         title: 'Guardado Correctamente'
