@@ -1,57 +1,6 @@
-<script setup>
-import { reactive } from "vue";
-
-// Example data
-const users = reactive([
-  {
-    id: 1,
-    name: "Adam McCoy",
-    avatar: "avatar10",
-    href: "javascript:void(0)",
-    labelVariant: "success",
-    labelText: "VIP",
-  },
-  {
-    id: 2,
-    name: "Betty Kelley",
-    avatar: "avatar2",
-    href: "javascript:void(0)",
-    labelVariant: "info",
-    labelText: "Business",
-  },
-  {
-    id: 3,
-    name: "Jesse Fisher",
-    avatar: "avatar9",
-    href: "javascript:void(0)",
-    labelVariant: "info",
-    labelText: "Business",
-  },
-  {
-    id: 4,
-    name: "Ryan Flores",
-    avatar: "avatar12",
-    href: "javascript:void(0)",
-    labelVariant: "warning",
-    labelText: "Trial",
-  },
-  {
-    id: 5,
-    name: "Alice Moore",
-    avatar: "avatar4",
-    href: "javascript:void(0)",
-    labelVariant: "danger",
-    labelText: "Disabled",
-  },
-]);
-</script>
-
 <template>
   <!-- Hero -->
-  <BasePageHeading
-    title="Responsive Tables"
-    subtitle="Mobile friendly tables that work across all screen sizes."
-  >
+  <BasePageHeading title="Responsive Tables" subtitle="Mobile friendly tables that work across all screen sizes.">
     <template #extra>
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-alt">
@@ -100,11 +49,7 @@ const users = reactive([
           <tbody>
             <tr v-for="user in users" :key="user.id">
               <td class="text-center">
-                <img
-                  class="img-avatar img-avatar48"
-                  :src="`/assets/media/avatars/${user.avatar}.jpg`"
-                  alt="Avatar"
-                />
+                <img class="img-avatar img-avatar48" :src="`/assets/media/avatars/${user.avatar}.jpg`" alt="Avatar" />
               </td>
               <td class="fw-semibold fs-sm">
                 {{ user.name }}
@@ -114,8 +59,7 @@ const users = reactive([
               </td>
               <td>
                 <span
-                  :class="`fs-xs fw-semibold d-inline-block py-1 px-3 rounded-pill bg-${user.labelVariant}-light text-${user.labelVariant}`"
-                >
+                  :class="`fs-xs fw-semibold d-inline-block py-1 px-3 rounded-pill bg-${user.labelVariant}-light text-${user.labelVariant}`">
                   {{ user.labelText }}
                 </span>
               </td>
@@ -167,11 +111,7 @@ const users = reactive([
         <tbody>
           <tr v-for="user in users" :key="user.id">
             <td class="text-center">
-              <img
-                class="img-avatar img-avatar48"
-                :src="`/assets/media/avatars/${user.avatar}.jpg`"
-                alt="Avatar"
-              />
+              <img class="img-avatar img-avatar48" :src="`/assets/media/avatars/${user.avatar}.jpg`" alt="Avatar" />
             </td>
             <td class="fw-semibold fs-sm">
               {{ user.name }}
@@ -181,8 +121,7 @@ const users = reactive([
             </td>
             <td class="d-none d-sm-table-cell">
               <span
-                :class="`fs-xs fw-semibold d-inline-block py-1 px-3 rounded-pill bg-${user.labelVariant}-light text-${user.labelVariant}`"
-              >
+                :class="`fs-xs fw-semibold d-inline-block py-1 px-3 rounded-pill bg-${user.labelVariant}-light text-${user.labelVariant}`">
                 {{ user.labelText }}
               </span>
             </td>
@@ -204,3 +143,52 @@ const users = reactive([
   </div>
   <!-- END Page Content -->
 </template>
+
+
+<script setup>
+import { reactive } from "vue";
+
+// Example data
+const users = reactive([
+  {
+    id: 1,
+    name: "Adam McCoy",
+    avatar: "avatar10",
+    href: "javascript:void(0)",
+    labelVariant: "success",
+    labelText: "VIP",
+  },
+  {
+    id: 2,
+    name: "Betty Kelley",
+    avatar: "avatar2",
+    href: "javascript:void(0)",
+    labelVariant: "info",
+    labelText: "Business",
+  },
+  {
+    id: 3,
+    name: "Jesse Fisher",
+    avatar: "avatar9",
+    href: "javascript:void(0)",
+    labelVariant: "info",
+    labelText: "Business",
+  },
+  {
+    id: 4,
+    name: "Ryan Flores",
+    avatar: "avatar12",
+    href: "javascript:void(0)",
+    labelVariant: "warning",
+    labelText: "Trial",
+  },
+  {
+    id: 5,
+    name: "Alice Moore",
+    avatar: "avatar4",
+    href: "javascript:void(0)",
+    labelVariant: "danger",
+    labelText: "Disabled",
+  },
+]);
+</script>

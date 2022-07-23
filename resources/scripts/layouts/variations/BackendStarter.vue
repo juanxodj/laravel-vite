@@ -39,7 +39,27 @@ store.mainContent({ mode: "narrow" });
           {
             name: 'Dashboard',
             to: 'backend-dashboard',
-            icon: 'si si-speedometer',
+            icon: 'fa fa-gauge',
+          },
+          {
+            name: 'Cajas',
+            to: 'cash-register',
+            icon: 'fa fa-cash-register',
+          },
+          {
+            name: 'Productos',
+            to: 'product',
+            icon: 'fa fa-barcode',
+          },
+          {
+            name: 'Usuarios',
+            to: 'user',
+            icon: 'fa fa-user',
+          },
+          {
+            name: 'Movimientos',
+            to: 'movement',
+            icon: 'fa fa-arrow-up-right-dots',
           },
           {
             name: 'More',

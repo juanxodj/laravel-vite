@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import { createPinia } from "pinia"
 import App from '@/scripts/App.vue'
 
-import router from "@/scripts/router"
+import router from "@/scripts/router/workana"
 
 // Template components
 import BaseBlock from "@/scripts/components/BaseBlock.vue";
