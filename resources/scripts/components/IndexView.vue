@@ -1,7 +1,7 @@
 <template>
-  <BasePageHeading title="Cajas">
+  <BasePageHeading :title="title">
     <template #extra>
-      <router-link :to="{ name: 'cash-register.add' }">
+      <router-link :to="{ name: `${routeName}.add` }">
         <button type="button" class="btn btn-alt-primary" v-click-ripple>
           <i class="fa fa-plus opacity-50 me-1"></i>
           Agregar
@@ -11,8 +11,8 @@
   </BasePageHeading>
 
   <div class="content">
-    <BaseBlock title="Lista de Cajas" content-full>
-      <Dataset v-slot="{ ds }" :ds-data="cashRegisters" :ds-sortby="sortBy" :ds-search-in="['description']">
+    <BaseBlock :title="titleBlock" content-full>
+      <Dataset v-slot="{ ds }" :ds-data="dataFetched" :ds-sortby="sortBy" :ds-search-in="fieldsSearch">
         <div class="row" :data-page-count="ds.dsPagecount">
           <div id="datasetLength" class="col-md-8 py-2">
             <DatasetShow />
@@ -39,19 +39,20 @@
                   <template #default="{ row, rowIndex }">
                     <tr>
                       <th scope="row">{{ rowIndex + 1 }}</th>
-                      <td style="min-width: 150px">{{ row.description }}</td>
+                      <template v-for="field in fieldsSearch">
+                        <td>{{ row[`${field}`] }}</td>
+                      </template>
                       <td>
                         <div class="btn-group">
                           <router-link :to="{
-                            name: 'cash-register.edit',
+                            name: `${routeName}.edit`,
                             params: { id: row.id }
                           }">
                             <button type="button" class="btn btn-sm btn-alt-secondary">
                               <i class="fa fa-fw fa-pencil-alt"></i>
                             </button>
                           </router-link>
-                          <button type="button" class="btn btn-sm btn-alt-secondary"
-                            @click.prevent="deleteCashRegister(row.id)">
+                          <button type="button" class="btn btn-sm btn-alt-secondary" @click.prevent="destroy(row.id)">
                             <i class="fa fa-fw fa-times"></i>
                           </button>
                         </div>
@@ -73,7 +74,7 @@
 </template>
 
 <script setup lang="ts">
-import { CashRegister } from '@/scripts/models/cash-register.model'
+/* import { CashRegister } from '@/scripts/models/cash-register.model' */
 import { onMounted, Ref, ref } from 'vue'
 import api from '@/scripts/services/api'
 import Swal from "sweetalert2"
@@ -87,19 +88,21 @@ import {
   DatasetShow,
 } from "vue-dataset"
 
+const props = defineProps({
+  title: String,
+  titleBlock: String,
+  fieldsSearch: Array,
+  routeFetch: String,
+  routeName: String,
+  columns: Array,
+  modelName: String
+})
+
+/* const dataFetched: Ref<CashRegister[]> = ref([]) */
+const dataFetched = ref([])
+
 // Helper variables
-const cols = reactive([
-  {
-    name: "Descripción",
-    field: "description",
-    sort: "",
-  },
-  {
-    name: "Acciones",
-    field: "action",
-    sort: "",
-  },
-]);
+const cols = reactive(props.columns);
 
 // Sort by functionality
 const sortBy = computed(() => {
@@ -141,7 +144,7 @@ function onSort(event, i) {
 
 // Apply a few Bootstrap 5 optimizations
 onMounted(() => {
-  getCashRegisters()
+  getData()
   // Remove labels from
   document.querySelectorAll("#datasetLength label").forEach((el) => {
     el.remove();
@@ -155,14 +158,12 @@ onMounted(() => {
   selectLength.style.width = "80px";
 });
 
-const cashRegisters: Ref<CashRegister[]> = ref([])
-
-const getCashRegisters = async () => {
-  const { data } = await api.get("/cash-registers");
-  cashRegisters.value = data;
+const getData = async () => {
+  const { data } = await api.get(`/${props.routeFetch}`);
+  dataFetched.value = data;
 }
 
-function deleteCashRegister(id: number | undefined) {
+function destroy(id: number | undefined) {
   Swal.fire({
     title: '¿Estás segurx de eliminar?',
     showDenyButton: false,
@@ -171,18 +172,18 @@ function deleteCashRegister(id: number | undefined) {
     cancelButtonText: 'Cancelar'
   }).then((result) => {
     if (result.isConfirmed) {
-      api.delete(`/cash-registers/${id}`)
+      api.delete(`/${props.routeFetch}/${id}`)
         .then((res) => {
           if (res.status === 200) {
             Toast.fire({
               icon: 'success',
               title: 'Eliminado correctamente'
             })
-            getCashRegisters();
+            getData();
           }
         })
         .catch((error) => {
-          console.log(error.response.data.message)
+          //console.log(error.response.data.message)
           Toast.fire({
             icon: 'error',
             title: error.message

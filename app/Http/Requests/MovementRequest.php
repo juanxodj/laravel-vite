@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Movement;
 use Illuminate\Foundation\Http\FormRequest;
 
 class MovementRequest extends FormRequest
@@ -13,16 +14,7 @@ class MovementRequest extends FormRequest
 
     public function rules(): array
     {
-        $rules = [
-            'type' => 'required',
-            'quantity' => 'required',
-            'amount' => 'required',
-            'total' => 'required',
-            'cash_register_id' => 'required',
-            'product_id' => 'required',
-        ];
-
-        return $rules;
+        return Movement::$rules;
     }
 
     public function attributes()

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Product;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ProductRequest extends FormRequest
@@ -13,12 +14,7 @@ class ProductRequest extends FormRequest
 
     public function rules(): array
     {
-        $rules = [
-            'description' => 'required|string|max:100',
-            'price' => 'required|decimal',
-        ];
-
-        return $rules;
+        return Product::$rules;
     }
 
     public function attributes()

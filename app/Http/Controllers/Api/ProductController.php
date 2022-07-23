@@ -12,36 +12,36 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $cash = Product::paginate(10);
+        $product = Product::all();
 
-        return response()->json($cash);
+        return response()->json($product);
     }
 
     public function store(ProductRequest $request): JsonResource
     {
-        $cash = new Product();
-        $cash->fill($request->all());
-        $cash->save();
+        $product = new Product();
+        $product->fill($request->all());
+        $product->save();
 
-        return new ProductResource($cash);
+        return new ProductResource($product);
     }
 
-    public function show(Product $cash): JsonResource
+    public function show(Product $product): JsonResource
     {
-        return new ProductResource($cash);
+        return new ProductResource($product);
     }
 
-    public function update(ProductRequest $request, Product $cash): JsonResource
+    public function update(ProductRequest $request, Product $product): JsonResource
     {
-        $cash->update($request->all());
+        $product->update($request->all());
 
-        return new ProductResource($cash);
+        return new ProductResource($product);
     }
 
-    public function destroy(Product $cash): JsonResource
+    public function destroy(Product $product): JsonResource
     {
-        $cash->delete();
+        $product->delete();
 
-        return new ProductResource($cash);
+        return new ProductResource($product);
     }
 }

@@ -13,4 +13,9 @@ class Product extends Model
         'description',
         'price',
     ];
+
+    public static $rules = [
+        'description' => 'required|string|max:100',
+        'price' => 'required|numeric',
+    ];
 }

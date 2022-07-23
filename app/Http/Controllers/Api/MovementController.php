@@ -12,7 +12,7 @@ class MovementController extends Controller
 {
     public function index()
     {
-        $cash = Movement::paginate(10);
+        $cash = Movement::all();
 
         return response()->json($cash);
     }

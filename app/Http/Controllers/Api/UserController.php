@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $cash = User::paginate(10);
+        $cash = User::all();
 
         return response()->json($cash);
     }

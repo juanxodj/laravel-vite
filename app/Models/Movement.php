@@ -15,4 +15,13 @@ class Movement extends Model
         'cash_register_id', 'product_id',
         'user_id',
     ];
+
+    public static $rules = [
+        'type' => 'required',
+        'quantity' => 'required',
+        'amount' => 'required',
+        'total' => 'required',
+        'cash_register_id' => 'required',
+        'product_id' => 'required',
+    ];
 }

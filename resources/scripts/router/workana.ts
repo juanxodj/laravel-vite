@@ -12,12 +12,15 @@ const Landing = () => import("@/scripts/views/workana/LandingView.vue");
 // Backend: Dashboard
 const Dashboard = () => import("@/scripts/views/workana/DashboardView.vue");
 
-const CashRegisterIndex = () => import("@/scripts/views/workana/cash-register/IndexView.vue");
-const CashRegisterAdd = () => import("@/scripts/views/workana/cash-register/AddView.vue");
-const CashRegisterEdit = () => import("@/scripts/views/workana/cash-register/EditView.vue");
+const CashRegisterIndex = () => import("@/scripts/views/workana/cash-register/CashRegisterIndex.vue");
+const CashRegisterAdd = () => import("@/scripts/views/workana/cash-register/CashRegisterAdd.vue");
+const CashRegisterEdit = () => import("@/scripts/views/workana/cash-register/CashRegisterEdit.vue");
+
+const ProductIndex = () => import("@/scripts/views/workana/product/ProductIndex.vue");
+const ProductAdd = () => import("@/scripts/views/workana/product/ProductAdd.vue");
+const ProductEdit = () => import("@/scripts/views/workana/product/ProductEdit.vue");
 
 const Movement = () => import("@/scripts/views/workana/MovementView.vue");
-const Product = () => import("@/scripts/views/workana/ProductView.vue");
 const User = () => import("@/scripts/views/workana/UserView.vue");
 
 // Set all routes
@@ -66,7 +69,17 @@ const routes = [
       {
         path: "product",
         name: "product",
-        component: Product,
+        component: ProductIndex,
+      },
+      {
+        path: "product/add",
+        name: "product.add",
+        component: ProductAdd,
+      },
+      {
+        path: "product/:id/edit",
+        name: "product.edit",
+        component: ProductEdit,
       },
       {
         path: "user",
