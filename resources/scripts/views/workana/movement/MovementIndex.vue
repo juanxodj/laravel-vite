@@ -54,7 +54,6 @@
 import { Movement } from '@/scripts/models/movement.model'
 import { reactive } from 'vue'
 import { Toast } from "@/scripts/mixins/toast"
-import { useRouter } from 'vue-router'
 import api from '@/scripts/services/api'
 
 const initialForm = {
@@ -66,7 +65,6 @@ const initialForm = {
   total: 0
 }
 const form = reactive<Movement>({ ...initialForm })
-const router = useRouter()
 const dataFetched = ref([])
 const total = computed(() => form.quantity * form.amount)
 
@@ -74,22 +72,31 @@ onMounted(() => {
   getData()
 });
 
+watch(
+  () => form.product_id,
+  (selection) => {
+    var found = dataFetched.value.product.find(e => e.id === selection);
+    form.amount = found.price
+  }
+);
+
 const getData = async () => {
   const { data } = await api.get(`/movements`);
   dataFetched.value = data;
 }
 
 function addData() {
+  form.total = total
   api.post(`/movements`, form)
     .then(() => {
-      Object.assign(form, initialForm)
       Toast.fire({
         icon: 'success',
         title: 'Guardado Correctamente'
       })
+      Object.assign(form, initialForm)
     })
     .catch((err) => {
-      console.log(err.response.data.errors)
+      console.log(err.response)
     });
 }
 </script>

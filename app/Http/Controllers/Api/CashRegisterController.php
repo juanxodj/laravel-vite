@@ -37,6 +37,11 @@ class CashRegisterController extends Controller
         return new CashRegisterResource($cash_register);
     }
 
+    public function detail(CashRegister $cash_register)
+    {
+        return response()->json($cash_register->details);
+    }
+
     public function update(CashRegisterRequest $request, CashRegister $cash_register): JsonResource
     {
         $cash_register->update($request->all());

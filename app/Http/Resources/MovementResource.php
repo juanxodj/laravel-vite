@@ -19,9 +19,9 @@ class MovementResource extends JsonResource
             'quantity' => $this->quantity,
             'amount' => $this->amount,
             'total' => $this->total,
-            'cash_register_id ' => $this->cash_register_id,
-            'product_id ' => $this->product_id,
-            'user_id  ' => $this->user_id,
+            'cash_register_id' => $this->cash_register_id,
+            'product_id' => $this->product_id,
+            'user_id' => $this->user_id,
         ];
     }
 }

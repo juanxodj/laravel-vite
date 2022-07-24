@@ -1,7 +1,12 @@
 <template>
   <BasePageHeading :title="title">
     <template #extra>
-      <router-link :to="{ name: `${routeName}.add` }">
+      <button type="button" class="btn btn-alt-primary" data-bs-toggle="modal" data-bs-target="#modalCashRegister"
+        v-if="route.name === 'cash-register.detail'">
+        <i class="fa fa-plus opacity-50 me-1"></i>
+        Abrir Caja
+      </button>
+      <router-link :to="{ name: `${routeName}.add` }" v-else>
         <button type="button" class="btn btn-alt-primary" v-click-ripple>
           <i class="fa fa-plus opacity-50 me-1"></i>
           Agregar
@@ -12,7 +17,7 @@
 
   <div class="content">
     <BaseBlock :title="titleBlock" content-full>
-      <Dataset v-slot="{ ds }" :ds-data="dataFetched" :ds-sortby="sortBy" :ds-search-in="fieldsSearch">
+      <Dataset v-slot="{ ds }" :ds-data="dataFetched.reverse()" :ds-sortby="sortBy" :ds-search-in="fieldsSearch">
         <div class="row" :data-page-count="ds.dsPagecount">
           <div id="datasetLength" class="col-md-8 py-2">
             <DatasetShow />
@@ -44,6 +49,22 @@
                       </template>
                       <td>
                         <div class="btn-group">
+                          <div v-if="route.name === 'cash-register'">
+                            <router-link :to="{
+                              name: `${routeName}.detail`,
+                              params: { id: row.id }
+                            }">
+                              <button type="button" class="btn btn-sm btn-alt-secondary">
+                                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                              </button>
+                            </router-link>
+                          </div>
+                          <div v-else-if="route.name === 'cash-register.detail'">
+                            <button type="button" class="btn btn-sm btn-alt-secondary"
+                              @click="closeCashRegister(row.id)">
+                              <i class="fa-solid fa-circle-arrow-down"></i>
+                            </button>
+                          </div>
                           <router-link :to="{
                             name: `${routeName}.edit`,
                             params: { id: row.id }
@@ -71,11 +92,37 @@
       </Dataset>
     </BaseBlock>
   </div>
+
+  <!-- Modal Open Cash Register -->
+  <div class="modal fade" id="modalCashRegister" tabindex="-1" aria-labelledby="modalCashRegisterLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalCashRegisterLabel">Abrir Caja</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form @submit.prevent="openCashRegister" class="mb-4">
+            <div class="row">
+              <div class="col-md-12">
+                <label class="form-label">Saldo Inicial</label>
+                <input type="number" step="0.01" class="form-control" v-model="initialFormCashRegister.initial_balance">
+              </div>
+              <div class="col-md-12 mt-3 text-end">
+                <button type="submit" class="btn btn-primary">Abrir</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 /* import { CashRegister } from '@/scripts/models/cash-register.model' */
-import { onMounted, Ref, ref } from 'vue'
+import { onMounted, ref, onUnmounted } from 'vue'
 import api from '@/scripts/services/api'
 import Swal from "sweetalert2"
 import { Toast } from "@/scripts/mixins/toast"
@@ -87,6 +134,7 @@ import {
   DatasetSearch,
   DatasetShow,
 } from "vue-dataset"
+import { useRoute } from 'vue-router'
 
 const props = defineProps({
   title: String,
@@ -97,12 +145,21 @@ const props = defineProps({
   columns: Array,
   modelName: String
 })
+const route = useRoute()
 
 /* const dataFetched: Ref<CashRegister[]> = ref([]) */
 const dataFetched = ref([])
 
+const initialFormCashRegister = {
+  opening: new Date(),
+  initial_balance: 0,
+  status: "open"
+}
+
 // Helper variables
 const cols = reactive(props.columns);
+let tooltipTriggerList = [];
+let tooltipList = [];
 
 // Sort by functionality
 const sortBy = computed(() => {
@@ -144,6 +201,7 @@ function onSort(event, i) {
 
 // Apply a few Bootstrap 5 optimizations
 onMounted(() => {
+  console.log(route.name)
   getData()
   // Remove labels from
   document.querySelectorAll("#datasetLength label").forEach((el) => {
@@ -156,6 +214,27 @@ onMounted(() => {
   selectLength.classList = "";
   selectLength.classList.add("form-select");
   selectLength.style.width = "80px";
+
+  // Grab all tooltip containers..
+  tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  );
+
+  // ..and init them
+  tooltipList = tooltipTriggerList.map((tooltipTriggerEl) => {
+    return new window.bootstrap.Tooltip(tooltipTriggerEl, {
+      container: tooltipTriggerEl.dataset.bsContainer || "#page-container",
+      animation:
+        tooltipTriggerEl.dataset.bsAnimation &&
+          tooltipTriggerEl.dataset.bsAnimation.toLowerCase() == "true"
+          ? true
+          : false,
+    });
+  });
+});
+
+onUnmounted(() => {
+  tooltipList.forEach((tooltip) => tooltip.dispose());
 });
 
 const getData = async () => {
@@ -183,10 +262,52 @@ function destroy(id: number | undefined) {
           }
         })
         .catch((error) => {
-          //console.log(error.response.data.message)
           Toast.fire({
             icon: 'error',
             title: error.message
+          })
+        });
+    }
+  })
+}
+
+function openCashRegister() {
+  api.post(`/cash-registers/${route.params.id}/open`, initialFormCashRegister)
+    .then(() => {
+      Toast.fire({
+        icon: 'success',
+        title: 'Guardado Correctamente'
+      })
+    })
+    .catch((err) => {
+      Toast.fire({
+        icon: 'error',
+        title: err.response.data.message
+      })
+    });
+}
+
+function closeCashRegister(id: number) {
+  Swal.fire({
+    title: '¿Estás segurx de cerrar caja?',
+    showDenyButton: false,
+    showCancelButton: true,
+    confirmButtonText: 'Si',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      api.post(`/cash-registers/${id}/close`)
+        .then(() => {
+          Toast.fire({
+            icon: 'success',
+            title: 'Cerrado Correctamente'
+          })
+          getData();
+        })
+        .catch((err) => {
+          Toast.fire({
+            icon: 'error',
+            title: err.response.data.message
           })
         });
     }

@@ -17,6 +17,7 @@ const Dashboard = () => import("@/scripts/views/workana/DashboardView.vue");
 const CashRegisterIndex = () => import("@/scripts/views/workana/cash-register/CashRegisterIndex.vue");
 const CashRegisterAdd = () => import("@/scripts/views/workana/cash-register/CashRegisterAdd.vue");
 const CashRegisterEdit = () => import("@/scripts/views/workana/cash-register/CashRegisterEdit.vue");
+const CashRegisterDetail = () => import("@/scripts/views/workana/cash-register/CashRegisterDetail.vue");
 
 const ProductIndex = () => import("@/scripts/views/workana/product/ProductIndex.vue");
 const ProductAdd = () => import("@/scripts/views/workana/product/ProductAdd.vue");
@@ -94,6 +95,12 @@ const routes = [
         path: "cash-register/:id/edit",
         name: "cash-register.edit",
         component: CashRegisterEdit,
+        beforeEnter: requireAuth
+      },
+      {
+        path: "cash-register/:id/detail",
+        name: "cash-register.detail",
+        component: CashRegisterDetail,
         beforeEnter: requireAuth
       },
       {

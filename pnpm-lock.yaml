@@ -38,6 +38,7 @@ specifiers:
   highlight.js: ^11.6.0
   laravel-vite-plugin: ^0.5.0
   lodash: ^4.17.21
+  moment: ^2.29.4
   nprogress: ^0.2.0
   pinia: ^2.0.16
   postcss: ^8.4.14
@@ -94,6 +95,7 @@ dependencies:
   chart.js: 3.8.0
   dropzone: 6.0.0-beta.2
   highlight.js: 11.6.0
+  moment: 2.29.4
   nprogress: 0.2.0
   pinia: 2.0.16_j6bzmzd4ujpabbp5objtwxyjp4
   simplebar: 5.3.8
@@ -2190,6 +2192,10 @@ packages:
       pathe: 0.3.2
       pkg-types: 0.3.3
     dev: true
+
+  /moment/2.29.4:
+    resolution: {integrity: sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==}
+    dev: false
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}

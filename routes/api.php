@@ -27,6 +27,7 @@ Route::middleware('localization')->group(function () {
         Route::post('cash-registers/{cash_register}/open', [CashRegisterController::class, 'open'])->name('cash-registers.open');
         Route::post('cash-registers/{cash_register}/close', [CashRegisterController::class, 'close'])->name('cash-registers.close');
         Route::post('cash-registers/{cash_register}/settlement', [CashRegisterController::class, 'settlement'])->name('cash-registers.settlement');
+        Route::get('cash-registers/{cash_register}/detail', [CashRegisterController::class, 'detail'])->name('cash-registers.detail');
         Route::apiResource('products', ProductController::class)->except(['create', 'edit']);
         Route::apiResource('movements', MovementController::class)->except(['create', 'edit']);
         Route::apiResource('users', UserController::class)->except(['create', 'edit']);
