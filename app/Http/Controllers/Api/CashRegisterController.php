@@ -77,7 +77,7 @@ class CashRegisterController extends Controller
         $detail->initial_balance = $request->initial_balance;
         $detail->status = 'open';
         $detail->cash_register_id = $cash_register->id;
-        $detail->user_open_id = Auth::id();
+        $detail->user_open_id = auth()->user()->id;
         $detail->save();
 
         return response()->json($detail);

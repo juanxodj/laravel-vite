@@ -2,10 +2,7 @@
 
 <template>
   <!-- Hero -->
-  <BasePageHeading
-    title="Alerts"
-    subtitle="Inform your users about important events happenning in your app."
-  >
+  <BasePageHeading title="Alerts" subtitle="Inform your users about important events happenning in your app.">
     <template #extra>
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-alt">
@@ -33,96 +30,56 @@
               This is a primary message with a
               <a class="alert-link" href="javascript:void(0)">link</a>!
             </p>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="alert"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
           <div class="alert alert-secondary alert-dismissible" role="alert">
             <p class="mb-0">
               This is a secondary message with a
               <a class="alert-link" href="javascript:void(0)">link</a>!
             </p>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="alert"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
           <div class="alert alert-success alert-dismissible" role="alert">
             <p class="mb-0">
               This is a successful message with a
               <a class="alert-link" href="javascript:void(0)">link</a>!
             </p>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="alert"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
           <div class="alert alert-info alert-dismissible" role="alert">
             <p class="mb-0">
               This is an informational message with a
               <a class="alert-link" href="javascript:void(0)">link</a>!
             </p>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="alert"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
           <div class="alert alert-warning alert-dismissible" role="alert">
             <p class="mb-0">
               This is a warning message with a
               <a class="alert-link" href="javascript:void(0)">link</a>!
             </p>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="alert"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
           <div class="alert alert-danger alert-dismissible" role="alert">
             <p class="mb-0">
               This is an error message with a
               <a class="alert-link" href="javascript:void(0)">link</a>!
             </p>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="alert"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
           <div class="alert alert-dark alert-dismissible" role="alert">
             <p class="mb-0">
               This is a dark alert message with a
               <a class="alert-link" href="javascript:void(0)">link</a>!
             </p>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="alert"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
           <div class="alert alert-light alert-dismissible" role="alert">
             <p class="mb-0">
               This is a light alert message with a
               <a class="alert-link" href="javascript:void(0)">link</a>!
             </p>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="alert"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         </BaseBlock>
         <!-- END Simple -->
@@ -134,10 +91,7 @@
             Choose an icon of your preference and easily add it to an alert
             message
           </p>
-          <div
-            class="alert alert-primary d-flex align-items-center"
-            role="alert"
-          >
+          <div class="alert alert-primary d-flex align-items-center" role="alert">
             <div class="flex-shrink-">
               <i class="fa fa-fw fa-globe"></i>
             </div>
@@ -148,10 +102,7 @@
               </p>
             </div>
           </div>
-          <div
-            class="alert alert-secondary d-flex align-items-center"
-            role="alert"
-          >
+          <div class="alert alert-secondary d-flex align-items-center" role="alert">
             <div class="flex-shrink-0">
               <i class="fa fa-fw fa-university"></i>
             </div>
@@ -162,10 +113,7 @@
               </p>
             </div>
           </div>
-          <div
-            class="alert alert-success d-flex align-items-center"
-            role="alert"
-          >
+          <div class="alert alert-success d-flex align-items-center" role="alert">
             <div class="flex-shrink-0">
               <i class="fa fa-fw fa-check"></i>
             </div>
@@ -187,10 +135,7 @@
               </p>
             </div>
           </div>
-          <div
-            class="alert alert-warning d-flex align-items-center justify-content-between"
-            role="alert"
-          >
+          <div class="alert alert-warning d-flex align-items-center justify-content-between" role="alert">
             <div class="flex-grow-1 me-3">
               <p class="mb-0">
                 This is a warning message with a
@@ -201,10 +146,7 @@
               <i class="fa fa-fw fa-exclamation-circle"></i>
             </div>
           </div>
-          <div
-            class="alert alert-danger d-flex align-items-center justify-content-between"
-            role="alert"
-          >
+          <div class="alert alert-danger d-flex align-items-center justify-content-between" role="alert">
             <div class="flex-grow-1 me-3">
               <p class="mb-0">
                 This is an error message with a
@@ -215,10 +157,7 @@
               <i class="fa fa-fw fa-times-circle"></i>
             </div>
           </div>
-          <div
-            class="alert alert-dark d-flex align-items-center justify-content-between"
-            role="alert"
-          >
+          <div class="alert alert-dark d-flex align-items-center justify-content-between" role="alert">
             <div class="flex-grow-1 me-3">
               <p class="mb-0">
                 This is a dark message with a
@@ -229,10 +168,7 @@
               <i class="fa fa-fw fa-camera-retro"></i>
             </div>
           </div>
-          <div
-            class="alert alert-light d-flex align-items-center justify-content-between"
-            role="alert"
-          >
+          <div class="alert alert-light d-flex align-items-center justify-content-between" role="alert">
             <div class="flex-grow-1 me-3">
               <p class="mb-0">
                 This is a light message with a
@@ -260,12 +196,7 @@
                   This is a primary message with a
                   <a class="alert-link" href="javascript:void(0)">link</a>!
                 </p>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="alert"
-                  aria-label="Close"
-                ></button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
               <div class="alert alert-secondary alert-dismissible" role="alert">
                 <h3 class="alert-heading h4 my-2">Secondary</h3>
@@ -273,12 +204,7 @@
                   This is a secondary message with a
                   <a class="alert-link" href="javascript:void(0)">link</a>!
                 </p>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="alert"
-                  aria-label="Close"
-                ></button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
               <div class="alert alert-success alert-dismissible" role="alert">
                 <h3 class="alert-heading h4 my-2">Success</h3>
@@ -286,12 +212,7 @@
                   This is a successful message with a
                   <a class="alert-link" href="javascript:void(0)">link</a>!
                 </p>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="alert"
-                  aria-label="Close"
-                ></button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
               <div class="alert alert-info alert-dismissible" role="alert">
                 <h3 class="alert-heading h4 my-2">Information</h3>
@@ -299,12 +220,7 @@
                   This is an informational message with a
                   <a class="alert-link" href="javascript:void(0)">link</a>!
                 </p>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="alert"
-                  aria-label="Close"
-                ></button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
             </div>
             <div class="col-md-6">
@@ -314,12 +230,7 @@
                   This is a warning message with a
                   <a class="alert-link" href="javascript:void(0)">link</a>!
                 </p>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="alert"
-                  aria-label="Close"
-                ></button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
               <div class="alert alert-danger alert-dismissible" role="alert">
                 <h3 class="alert-heading h4 my-2">Error</h3>
@@ -327,12 +238,7 @@
                   This is an error message with a
                   <a class="alert-link" href="javascript:void(0)">link</a>!
                 </p>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="alert"
-                  aria-label="Close"
-                ></button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
               <div class="alert alert-dark alert-dismissible" role="alert">
                 <h3 class="alert-heading h4 my-2">Dark</h3>
@@ -340,12 +246,7 @@
                   This is a dark message with a
                   <a class="alert-link" href="javascript:void(0)">link</a>!
                 </p>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="alert"
-                  aria-label="Close"
-                ></button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
               <div class="alert alert-light alert-dismissible" role="alert">
                 <h3 class="alert-heading h4 my-2">Light</h3>
@@ -353,12 +254,7 @@
                   This is a light message with a
                   <a class="alert-link" href="javascript:void(0)">link</a>!
                 </p>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="alert"
-                  aria-label="Close"
-                ></button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
               </div>
             </div>
           </div>

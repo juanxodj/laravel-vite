@@ -46,6 +46,8 @@ export const useUserStore = defineStore("userStore", {
     },
     logout() {
       this.user = null;
+      this.token = null;
+      this.loggedIn = false;
       localStorage.clear();
     },
   },

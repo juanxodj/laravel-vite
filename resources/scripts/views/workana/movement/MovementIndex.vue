@@ -2,6 +2,13 @@
   <BasePageHeading title="Movimientos" />
 
   <div class="content">
+    <div class="alert alert-warning alert-dismissible" role="alert" v-if="cashLength === 0">
+      <p class="mb-0">
+        No se ha detectado cajas aperturadas, por lo tanto no podrá agregar registros.
+      </p>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
     <BaseBlock title="Agregar Movimiento">
       <form @submit.prevent="addData" class="mb-4">
         <div class="row">
@@ -67,6 +74,10 @@ const initialForm = {
 const form = reactive<Movement>({ ...initialForm })
 const dataFetched = ref([])
 const total = computed(() => form.quantity * form.amount)
+const openBoxes = ref(true)
+
+const getCashRegister = computed(() => { return dataFetched.value.cashRegister || [] })
+const cashLength = computed(() => getCashRegister.value.length)
 
 onMounted(() => {
   getData()
