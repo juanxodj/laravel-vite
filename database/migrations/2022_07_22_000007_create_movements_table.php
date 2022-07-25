@@ -21,12 +21,12 @@ return new class extends Migration
             $table->integer('quantity');
             $table->decimal('amount', 12, 2)->default(0);
             $table->decimal('total', 12, 2)->default(0);
-            $table->unsignedBigInteger('cash_register_id');
+            $table->unsignedBigInteger('cash_register_detail_id');
             $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
-            $table->foreign('cash_register_id')->references('id')->on('cash_register_details');
+            $table->foreign('cash_register_detail_id')->references('id')->on('cash_register_details');
             $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('user_id', '')->references('id')->on('users');
         });

@@ -24,7 +24,7 @@ class MovementRequest extends FormRequest
             'quantity' => __('request.quantity'),
             'amount' => __('request.amount'),
             'total' => __('request.total'),
-            'cash_register_id' => __('request.cash_register'),
+            'cash_register_detail_id' => __('request.cash_register_detail'),
             'product_id' => __('request.product'),
         ];
     }

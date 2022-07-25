@@ -25,10 +25,10 @@ return new class extends Migration
             $table->integer('bill_5')->default(0);
             $table->integer('bill_1')->default(0);
             $table->decimal('total', 12, 2)->default(0);
-            $table->unsignedBigInteger('cash_register_details_id');
+            $table->unsignedBigInteger('cash_register_detail_id');
             $table->timestamps();
 
-            $table->foreign('cash_register_details_id')->references('id')->on('cash_register_details');
+            $table->foreign('cash_register_detail_id')->references('id')->on('cash_register_details');
         });
     }
 

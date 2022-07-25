@@ -12,6 +12,6 @@ class CashSettlement extends Model
     protected $fillable = [
         'bill_200', 'bill_100', 'bill_50',
         'bill_20', 'bill_10', 'bill_5', 'bill_1',
-        'total', 'cash_register_details_id',
+        'total', 'cash_register_detail_id',
     ];
 }

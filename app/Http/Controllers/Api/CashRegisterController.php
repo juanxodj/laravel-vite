@@ -39,7 +39,8 @@ class CashRegisterController extends Controller
 
     public function detail(CashRegister $cash_register)
     {
-        return response()->json($cash_register->details);
+        $details = $cash_register->details()->with('movements', 'settlement')->get();
+        return response()->json($details);
     }
 
     public function update(CashRegisterRequest $request, CashRegister $cash_register): JsonResource
@@ -85,7 +86,7 @@ class CashRegisterController extends Controller
     public function close(CashRegisterDetail $cash_register)
     {
         $movements = DB::table('movements')
-            ->where('cash_register_id', $cash_register->id)
+            ->where('cash_register_detail_id', $cash_register->id)
             ->get();
 
         $income = 0;
@@ -130,7 +131,7 @@ class CashRegisterController extends Controller
         $settlement->bill_5 = $request->bill_5;
         $settlement->bill_1 = $request->bill_1;
         $settlement->total = $request->total;
-        $settlement->cash_register_details_id = $cash_register->id;
+        $settlement->cash_register_detail_id = $cash_register->id;
         $settlement->save();
 
         return response()->json($settlement);

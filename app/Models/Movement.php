@@ -12,7 +12,7 @@ class Movement extends Model
     protected $fillable = [
         'type', 'quantity',
         'amount', 'total',
-        'cash_register_id', 'product_id',
+        'cash_register_detail_id', 'product_id',
         'user_id',
     ];
 
@@ -21,7 +21,7 @@ class Movement extends Model
         'quantity' => 'required',
         'amount' => 'required',
         'total' => 'required',
-        'cash_register_id' => 'required',
+        'cash_register_detail_id' => 'required',
         'product_id' => 'required',
     ];
 }

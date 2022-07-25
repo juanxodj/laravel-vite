@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\MovementRequest;
 use App\Http\Resources\MovementResource;
 use App\Models\CashRegister;
+use App\Models\CashRegisterDetail;
 use App\Models\Movement;
 use App\Models\Product;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -16,7 +17,11 @@ class MovementController extends Controller
     public function index()
     {
         $product = Product::all();
-        $cashRegister = CashRegister::all();
+
+        $cashRegister = CashRegisterDetail::with('cashRegister')
+            ->where('status', 'open')
+            ->orderByDesc('id')
+            ->get();
 
         return response()->json(compact('product', 'cashRegister'));
     }

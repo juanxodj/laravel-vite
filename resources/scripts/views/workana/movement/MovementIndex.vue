@@ -22,9 +22,9 @@
           </div>
           <div class="col-md-6">
             <label class="form-label">Caja</label>
-            <select class="form-select" v-model="form.cash_register_id">
+            <select class="form-select" v-model="form.cash_register_detail_id">
               <template v-for="data in dataFetched.cashRegister">
-                <option :value="data.id">{{ data.description }}</option>
+                <option :value="data.id">{{ data.cash_register.description }}</option>
               </template>
             </select>
           </div>
@@ -42,7 +42,7 @@
           </div>
 
           <div class="col-md-12 mt-3">
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary">Agregar</button>
           </div>
         </div>
       </form>
@@ -60,7 +60,7 @@ const initialForm = {
   type: "income",
   quantity: 1,
   amount: 0,
-  cash_register_id: 1,
+  cash_register_detail_id: 1,
   product_id: 1,
   total: 0
 }
@@ -86,6 +86,14 @@ const getData = async () => {
 }
 
 function addData() {
+
+  if (dataFetched.value.cashRegister.length === 0) {
+    Toast.fire({
+      icon: 'error',
+      title: 'No hay ninguna caja abierta'
+    })
+  }
+
   form.total = total
   api.post(`/movements`, form)
     .then(() => {

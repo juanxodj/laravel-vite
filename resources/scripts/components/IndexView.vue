@@ -1,7 +1,7 @@
 <template>
   <BasePageHeading :title="title">
     <template #extra>
-      <button type="button" class="btn btn-alt-primary" data-bs-toggle="modal" data-bs-target="#modalCashRegister"
+      <button type="button" class="btn btn-alt-primary" @click="modalShow('modalCashRegister')"
         v-if="route.name === 'cash-register.detail'">
         <i class="fa fa-plus opacity-50 me-1"></i>
         Abrir Caja
@@ -59,21 +59,35 @@
                               </button>
                             </router-link>
                           </div>
-                          <div v-else-if="route.name === 'cash-register.detail'">
+                          <div
+                            v-else-if="route.name === 'cash-register.detail' && row.status === 'open' && row.settlement === null">
+                            <button type="button" class="btn btn-sm btn-alt-secondary"
+                              @click="modalShow('settlementModal', row.id)">
+                              <i class="fa-solid fa-money-bill"></i>
+                            </button>
+                          </div>
+                          <div v-else-if="route.name === 'cash-register.detail' && row.status != 'close'">
                             <button type="button" class="btn btn-sm btn-alt-secondary"
                               @click="closeCashRegister(row.id)">
                               <i class="fa-solid fa-circle-arrow-down"></i>
                             </button>
                           </div>
+                          <div v-if="route.name === 'cash-register.detail'">
+                            <button type="button" class="btn btn-sm btn-alt-secondary"
+                              @click="modalShow('modalDetailMovements', row.movements)">
+                              Detalle
+                            </button>
+                          </div>
                           <router-link :to="{
                             name: `${routeName}.edit`,
                             params: { id: row.id }
-                          }">
+                          }" v-if="route.name != 'cash-register.detail'">
                             <button type="button" class="btn btn-sm btn-alt-secondary">
                               <i class="fa fa-fw fa-pencil-alt"></i>
                             </button>
                           </router-link>
-                          <button type="button" class="btn btn-sm btn-alt-secondary" @click.prevent="destroy(row.id)">
+                          <button type="button" class="btn btn-sm btn-alt-secondary" @click.prevent="destroy(row.id)"
+                            v-if="route.name != 'cash-register.detail'">
                             <i class="fa fa-fw fa-times"></i>
                           </button>
                         </div>
@@ -95,7 +109,7 @@
 
   <!-- Modal Open Cash Register -->
   <div class="modal fade" id="modalCashRegister" tabindex="-1" aria-labelledby="modalCashRegisterLabel"
-    aria-hidden="true">
+    aria-hidden="true" data-bs-backdrop="static">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -111,6 +125,105 @@
               </div>
               <div class="col-md-12 mt-3 text-end">
                 <button type="submit" class="btn btn-primary">Abrir</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Settlement -->
+  <div class="modal fade" id="modalDetailMovements" tabindex="-1" aria-labelledby="modalDetailMovementsLabel"
+    aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalDetailMovementsLabel">Detalle de Movimientos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Income</th>
+                <th scope="col">Expense</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="detail in movementsDetail">
+                <th scope="row">{{ detail.id }}</th>
+                <td>{{ detail.quantity }}</td>
+                <td>{{ detail.amount }}</td>
+                <template v-if="detail.type === 'income'">
+                  <td>{{ detail.total }}</td>
+                  <td>-</td>
+                </template>
+                <template v-else>
+                  <td>-</td>
+                  <td>{{ detail.total }}</td>
+                </template>
+              </tr>
+            </tbody>
+            <tfoot>
+              <td colspan="3" class="text-center">TOTAL</td>
+              <td>{{ totalIncome.toFixed(2) }}</td>
+              <td>{{ totalExpense.toFixed(2) }}</td>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Settlement -->
+  <div class="modal fade" id="settlementModal" tabindex="-1" aria-labelledby="settlementModalLabel" aria-hidden="true"
+    data-bs-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="settlementModalLabel">Arqueo de Caja</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form @submit.prevent="settlementCashRegister" class="mb-4">
+            <div class="row">
+              <div class="col-md-4">
+                <label class="form-label">200</label>
+                <input type="number" class="form-control" v-model="form.bill_200">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">100</label>
+                <input type="number" class="form-control" v-model="form.bill_100">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">50</label>
+                <input type="number" class="form-control" v-model="form.bill_50">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">20</label>
+                <input type="number" class="form-control" v-model="form.bill_20">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">10</label>
+                <input type="number" class="form-control" v-model="form.bill_10">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">5</label>
+                <input type="number" class="form-control" v-model="form.bill_5">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">1</label>
+                <input type="number" class="form-control" v-model="form.bill_1">
+              </div>
+              <div class="col-md-12 mt-3">
+                Total: {{ total }}
+              </div>
+              <div class="col-md-12 mt-3">
+                <button type="submit" class="btn btn-primary">Liquidar</button>
               </div>
             </div>
           </form>
@@ -135,6 +248,19 @@ import {
   DatasetShow,
 } from "vue-dataset"
 import { useRoute } from 'vue-router'
+
+const initialForm = {
+  bill_200: 0,
+  bill_100: 0,
+  bill_50: 0,
+  bill_20: 0,
+  bill_10: 0,
+  bill_5: 0,
+  bill_1: 0,
+  total: 0,
+}
+const form = reactive({ ...initialForm })
+const total = computed(() => (form.bill_200 * 200) + (form.bill_100 * 100) + (form.bill_50 * 50) + (form.bill_20 * 20) + (form.bill_10 * 10) + (form.bill_5 * 5) + (form.bill_1 * 1))
 
 const props = defineProps({
   title: String,
@@ -276,8 +402,10 @@ function openCashRegister() {
     .then(() => {
       Toast.fire({
         icon: 'success',
-        title: 'Guardado Correctamente'
+        title: 'Caja Abierta Correctamente'
       })
+      modalHide('modalCashRegister')
+      getData()
     })
     .catch((err) => {
       Toast.fire({
@@ -285,6 +413,35 @@ function openCashRegister() {
         title: err.response.data.message
       })
     });
+}
+
+function settlementCashRegister() {
+  form.total = total
+  Swal.fire({
+    title: '¿Estás segurx de liquidar caja?',
+    showDenyButton: false,
+    showCancelButton: true,
+    confirmButtonText: 'Si',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      api.post(`/cash-registers/${idDetail.value}/settlement`, form)
+        .then(() => {
+          Toast.fire({
+            icon: 'success',
+            title: 'Arqueo de Caja agregado correctamente'
+          })
+          getData()
+          modalHide('settlementModal')
+        })
+        .catch((err) => {
+          Toast.fire({
+            icon: 'error',
+            title: err.response.data.message
+          })
+        });
+    }
+  })
 }
 
 function closeCashRegister(id: number) {
@@ -300,7 +457,7 @@ function closeCashRegister(id: number) {
         .then(() => {
           Toast.fire({
             icon: 'success',
-            title: 'Cerrado Correctamente'
+            title: 'Caja Cerrada Correctamente'
           })
           getData();
         })
@@ -312,6 +469,35 @@ function closeCashRegister(id: number) {
         });
     }
   })
+}
+
+const movementsDetail = ref([]);
+const totalIncome = ref(0);
+const totalExpense = ref(0);
+const idDetail = ref(0);
+
+function calcMovements(movements) {
+  movementsDetail.value = movements
+
+  totalIncome.value = movementsDetail.value
+    .filter(({ type }) => type === 'income')
+    .reduce((sum, record) => sum + parseInt(record.total), 0)
+
+  totalExpense.value = movementsDetail.value
+    .filter(({ type }) => type === 'expenses')
+    .reduce((sum, record) => sum + parseInt(record.total), 0)
+}
+
+function modalShow(modalName: string, data?) {
+  if (modalName === 'modalDetailMovements') calcMovements(data)
+  if (modalName === 'settlementModal') idDetail.value = data
+  var myModal = new bootstrap.Modal(document.getElementById(modalName))
+  myModal.show()
+}
+
+function modalHide(modalName: string) {
+  var myModal = bootstrap.Modal.getOrCreateInstance(document.getElementById(modalName));
+  myModal.hide();
 }
 </script>
 

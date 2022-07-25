@@ -1,11 +1,7 @@
-<script setup></script>
-
 <template>
   <!-- Hero -->
-  <BasePageHeading
-    title="Modals"
-    subtitle="Add dialogs to your site for lightboxes, user notifications, or completely custom content."
-  >
+  <BasePageHeading title="Modals"
+    subtitle="Add dialogs to your site for lightboxes, user notifications, or completely custom content.">
     <template #extra>
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-alt">
@@ -32,12 +28,8 @@
             Modals are completely customizable and here we present the default
             one
           </p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-normal"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-normal">
             Launch Modal
           </button>
         </BaseBlock>
@@ -49,12 +41,8 @@
           <p class="fs-sm text-muted">
             If you don’t have much content, you can use the small size variation
           </p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-small"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-small">
             Launch Modal
           </button>
         </BaseBlock>
@@ -66,12 +54,8 @@
           <p class="fs-sm text-muted">
             If you need more space you can use the large size variation
           </p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-large"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-large">
             Launch Modal
           </button>
         </BaseBlock>
@@ -83,12 +67,8 @@
           <p class="fs-sm text-muted">
             Do you need even more space? Go for the extra large modal
           </p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-extra-large"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-extra-large">
             Launch Modal
           </button>
         </BaseBlock>
@@ -100,12 +80,8 @@
           <p class="fs-sm text-muted">
             You can position your modals at the top of the screen
           </p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-top"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-top">
             Launch Modal
           </button>
         </BaseBlock>
@@ -117,12 +93,8 @@
           <p class="fs-sm text-muted">
             You can center your modals in the middle of the screen
           </p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-vcenter"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-vcenter">
             Launch Modal
           </button>
         </BaseBlock>
@@ -132,12 +104,8 @@
         <!-- Tabs in Modal -->
         <BaseBlock title="Tabs in Modal" class="h-100 mb-0">
           <p class="fs-sm text-muted">You can even add tabs in your modal</p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-tabs"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-tabs">
             Launch Modal
           </button>
         </BaseBlock>
@@ -147,12 +115,8 @@
         <!--  Alternative Tabs in Modal -->
         <BaseBlock title="Alternative Tabs in Modal" class="h-100 mb-0">
           <p class="fs-sm text-muted">Alternative tabs in a modal</p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-tabs-alt"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-tabs-alt">
             Launch Modal
           </button>
         </BaseBlock>
@@ -168,12 +132,8 @@
         <!-- Fade In -->
         <BaseBlock title="Fade In" class="h-100 mb-0">
           <p class="fs-sm text-muted">The default modal animation</p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-fadein"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-fadein">
             Launch Modal
           </button>
         </BaseBlock>
@@ -183,12 +143,8 @@
         <!-- Pop In -->
         <BaseBlock title="Pop In" class="h-100 mb-0">
           <p class="fs-sm text-muted">Poping in animation</p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-popin"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-popin">
             Launch Modal
           </button>
         </BaseBlock>
@@ -198,12 +154,8 @@
         <!-- Pop Out -->
         <BaseBlock title="Pop Out" class="h-100 mb-0">
           <p class="fs-sm text-muted">Poping out animation</p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-popout"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-popout">
             Launch Modal
           </button>
         </BaseBlock>
@@ -213,12 +165,8 @@
         <!-- Slide Up -->
         <BaseBlock title="Slide Up" class="h-100 mb-0">
           <p class="fs-sm text-muted">Sliding from up animation</p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-slideup"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-slideup">
             Launch Modal
           </button>
         </BaseBlock>
@@ -228,12 +176,8 @@
         <!-- Slide Right -->
         <BaseBlock title="Slide Right" class="h-100 mb-0">
           <p class="fs-sm text-muted">Sliding from right animation</p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-slideright"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-slideright">
             Launch Modal
           </button>
         </BaseBlock>
@@ -243,12 +187,8 @@
         <!-- Slide Left -->
         <BaseBlock title="Slide Left" class="h-100 mb-0">
           <p class="fs-sm text-muted">Sliding from left animation</p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-slideleft"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-slideleft">
             Launch Modal
           </button>
         </BaseBlock>
@@ -260,12 +200,8 @@
           <p class="fs-sm text-muted">
             Coming from right with rotation animation
           </p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-fromright"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-fromright">
             Launch Modal
           </button>
         </BaseBlock>
@@ -277,12 +213,8 @@
           <p class="fs-sm text-muted">
             Coming from left with rotation animation
           </p>
-          <button
-            type="button"
-            class="btn btn-alt-primary push"
-            data-bs-toggle="modal"
-            data-bs-target="#modal-block-fromleft"
-          >
+          <button type="button" class="btn btn-alt-primary push" data-bs-toggle="modal"
+            data-bs-target="#modal-block-fromleft">
             Launch Modal
           </button>
         </BaseBlock>
@@ -292,24 +224,13 @@
     <!-- END Bootstrap Modals Animations -->
 
     <!-- Normal Block Modal -->
-    <div
-      class="modal"
-      id="modal-block-normal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-normal"
-      aria-hidden="true"
-    >
+    <div class="modal" id="modal-block-normal" tabindex="-1" role="dialog" aria-labelledby="modal-block-normal"
+      aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <BaseBlock title="Modal Title" transparent class="mb-0">
             <template #options>
-              <button
-                type="button"
-                class="btn-block-option"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                 <i class="fa fa-fw fa-times"></i>
               </button>
             </template>
@@ -334,18 +255,10 @@
                 </p>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -357,24 +270,13 @@
     <!-- END Normal Block Modal -->
 
     <!-- Small Block Modal -->
-    <div
-      class="modal"
-      id="modal-block-small"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-small"
-      aria-hidden="true"
-    >
+    <div class="modal" id="modal-block-small" tabindex="-1" role="dialog" aria-labelledby="modal-block-small"
+      aria-hidden="true">
       <div class="modal-dialog modal-sm" role="document">
         <div class="modal-content">
           <BaseBlock title="Modal Title" transparent class="mb-0">
             <template #options>
-              <button
-                type="button"
-                class="btn-block-option"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                 <i class="fa fa-fw fa-times"></i>
               </button>
             </template>
@@ -391,18 +293,10 @@
                 </p>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -414,24 +308,13 @@
     <!-- END Small Block Modal -->
 
     <!-- Large Block Modal -->
-    <div
-      class="modal"
-      id="modal-block-large"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-large"
-      aria-hidden="true"
-    >
+    <div class="modal" id="modal-block-large" tabindex="-1" role="dialog" aria-labelledby="modal-block-large"
+      aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <BaseBlock title="Modal Title" transparent class="mb-0">
             <template #options>
-              <button
-                type="button"
-                class="btn-block-option"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                 <i class="fa fa-fw fa-times"></i>
               </button>
             </template>
@@ -456,18 +339,10 @@
                 </p>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -479,24 +354,13 @@
     <!-- END Large Block Modal -->
 
     <!-- Extra Large Block Modal -->
-    <div
-      class="modal"
-      id="modal-block-extra-large"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-extra-large"
-      aria-hidden="true"
-    >
+    <div class="modal" id="modal-block-extra-large" tabindex="-1" role="dialog"
+      aria-labelledby="modal-block-extra-large" aria-hidden="true">
       <div class="modal-dialog modal-xl" role="document">
         <div class="modal-content">
           <BaseBlock title="Modal Title" transparent class="mb-0">
             <template #options>
-              <button
-                type="button"
-                class="btn-block-option"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                 <i class="fa fa-fw fa-times"></i>
               </button>
             </template>
@@ -544,18 +408,10 @@
                 </p>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -567,24 +423,13 @@
     <!-- END Extra Large Block Modal -->
 
     <!-- Top Block Modal -->
-    <div
-      class="modal"
-      id="modal-block-top"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-top"
-      aria-hidden="true"
-    >
+    <div class="modal" id="modal-block-top" tabindex="-1" role="dialog" aria-labelledby="modal-block-top"
+      aria-hidden="true">
       <div class="modal-dialog modal-dialog-top" role="document">
         <div class="modal-content">
           <BaseBlock title="Modal Title" transparent class="mb-0">
             <template #options>
-              <button
-                type="button"
-                class="btn-block-option"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                 <i class="fa fa-fw fa-times"></i>
               </button>
             </template>
@@ -609,18 +454,10 @@
                 </p>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -632,24 +469,13 @@
     <!-- END Top Block Modal -->
 
     <!-- Vertically Centered Block Modal -->
-    <div
-      class="modal"
-      id="modal-block-vcenter"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-vcenter"
-      aria-hidden="true"
-    >
+    <div class="modal" id="modal-block-vcenter" tabindex="-1" role="dialog" aria-labelledby="modal-block-vcenter"
+      aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <BaseBlock title="Modal Title" transparent class="mb-0">
             <template #options>
-              <button
-                type="button"
-                class="btn-block-option"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                 <i class="fa fa-fw fa-times"></i>
               </button>
             </template>
@@ -674,18 +500,10 @@
                 </p>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -697,24 +515,13 @@
     <!-- END Vertically Centered Block Modal -->
 
     <!-- Fade In Block Modal -->
-    <div
-      class="modal fade"
-      id="modal-block-fadein"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-fadein"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="modal-block-fadein" tabindex="-1" role="dialog" aria-labelledby="modal-block-fadein"
+      aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <BaseBlock title="Modal Title" transparent class="mb-0">
             <template #options>
-              <button
-                type="button"
-                class="btn-block-option"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                 <i class="fa fa-fw fa-times"></i>
               </button>
             </template>
@@ -739,18 +546,10 @@
                 </p>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -762,24 +561,13 @@
     <!-- END Fade In Block Modal -->
 
     <!-- Pop In Block Modal -->
-    <div
-      class="modal fade"
-      id="modal-block-popin"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-popin"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="modal-block-popin" tabindex="-1" role="dialog" aria-labelledby="modal-block-popin"
+      aria-hidden="true">
       <div class="modal-dialog modal-dialog-popin" role="document">
         <div class="modal-content">
           <BaseBlock title="Modal Title" transparent class="mb-0">
             <template #options>
-              <button
-                type="button"
-                class="btn-block-option"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                 <i class="fa fa-fw fa-times"></i>
               </button>
             </template>
@@ -804,18 +592,10 @@
                 </p>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -827,24 +607,13 @@
     <!-- END Pop In Block Modal -->
 
     <!-- Pop Out Block Modal -->
-    <div
-      class="modal fade"
-      id="modal-block-popout"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-popout"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="modal-block-popout" tabindex="-1" role="dialog" aria-labelledby="modal-block-popout"
+      aria-hidden="true">
       <div class="modal-dialog modal-dialog-popout" role="document">
         <div class="modal-content">
           <BaseBlock title="Modal Title" transparent class="mb-0">
             <template #options>
-              <button
-                type="button"
-                class="btn-block-option"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                 <i class="fa fa-fw fa-times"></i>
               </button>
             </template>
@@ -869,18 +638,10 @@
                 </p>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -892,24 +653,13 @@
     <!-- END Pop Out Block Modal -->
 
     <!-- Slide Up Block Modal -->
-    <div
-      class="modal fade"
-      id="modal-block-slideup"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-slideup"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="modal-block-slideup" tabindex="-1" role="dialog" aria-labelledby="modal-block-slideup"
+      aria-hidden="true">
       <div class="modal-dialog modal-dialog-slideup" role="document">
         <div class="modal-content">
           <BaseBlock title="Modal Title" transparent class="mb-0">
             <template #options>
-              <button
-                type="button"
-                class="btn-block-option"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                 <i class="fa fa-fw fa-times"></i>
               </button>
             </template>
@@ -934,18 +684,10 @@
                 </p>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -957,24 +699,13 @@
     <!-- END Slide Up Block Modal -->
 
     <!-- Slide Right Block Modal -->
-    <div
-      class="modal fade"
-      id="modal-block-slideright"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-slideright"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="modal-block-slideright" tabindex="-1" role="dialog"
+      aria-labelledby="modal-block-slideright" aria-hidden="true">
       <div class="modal-dialog modal-dialog-slideright" role="document">
         <div class="modal-content">
           <BaseBlock title="Modal Title" transparent class="mb-0">
             <template #options>
-              <button
-                type="button"
-                class="btn-block-option"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                 <i class="fa fa-fw fa-times"></i>
               </button>
             </template>
@@ -999,18 +730,10 @@
                 </p>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -1022,24 +745,13 @@
     <!-- END Slide Right Block Modal -->
 
     <!-- Slide Left Block Modal -->
-    <div
-      class="modal fade"
-      id="modal-block-slideleft"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-slideleft"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="modal-block-slideleft" tabindex="-1" role="dialog"
+      aria-labelledby="modal-block-slideleft" aria-hidden="true">
       <div class="modal-dialog modal-dialog-slideleft" role="document">
         <div class="modal-content">
           <BaseBlock title="Modal Title" transparent class="mb-0">
             <template #options>
-              <button
-                type="button"
-                class="btn-block-option"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                 <i class="fa fa-fw fa-times"></i>
               </button>
             </template>
@@ -1064,18 +776,10 @@
                 </p>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -1087,24 +791,13 @@
     <!-- END Slide Left Block Modal -->
 
     <!-- From Right Block Modal -->
-    <div
-      class="modal fade"
-      id="modal-block-fromright"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-fromright"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="modal-block-fromright" tabindex="-1" role="dialog"
+      aria-labelledby="modal-block-fromright" aria-hidden="true">
       <div class="modal-dialog modal-dialog-fromright" role="document">
         <div class="modal-content">
           <BaseBlock title="Modal Title" transparent class="mb-0">
             <template #options>
-              <button
-                type="button"
-                class="btn-block-option"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                 <i class="fa fa-fw fa-times"></i>
               </button>
             </template>
@@ -1129,18 +822,10 @@
                 </p>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -1152,24 +837,13 @@
     <!-- END From Right Block Modal -->
 
     <!-- From Left Block Modal -->
-    <div
-      class="modal fade"
-      id="modal-block-fromleft"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-fromleft"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="modal-block-fromleft" tabindex="-1" role="dialog" aria-labelledby="modal-block-fromleft"
+      aria-hidden="true">
       <div class="modal-dialog modal-dialog-fromleft" role="document">
         <div class="modal-content">
           <BaseBlock title="Modal Title" transparent class="mb-0">
             <template #options>
-              <button
-                type="button"
-                class="btn-block-option"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              >
+              <button type="button" class="btn-block-option" data-bs-dismiss="modal" aria-label="Close">
                 <i class="fa fa-fw fa-times"></i>
               </button>
             </template>
@@ -1194,18 +868,10 @@
                 </p>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -1217,105 +883,58 @@
     <!-- END From Left Block Modal -->
 
     <!-- Tabs in Modal -->
-    <div
-      class="modal fade"
-      id="modal-block-tabs"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-tabs"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="modal-block-tabs" tabindex="-1" role="dialog" aria-labelledby="modal-block-tabs"
+      aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <BaseBlock transparent class="mb-0">
             <template #content>
               <ul class="nav nav-tabs nav-tabs-block" role="tablist">
                 <li class="nav-item">
-                  <button
-                    type="button"
-                    class="nav-link active"
-                    id="btabs-static-home-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#btabs-static-home"
-                    role="tab"
-                    aria-controls="btabs-static-home"
-                    aria-selected="true"
-                  >
+                  <button type="button" class="nav-link active" id="btabs-static-home-tab" data-bs-toggle="tab"
+                    data-bs-target="#btabs-static-home" role="tab" aria-controls="btabs-static-home"
+                    aria-selected="true">
                     Home
                   </button>
                 </li>
                 <li class="nav-item">
-                  <button
-                    type="button"
-                    class="nav-link"
-                    id="btabs-static-profile-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#btabs-static-profile"
-                    role="tab"
-                    aria-controls="btabs-static-profile"
-                    aria-selected="false"
-                  >
+                  <button type="button" class="nav-link" id="btabs-static-profile-tab" data-bs-toggle="tab"
+                    data-bs-target="#btabs-static-profile" role="tab" aria-controls="btabs-static-profile"
+                    aria-selected="false">
                     Profile
                   </button>
                 </li>
                 <li class="nav-item ms-auto">
-                  <button
-                    type="button"
-                    class="nav-link"
-                    id="btabs-static-settings-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#btabs-static-settings"
-                    role="tab"
-                    aria-controls="btabs-static-settings"
-                    aria-selected="false"
-                  >
+                  <button type="button" class="nav-link" id="btabs-static-settings-tab" data-bs-toggle="tab"
+                    data-bs-target="#btabs-static-settings" role="tab" aria-controls="btabs-static-settings"
+                    aria-selected="false">
                     <i class="si si-settings"></i>
                     <span class="visually-hidden">Settings</span>
                   </button>
                 </li>
               </ul>
               <div class="block-content tab-content">
-                <div
-                  class="tab-pane active"
-                  id="btabs-static-home"
-                  role="tabpanel"
-                  aria-labelledby="btabs-static-home-tab"
-                >
+                <div class="tab-pane active" id="btabs-static-home" role="tabpanel"
+                  aria-labelledby="btabs-static-home-tab">
                   <h4 class="fw-normal">Home Content</h4>
                   <p>...</p>
                 </div>
-                <div
-                  class="tab-pane"
-                  id="btabs-static-profile"
-                  role="tabpanel"
-                  aria-labelledby="btabs-static-profile-tab"
-                >
+                <div class="tab-pane" id="btabs-static-profile" role="tabpanel"
+                  aria-labelledby="btabs-static-profile-tab">
                   <h4 class="fw-normal">Profile Content</h4>
                   <p>...</p>
                 </div>
-                <div
-                  class="tab-pane"
-                  id="btabs-static-settings"
-                  role="tabpanel"
-                  aria-labelledby="btabs-static-settings-tab"
-                >
+                <div class="tab-pane" id="btabs-static-settings" role="tabpanel"
+                  aria-labelledby="btabs-static-settings-tab">
                   <h4 class="fw-normal">Settings Content</h4>
                   <p>...</p>
                 </div>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -1327,105 +946,58 @@
     <!-- END Tabs in Modal -->
 
     <!-- Tabs in Modal -->
-    <div
-      class="modal fade"
-      id="modal-block-tabs-alt"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="modal-block-tabs-alt"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="modal-block-tabs-alt" tabindex="-1" role="dialog" aria-labelledby="modal-block-tabs-alt"
+      aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <BaseBlock transparent class="mb-0">
             <template #content>
               <ul class="nav nav-tabs nav-tabs-alt" role="tablist">
                 <li class="nav-item">
-                  <button
-                    type="button"
-                    class="nav-link active"
-                    id="btabs-alt-static-home-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#btabs-alt-static-home"
-                    role="tab"
-                    aria-controls="btabs-alt-static-home"
-                    aria-selected="true"
-                  >
+                  <button type="button" class="nav-link active" id="btabs-alt-static-home-tab" data-bs-toggle="tab"
+                    data-bs-target="#btabs-alt-static-home" role="tab" aria-controls="btabs-alt-static-home"
+                    aria-selected="true">
                     Home
                   </button>
                 </li>
                 <li class="nav-item">
-                  <button
-                    type="button"
-                    class="nav-link"
-                    id="btabs-alt-static-profile-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#btabs-alt-static-profile"
-                    role="tab"
-                    aria-controls="btabs-alt-static-profile"
-                    aria-selected="false"
-                  >
+                  <button type="button" class="nav-link" id="btabs-alt-static-profile-tab" data-bs-toggle="tab"
+                    data-bs-target="#btabs-alt-static-profile" role="tab" aria-controls="btabs-alt-static-profile"
+                    aria-selected="false">
                     Profile
                   </button>
                 </li>
                 <li class="nav-item ms-auto">
-                  <button
-                    type="button"
-                    class="nav-link"
-                    id="btabs-alt-static-settings-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#btabs-alt-static-settings"
-                    role="tab"
-                    aria-controls="btabs-alt-static-settings"
-                    aria-selected="false"
-                  >
+                  <button type="button" class="nav-link" id="btabs-alt-static-settings-tab" data-bs-toggle="tab"
+                    data-bs-target="#btabs-alt-static-settings" role="tab" aria-controls="btabs-alt-static-settings"
+                    aria-selected="false">
                     <i class="si si-settings"></i>
                     <span class="visually-hidden">Settings</span>
                   </button>
                 </li>
               </ul>
               <div class="block-content tab-content">
-                <div
-                  class="tab-pane active"
-                  id="btabs-alt-static-home"
-                  role="tabpanel"
-                  aria-labelledby="btabs-alt-static-home-tab"
-                >
+                <div class="tab-pane active" id="btabs-alt-static-home" role="tabpanel"
+                  aria-labelledby="btabs-alt-static-home-tab">
                   <h4 class="fw-normal">Home Content</h4>
                   <p>...</p>
                 </div>
-                <div
-                  class="tab-pane"
-                  id="btabs-alt-static-profile"
-                  role="tabpanel"
-                  aria-labelledby="btabs-alt-static-profile-tab"
-                >
+                <div class="tab-pane" id="btabs-alt-static-profile" role="tabpanel"
+                  aria-labelledby="btabs-alt-static-profile-tab">
                   <h4 class="fw-normal">Profile Content</h4>
                   <p>...</p>
                 </div>
-                <div
-                  class="tab-pane"
-                  id="btabs-alt-static-settings"
-                  role="tabpanel"
-                  aria-labelledby="btabs-alt-static-settings-tab"
-                >
+                <div class="tab-pane" id="btabs-alt-static-settings" role="tabpanel"
+                  aria-labelledby="btabs-alt-static-settings-tab">
                   <h4 class="fw-normal">Settings Content</h4>
                   <p>...</p>
                 </div>
               </div>
               <div class="block-content block-content-full text-end bg-body">
-                <button
-                  type="button"
-                  class="btn btn-sm btn-alt-secondary me-1"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-alt-secondary me-1" data-bs-dismiss="modal">
                   Close
                 </button>
-                <button
-                  type="button"
-                  class="btn btn-sm btn-primary"
-                  data-bs-dismiss="modal"
-                >
+                <button type="button" class="btn btn-sm btn-primary" data-bs-dismiss="modal">
                   Perfect
                 </button>
               </div>
@@ -1438,3 +1010,5 @@
   </div>
   <!-- END Page Content -->
 </template>
+
+<script setup></script>

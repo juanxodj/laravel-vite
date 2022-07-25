@@ -12,7 +12,7 @@ const title = "Detalle de Caja"
 const titleBlock = "Historial de Caja"
 const fieldsSearch = ['opening', 'closing', 'initial_balance', 'ending_balance', 'status']
 const routeFetch = `cash-registers/${route.params.id}/detail`
-const routeName = 'cash-register'
+const routeName = 'cash-register.detail'
 const modelName = 'CashRegister'
 const columns = [
   {

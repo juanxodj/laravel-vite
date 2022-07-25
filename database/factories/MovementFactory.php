@@ -24,7 +24,7 @@ class MovementFactory extends Factory
             'quantity' => $quantity,
             'amount' => $amount,
             'total' => $quantity * $amount,
-            'cash_register_id' => 1,
+            'cash_register_detail_id' => 1,
             'product_id' => fake()->randomElement([1, 2, 3, 4, 5]),
             'user_id' => 1,
         ];
