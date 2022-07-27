@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        if (! User::where('email', 'admin@laravel.io')->exists()) {
+        if (!User::where('email', 'admin@laravel.io')->exists()) {
             User::create([
                 'email' => 'admin@laravel.io',
                 'name' => 'Admin',
@@ -34,11 +34,17 @@ class DatabaseSeeder extends Seeder
         CashRegister::create(['description' => 'Caja 03']);
         CashRegister::create(['description' => 'Caja 04']);
 
-        Product::create(['description' => 'Producto 01', 'price' => 50]);
-        Product::create(['description' => 'Producto 02', 'price' => 100]);
-        Product::create(['description' => 'Producto 03', 'price' => 150]);
-        Product::create(['description' => 'Producto 04', 'price' => 200]);
-        Product::create(['description' => 'Producto 05', 'price' => 250]);
+        Product::create(['description' => 'Intermex', 'price' => 0]);
+        Product::create(['description' => 'rural', 'price' => 0]);
+        Product::create(['description' => 'Depósito Gyt', 'price' => 0]);
+        Product::create(['description' => 'DEOCSA', 'price' => 0]);
+        Product::create(['description' => 'INDUSTRIAL', 'price' => 0]);
+        Product::create(['description' => 'G&T', 'price' => 0]);
+        Product::create(['description' => 'Western', 'price' => 0]);
+        Product::create(['description' => 'Sigue', 'price' => 0]);
+        Product::create(['description' => 'retiro', 'price' => 0]);
+        Product::create(['description' => 'rec Nexcel', 'price' => 0]);
+        Product::create(['description' => 'Dep BI', 'price' => 0]);
 
         CashRegisterDetail::create(
             [
@@ -49,6 +55,6 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        Movement::factory(100)->create();
+        Movement::factory(50)->create();
     }
 }

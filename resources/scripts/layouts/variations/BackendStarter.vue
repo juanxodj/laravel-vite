@@ -37,7 +37,7 @@ store.mainContent({ mode: "narrow" });
       <div class="content-side">
         <BaseNavigation :nodes="[
           {
-            name: 'Dashboard',
+            name: 'Panel de Control',
             to: 'dashboard',
             icon: 'fa fa-gauge',
           },
@@ -52,23 +52,18 @@ store.mainContent({ mode: "narrow" });
             icon: 'fa fa-barcode',
           },
           {
-            name: 'Usuarios',
-            to: 'user',
-            icon: 'fa fa-user',
-          },
-          {
             name: 'Movimientos',
             to: 'movement',
             icon: 'fa fa-arrow-up-right-dots',
           },
           {
-            name: 'More',
+            name: 'Configuración',
             heading: true,
           },
           {
-            name: 'Landing',
-            to: 'landing',
-            icon: 'si si-rocket',
+            name: 'Usuarios',
+            to: 'user',
+            icon: 'fa fa-user',
           },
         ]" />
       </div>

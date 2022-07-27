@@ -1,5 +1,5 @@
 <template>
-  <BasePageHeading title="Movimientos" />
+  <BasePageHeading title="Reportes" />
 
   <div class="content">
     <div class="alert alert-warning alert-dismissible" role="alert" v-if="cashLength === 0">
@@ -49,7 +49,7 @@
           </div>
 
           <div class="col-md-12 mt-3">
-            <button type="submit" class="btn btn-primary">Agregar</button>
+            <button type="submit" class="btn btn-primary">Generar</button>
           </div>
         </div>
       </form>

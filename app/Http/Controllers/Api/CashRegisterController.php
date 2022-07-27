@@ -8,6 +8,7 @@ use App\Http\Resources\CashRegisterResource;
 use App\Models\CashRegister;
 use App\Models\CashRegisterDetail;
 use App\Models\CashSettlement;
+use App\Models\Movement;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -39,7 +40,7 @@ class CashRegisterController extends Controller
 
     public function detail(CashRegister $cash_register)
     {
-        $details = $cash_register->details()->with('movements', 'settlement')->get();
+        $details = $cash_register->details()->with('movements.product', 'movements.user', 'settlement')->get();
         return response()->json($details);
     }
 
@@ -85,10 +86,7 @@ class CashRegisterController extends Controller
 
     public function close(CashRegisterDetail $cash_register)
     {
-        $movements = DB::table('movements')
-            ->where('cash_register_detail_id', $cash_register->id)
-            ->get();
-
+        $movements = Movement::where('cash_register_detail_id', $cash_register->id)->get();
         $income = 0;
         $expenses = 0;
 
@@ -135,5 +133,12 @@ class CashRegisterController extends Controller
         $settlement->save();
 
         return response()->json($settlement);
+    }
+
+    public function report(CashRegisterDetail $cash_register)
+    {
+        $movements = Movement::where('cash_register_detail_id', $cash_register->id)->get();
+
+        return response()->json(compact('cash_register', 'movements'));
     }
 }

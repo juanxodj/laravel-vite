@@ -28,6 +28,7 @@ const UserAdd = () => import("@/scripts/views/workana/user/UserAdd.vue");
 const UserEdit = () => import("@/scripts/views/workana/user/UserEdit.vue");
 
 const MovementIndex = () => import("@/scripts/views/workana/movement/MovementIndex.vue");
+const ReportIndex = () => import("@/scripts/views/workana/report/ReportIndex.vue");
 const AuthSignIn = () => import("@/scripts/views/workana/LoginView.vue");
 
 const requireAuth = async (to, from, next) => {
@@ -143,6 +144,12 @@ const routes = [
         path: "movement",
         name: "movement",
         component: MovementIndex,
+        beforeEnter: requireAuth
+      },
+      {
+        path: "reports",
+        name: "reports",
+        component: ReportIndex,
         beforeEnter: requireAuth
       },
     ],

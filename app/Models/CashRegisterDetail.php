@@ -18,6 +18,10 @@ class CashRegisterDetail extends Model
         'status', 'cash_register_id',
     ];
 
+    protected $appends = [
+        'match'
+    ];
+
     public function cashRegister(): BelongsTo
     {
         return $this->belongsTo(CashRegister::class);
@@ -31,5 +35,16 @@ class CashRegisterDetail extends Model
     public function movements(): HasMany
     {
         return $this->hasMany(Movement::class);
+    }
+
+    public function getMatchAttribute()
+    {
+        $totalSettlement = 0;
+
+        if ($this->settlement) {
+            $totalSettlement = $this->settlement->total;
+        }
+
+        return doubleval($totalSettlement) - doubleval($this->ending_balance);
     }
 }

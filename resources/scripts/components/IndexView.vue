@@ -78,6 +78,13 @@
                               Detalle
                             </button>
                           </div>
+                          <div v-if="route.name === 'cash-register.detail'">
+                            <button type="button" class="btn btn-sm btn-alt-secondary"
+                              @click="modalShow('modalReportMovements')">
+                              <!-- <i class="fa-solid fa-chart-bar"></i> -->
+                              Reporte
+                            </button>
+                          </div>
                           <router-link :to="{
                             name: `${routeName}.edit`,
                             params: { id: row.id }
@@ -133,7 +140,7 @@
     </div>
   </div>
 
-  <!-- Modal Settlement -->
+  <!-- Modal Movements -->
   <div class="modal fade" id="modalDetailMovements" tabindex="-1" aria-labelledby="modalDetailMovementsLabel"
     aria-hidden="true" data-bs-backdrop="static">
     <div class="modal-dialog">
@@ -147,15 +154,17 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Amount</th>
-                <th scope="col">Income</th>
-                <th scope="col">Expense</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Monto</th>
+                <th scope="col">Ingreso</th>
+                <th scope="col">Egreso</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="detail in movementsDetail">
-                <th scope="row">{{ detail.id }}</th>
+              <tr v-for="(detail, index) in movementsDetail">
+                <th scope="row">{{ ++index }}</th>
+                <td>{{ detail.product.description }}</td>
                 <td>{{ detail.quantity }}</td>
                 <td>{{ detail.amount }}</td>
                 <template v-if="detail.type === 'income'">
@@ -169,7 +178,9 @@
               </tr>
             </tbody>
             <tfoot>
-              <td colspan="3" class="text-center">TOTAL</td>
+              <td colspan="2" class="text-center">TOTAL</td>
+              <td>{{ totalQuantity }}</td>
+              <td>-</td>
               <td>{{ totalIncome.toFixed(2) }}</td>
               <td>{{ totalExpense.toFixed(2) }}</td>
             </tfoot>
@@ -227,6 +238,22 @@
               </div>
             </div>
           </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Report -->
+  <div class="modal fade" id="modalReportMovements" tabindex="-1" aria-labelledby="modalReportMovementsLabel"
+    aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalReportMovementsLabel">Reporte General</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
         </div>
       </div>
     </div>
@@ -327,7 +354,7 @@ function onSort(event, i) {
 
 // Apply a few Bootstrap 5 optimizations
 onMounted(() => {
-  console.log(route.name)
+  console.log("Route Name: " + route.name)
   getData()
   // Remove labels from
   document.querySelectorAll("#datasetLength label").forEach((el) => {
@@ -474,18 +501,22 @@ function closeCashRegister(id: number) {
 const movementsDetail = ref([]);
 const totalIncome = ref(0);
 const totalExpense = ref(0);
+const totalQuantity = ref(0);
 const idDetail = ref(0);
 
 function calcMovements(movements) {
   movementsDetail.value = movements
 
+  totalQuantity.value = movementsDetail.value
+    .reduce((sum, record) => sum + record.quantity, 0)
+
   totalIncome.value = movementsDetail.value
     .filter(({ type }) => type === 'income')
-    .reduce((sum, record) => sum + parseInt(record.total), 0)
+    .reduce((sum, record) => sum + parseFloat(record.total), 0)
 
   totalExpense.value = movementsDetail.value
     .filter(({ type }) => type === 'expenses')
-    .reduce((sum, record) => sum + parseInt(record.total), 0)
+    .reduce((sum, record) => sum + parseFloat(record.total), 0)
 }
 
 function modalShow(modalName: string, data?) {

@@ -7,7 +7,8 @@
         <slot name="header">
           <!-- User Avatar -->
           <a class="img-link me-1" href="javascript:void(0)">
-            <img class="img-avatar img-avatar32" src="/assets/media/avatars/avatar10.jpg" alt="Avatar" />
+            <img class="img-avatar img-avatar32"
+              src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar10.jpg" alt="Avatar" />
           </a>
           <!-- END User Avatar -->
 
