@@ -255,7 +255,8 @@
               <tbody>
                 <tr>
                   <td class="text-center">
-                    <img class="img-avatar img-avatar48" src="/assets/media/avatars/avatar13.jpg" alt="" />
+                    <img class="img-avatar img-avatar48"
+                      src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar13.jpg" alt="" />
                   </td>
                   <td class="fw-semibold">
                     <a href="javascript:void(0)">Brian Cruz</a>
@@ -278,7 +279,8 @@
                 </tr>
                 <tr>
                   <td class="text-center">
-                    <img class="img-avatar img-avatar48" src="/assets/media/avatars/avatar12.jpg" alt="" />
+                    <img class="img-avatar img-avatar48"
+                      src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar12.jpg" alt="" />
                   </td>
                   <td class="fw-semibold">
                     <a href="javascript:void(0)">Jack Estrada</a>
@@ -301,7 +303,8 @@
                 </tr>
                 <tr>
                   <td class="text-center">
-                    <img class="img-avatar img-avatar48" src="/assets/media/avatars/avatar5.jpg" alt="" />
+                    <img class="img-avatar img-avatar48"
+                      src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar5.jpg" alt="" />
                   </td>
                   <td class="fw-semibold">
                     <a href="javascript:void(0)">Megan Fuller</a>
@@ -324,7 +327,8 @@
                 </tr>
                 <tr>
                   <td class="text-center">
-                    <img class="img-avatar img-avatar48" src="/assets/media/avatars/avatar16.jpg" alt="" />
+                    <img class="img-avatar img-avatar48"
+                      src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar16.jpg" alt="" />
                   </td>
                   <td class="fw-semibold">
                     <a href="javascript:void(0)">Justin Hunt</a>
@@ -347,7 +351,8 @@
                 </tr>
                 <tr>
                   <td class="text-center">
-                    <img class="img-avatar img-avatar48" src="/assets/media/avatars/avatar13.jpg" alt="" />
+                    <img class="img-avatar img-avatar48"
+                      src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar13.jpg" alt="" />
                   </td>
                   <td class="fw-semibold">
                     <a href="javascript:void(0)">Jack Greene</a>
@@ -370,7 +375,8 @@
                 </tr>
                 <tr>
                   <td class="text-center">
-                    <img class="img-avatar img-avatar48" src="/assets/media/avatars/avatar3.jpg" alt="" />
+                    <img class="img-avatar img-avatar48"
+                      src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar3.jpg" alt="" />
                   </td>
                   <td class="fw-semibold">
                     <a href="javascript:void(0)">Helen Jacobs</a>
@@ -393,7 +399,8 @@
                 </tr>
                 <tr>
                   <td class="text-center">
-                    <img class="img-avatar img-avatar48" src="/assets/media/avatars/avatar15.jpg" alt="" />
+                    <img class="img-avatar img-avatar48"
+                      src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar15.jpg" alt="" />
                   </td>
                   <td class="fw-semibold">
                     <a href="javascript:void(0)">Albert Ray</a>
@@ -416,7 +423,8 @@
                 </tr>
                 <tr>
                   <td class="text-center">
-                    <img class="img-avatar img-avatar48" src="/assets/media/avatars/avatar14.jpg" alt="" />
+                    <img class="img-avatar img-avatar48"
+                      src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar14.jpg" alt="" />
                   </td>
                   <td class="fw-semibold">
                     <a href="javascript:void(0)">Wayne Garcia</a>
@@ -439,7 +447,8 @@
                 </tr>
                 <tr>
                   <td class="text-center">
-                    <img class="img-avatar img-avatar48" src="/assets/media/avatars/avatar13.jpg" alt="" />
+                    <img class="img-avatar img-avatar48"
+                      src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar13.jpg" alt="" />
                   </td>
                   <td class="fw-semibold">
                     <a href="javascript:void(0)">Jesse Fisher</a>
@@ -462,7 +471,8 @@
                 </tr>
                 <tr>
                   <td class="text-center">
-                    <img class="img-avatar img-avatar48" src="/assets/media/avatars/avatar10.jpg" alt="" />
+                    <img class="img-avatar img-avatar48"
+                      src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar10.jpg" alt="" />
                   </td>
                   <td class="fw-semibold">
                     <a href="javascript:void(0)">Wayne Garcia</a>

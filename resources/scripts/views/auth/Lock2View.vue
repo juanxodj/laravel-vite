@@ -61,11 +61,8 @@ async function onSubmit() {
                 <p class="fw-medium text-muted mb-5">
                   Please enter your password to unlock your account
                 </p>
-                <img
-                  class="img-avatar img-avatar96"
-                  src="/assets/media/avatars/avatar10.jpg"
-                  alt=""
-                />
+                <img class="img-avatar img-avatar96"
+                  src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar10.jpg" alt="" />
                 <p class="fw-semibold text-center my-2">user@example.com</p>
               </div>
               <!-- END Header -->
@@ -73,22 +70,11 @@ async function onSubmit() {
               <!-- Unlock Form -->
               <form @submit.prevent="onSubmit">
                 <div class="mb-4">
-                  <input
-                    type="password"
-                    class="form-control form-control-lg form-control-alt"
-                    id="lock-password"
-                    name="lock-password"
-                    placeholder="Password.."
-                    :class="{
+                  <input type="password" class="form-control form-control-lg form-control-alt" id="lock-password"
+                    name="lock-password" placeholder="Password.." :class="{
                       'is-invalid': v$.password.$errors.length,
-                    }"
-                    v-model="state.password"
-                    @blur="v$.password.$touch"
-                  />
-                  <div
-                    v-if="v$.password.$errors.length"
-                    class="invalid-feedback animated fadeIn"
-                  >
+                    }" v-model="state.password" @blur="v$.password.$touch" />
+                  <div v-if="v$.password.$errors.length" class="invalid-feedback animated fadeIn">
                     Please enter your password
                   </div>
                 </div>

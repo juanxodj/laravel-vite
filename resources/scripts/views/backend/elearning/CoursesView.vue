@@ -8,9 +8,7 @@
       <h2 class="h4 fw-normal text-white-75">
         Join our community and get access to over 10,000 online courses.
       </h2>
-      <a class="btn btn-primary px-4 py-2" href="javascript:void(0)"
-        >Subscribe from $9/month</a
-      >
+      <a class="btn btn-primary px-4 py-2" href="javascript:void(0)">Subscribe from $9/month</a>
     </div>
   </div>
   <!-- END Hero Content -->
@@ -20,23 +18,11 @@
     <div class="row items-push py-4">
       <!-- Course -->
       <div class="col-md-6 col-lg-4 col-xl-3">
-        <RouterLink
-          :to="{ name: 'backend-elearning-course' }"
-          custom
-          v-slot="{ href, navigate }"
-        >
-          <BaseBlock
-            :href="href"
-            @click="navigate"
-            tag="a"
-            link-pop
-            class="h-100 mb-0"
-          >
+        <RouterLink :to="{ name: 'backend-elearning-course' }" custom v-slot="{ href, navigate }">
+          <BaseBlock :href="href" @click="navigate" tag="a" link-pop class="h-100 mb-0">
             <template #content>
               <div class="block-content block-content-full text-center bg-city">
-                <div
-                  class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto"
-                >
+                <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
                   <i class="fab fa-html5 fa-2x text-white-75"></i>
                 </div>
                 <div class="fs-sm text-white-75">10 lessons &bull; 3 hours</div>
@@ -55,23 +41,11 @@
 
       <!-- Course -->
       <div class="col-md-6 col-lg-4 col-xl-3">
-        <RouterLink
-          :to="{ name: 'backend-elearning-course' }"
-          custom
-          v-slot="{ href, navigate }"
-        >
-          <BaseBlock
-            :href="href"
-            @click="navigate"
-            tag="a"
-            link-pop
-            class="h-100 mb-0"
-          >
+        <RouterLink :to="{ name: 'backend-elearning-course' }" custom v-slot="{ href, navigate }">
+          <BaseBlock :href="href" @click="navigate" tag="a" link-pop class="h-100 mb-0">
             <template #content>
               <div class="block-content block-content-full text-center bg-flat">
-                <div
-                  class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto"
-                >
+                <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
                   <i class="fab fa-css3 fa-2x text-white-75"></i>
                 </div>
                 <div class="fs-sm text-white-75">12 lessons &bull; 5 hours</div>
@@ -88,25 +62,11 @@
 
       <!-- Course -->
       <div class="col-md-6 col-lg-4 col-xl-3">
-        <RouterLink
-          :to="{ name: 'backend-elearning-course' }"
-          custom
-          v-slot="{ href, navigate }"
-        >
-          <BaseBlock
-            :href="href"
-            @click="navigate"
-            tag="a"
-            link-pop
-            class="h-100 mb-0"
-          >
+        <RouterLink :to="{ name: 'backend-elearning-course' }" custom v-slot="{ href, navigate }">
+          <BaseBlock :href="href" @click="navigate" tag="a" link-pop class="h-100 mb-0">
             <template #content>
-              <div
-                class="block-content block-content-full text-center bg-amethyst"
-              >
-                <div
-                  class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto"
-                >
+              <div class="block-content block-content-full text-center bg-amethyst">
+                <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
                   <i class="si si-vector fa-2x text-white-75"></i>
                 </div>
                 <div class="fs-sm text-white-75">4 lessons &bull; 2 hours</div>
@@ -123,25 +83,11 @@
 
       <!-- Course -->
       <div class="col-md-6 col-lg-4 col-xl-3">
-        <RouterLink
-          :to="{ name: 'backend-elearning-course' }"
-          custom
-          v-slot="{ href, navigate }"
-        >
-          <BaseBlock
-            :href="href"
-            @click="navigate"
-            tag="a"
-            link-pop
-            class="h-100 mb-0"
-          >
+        <RouterLink :to="{ name: 'backend-elearning-course' }" custom v-slot="{ href, navigate }">
+          <BaseBlock :href="href" @click="navigate" tag="a" link-pop class="h-100 mb-0">
             <template #content>
-              <div
-                class="block-content block-content-full text-center bg-smooth"
-              >
-                <div
-                  class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto"
-                >
+              <div class="block-content block-content-full text-center bg-smooth">
+                <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
                   <i class="si si-rocket fa-2x text-white-75"></i>
                 </div>
                 <div class="fs-sm text-white-75">
@@ -162,25 +108,11 @@
 
       <!-- Course -->
       <div class="col-md-6 col-lg-4 col-xl-3">
-        <RouterLink
-          :to="{ name: 'backend-elearning-course' }"
-          custom
-          v-slot="{ href, navigate }"
-        >
-          <BaseBlock
-            :href="href"
-            @click="navigate"
-            tag="a"
-            link-pop
-            class="h-100 mb-0"
-          >
+        <RouterLink :to="{ name: 'backend-elearning-course' }" custom v-slot="{ href, navigate }">
+          <BaseBlock :href="href" @click="navigate" tag="a" link-pop class="h-100 mb-0">
             <template #content>
-              <div
-                class="block-content block-content-full text-center bg-default"
-              >
-                <div
-                  class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto"
-                >
+              <div class="block-content block-content-full text-center bg-default">
+                <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
                   <span class="fs-lg fw-bold text-white-75">PS</span>
                 </div>
                 <div class="fs-sm text-white-75">5 lessons &bull; 19 hours</div>
@@ -199,25 +131,11 @@
 
       <!-- Course -->
       <div class="col-md-6 col-lg-4 col-xl-3">
-        <RouterLink
-          :to="{ name: 'backend-elearning-course' }"
-          custom
-          v-slot="{ href, navigate }"
-        >
-          <BaseBlock
-            :href="href"
-            @click="navigate"
-            tag="a"
-            link-pop
-            class="h-100 mb-0"
-          >
+        <RouterLink :to="{ name: 'backend-elearning-course' }" custom v-slot="{ href, navigate }">
+          <BaseBlock :href="href" @click="navigate" tag="a" link-pop class="h-100 mb-0">
             <template #content>
-              <div
-                class="block-content block-content-full text-center bg-modern"
-              >
-                <div
-                  class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto"
-                >
+              <div class="block-content block-content-full text-center bg-modern">
+                <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
                   <i class="si si-user-following fa-2x text-white-75"></i>
                 </div>
                 <div class="fs-sm text-white-75">9 lessons &bull; 10 hours</div>
@@ -234,25 +152,11 @@
 
       <!-- Course -->
       <div class="col-md-6 col-lg-4 col-xl-3">
-        <RouterLink
-          :to="{ name: 'backend-elearning-course' }"
-          custom
-          v-slot="{ href, navigate }"
-        >
-          <BaseBlock
-            :href="href"
-            @click="navigate"
-            tag="a"
-            link-pop
-            class="h-100 mb-0"
-          >
+        <RouterLink :to="{ name: 'backend-elearning-course' }" custom v-slot="{ href, navigate }">
+          <BaseBlock :href="href" @click="navigate" tag="a" link-pop class="h-100 mb-0">
             <template #content>
-              <div
-                class="block-content block-content-full text-center bg-warning"
-              >
-                <div
-                  class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto"
-                >
+              <div class="block-content block-content-full text-center bg-warning">
+                <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
                   <i class="si si-target fa-2x text-white-75"></i>
                 </div>
                 <div class="fs-sm text-white-75">5 lessons &bull; 8 hours</div>
@@ -271,25 +175,11 @@
 
       <!-- Course -->
       <div class="col-md-6 col-lg-4 col-xl-3">
-        <RouterLink
-          :to="{ name: 'backend-elearning-course' }"
-          custom
-          v-slot="{ href, navigate }"
-        >
-          <BaseBlock
-            :href="href"
-            @click="navigate"
-            tag="a"
-            link-pop
-            class="h-100 mb-0"
-          >
+        <RouterLink :to="{ name: 'backend-elearning-course' }" custom v-slot="{ href, navigate }">
+          <BaseBlock :href="href" @click="navigate" tag="a" link-pop class="h-100 mb-0">
             <template #content>
-              <div
-                class="block-content block-content-full text-center bg-success"
-              >
-                <div
-                  class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto"
-                >
+              <div class="block-content block-content-full text-center bg-success">
+                <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
                   <i class="si si-support fa-2x text-white-75"></i>
                 </div>
                 <div class="fs-sm text-white-75">
@@ -308,23 +198,11 @@
 
       <!-- Course -->
       <div class="col-md-6 col-lg-4 col-xl-3">
-        <RouterLink
-          :to="{ name: 'backend-elearning-course' }"
-          custom
-          v-slot="{ href, navigate }"
-        >
-          <BaseBlock
-            :href="href"
-            @click="navigate"
-            tag="a"
-            link-pop
-            class="h-100 mb-0"
-          >
+        <RouterLink :to="{ name: 'backend-elearning-course' }" custom v-slot="{ href, navigate }">
+          <BaseBlock :href="href" @click="navigate" tag="a" link-pop class="h-100 mb-0">
             <template #content>
               <div class="block-content block-content-full text-center bg-info">
-                <div
-                  class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto"
-                >
+                <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
                   <i class="si si-social-twitter fa-2x text-white-75"></i>
                 </div>
                 <div class="fs-sm text-white-75">7 lessons &bull; 6 hours</div>
@@ -341,25 +219,11 @@
 
       <!-- Course -->
       <div class="col-md-6 col-lg-4 col-xl-3">
-        <RouterLink
-          :to="{ name: 'backend-elearning-course' }"
-          custom
-          v-slot="{ href, navigate }"
-        >
-          <BaseBlock
-            :href="href"
-            @click="navigate"
-            tag="a"
-            link-pop
-            class="h-100 mb-0"
-          >
+        <RouterLink :to="{ name: 'backend-elearning-course' }" custom v-slot="{ href, navigate }">
+          <BaseBlock :href="href" @click="navigate" tag="a" link-pop class="h-100 mb-0">
             <template #content>
-              <div
-                class="block-content block-content-full text-center bg-danger"
-              >
-                <div
-                  class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto"
-                >
+              <div class="block-content block-content-full text-center bg-danger">
+                <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
                   <i class="si si-briefcase fa-2x text-white-75"></i>
                 </div>
                 <div class="fs-sm text-white-75">5 lessons &bull; 4 hours</div>
@@ -376,25 +240,11 @@
 
       <!-- Course -->
       <div class="col-md-6 col-lg-4 col-xl-3">
-        <RouterLink
-          :to="{ name: 'backend-elearning-course' }"
-          custom
-          v-slot="{ href, navigate }"
-        >
-          <BaseBlock
-            :href="href"
-            @click="navigate"
-            tag="a"
-            link-pop
-            class="h-100 mb-0"
-          >
+        <RouterLink :to="{ name: 'backend-elearning-course' }" custom v-slot="{ href, navigate }">
+          <BaseBlock :href="href" @click="navigate" tag="a" link-pop class="h-100 mb-0">
             <template #content>
-              <div
-                class="block-content block-content-full text-center bg-gray-dark"
-              >
-                <div
-                  class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto"
-                >
+              <div class="block-content block-content-full text-center bg-gray-dark">
+                <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
                   <i class="si si-camcorder fa-2x text-white-75"></i>
                 </div>
                 <div class="fs-sm text-white-75">7 lessons &bull; 9 hours</div>
@@ -411,25 +261,11 @@
 
       <!-- Course -->
       <div class="col-md-6 col-lg-4 col-xl-3">
-        <RouterLink
-          :to="{ name: 'backend-elearning-course' }"
-          custom
-          v-slot="{ href, navigate }"
-        >
-          <BaseBlock
-            :href="href"
-            @click="navigate"
-            tag="a"
-            link-pop
-            class="h-100 mb-0"
-          >
+        <RouterLink :to="{ name: 'backend-elearning-course' }" custom v-slot="{ href, navigate }">
+          <BaseBlock :href="href" @click="navigate" tag="a" link-pop class="h-100 mb-0">
             <template #content>
-              <div
-                class="block-content block-content-full text-center bg-primary"
-              >
-                <div
-                  class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto"
-                >
+              <div class="block-content block-content-full text-center bg-primary">
+                <div class="item item-2x item-circle bg-white-10 py-3 my-3 mx-auto">
                   <i class="si si-chemistry fa-2x text-white-75"></i>
                 </div>
                 <div class="fs-sm text-white-75">12 lessons &bull; 7 hours</div>
@@ -458,29 +294,20 @@
       </h3>
       <div class="row items-push mt-5">
         <div class="col-md-4">
-          <img
-            class="img-avatar img-avatar-thumb"
-            src="/assets/media/avatars/avatar1.jpg"
-            alt=""
-          />
+          <img class="img-avatar img-avatar-thumb"
+            src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar1.jpg" alt="" />
           <div class="fs-lg fw-semibold text-white mt-3">Amanda Powell</div>
           <div class="fs-sm text-white-75">Web Designer</div>
         </div>
         <div class="col-md-4">
-          <img
-            class="img-avatar img-avatar-thumb"
-            src="/assets/media/avatars/avatar15.jpg"
-            alt=""
-          />
+          <img class="img-avatar img-avatar-thumb"
+            src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar15.jpg" alt="" />
           <div class="fs-lg fw-semibold text-white mt-3">Jose Mills</div>
           <div class="fs-sm text-white-75">Web Developer</div>
         </div>
         <div class="col-md-4">
-          <img
-            class="img-avatar img-avatar-thumb"
-            src="/assets/media/avatars/avatar3.jpg"
-            alt=""
-          />
+          <img class="img-avatar img-avatar-thumb"
+            src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar3.jpg" alt="" />
           <div class="fs-lg fw-semibold text-white mt-3">Melissa Rice</div>
           <div class="fs-sm text-white-75">Photographer</div>
         </div>
@@ -494,9 +321,7 @@
     <div class="content content-full">
       <div class="my-5 text-center">
         <h3 class="h4 mb-4">Are you ready to get started? Join today.</h3>
-        <a class="btn btn-primary px-4 py-2" href="javascript:void(0)"
-          >Subscribe from $9/month</a
-        >
+        <a class="btn btn-primary px-4 py-2" href="javascript:void(0)">Subscribe from $9/month</a>
       </div>
     </div>
   </div>

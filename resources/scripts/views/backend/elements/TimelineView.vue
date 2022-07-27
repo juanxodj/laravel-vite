@@ -40,16 +40,10 @@ function handleHide() {
 
 <template>
   <!-- Hero -->
-  <BasePageHeading
-    title="Timeline"
-    subtitle="Present various events in chronological order."
-  >
+  <BasePageHeading title="Timeline" subtitle="Present various events in chronological order.">
     <template #extra>
       <!-- Toggle Timeline Mode -->
-      <button
-        class="btn btn-sm btn-alt-primary"
-        @click="timelineCentered = !timelineCentered"
-      >
+      <button class="btn btn-sm btn-alt-primary" @click="timelineCentered = !timelineCentered">
         <i class="fa fa-arrows-alt-h opacity-50 me-1"></i> Toggle Timeline Mode
       </button>
     </template>
@@ -68,12 +62,9 @@ function handleHide() {
                                                       to 'timeline-event' elements to position them to the right (screen width > 1200px) (useful, if you
                                                       would like to have multiple events to the left or to the right section)
   -->
-    <ul
-      class="timeline timeline-alt"
-      :class="{
-        'timeline-centered': timelineCentered,
-      }"
-    >
+    <ul class="timeline timeline-alt" :class="{
+      'timeline-centered': timelineCentered,
+    }">
       <!-- Photos Event -->
       <li class="timeline-event">
         <div class="timeline-event-icon bg-success">
@@ -81,34 +72,21 @@ function handleHide() {
         </div>
         <BaseBlock title="New Gallery" class="timeline-event-block">
           <template #options>
-            <div
-              class="timeline-event-time block-options-item fs-sm fw-semibold"
-            >
+            <div class="timeline-event-time block-options-item fs-sm fw-semibold">
               just now
             </div>
           </template>
 
           <div class="row items-push js-gallery img-fluid-100">
-            <div
-              v-for="(photo, index) in gallery.photos"
-              :key="index"
-              class="col-md-6 col-lg-4 col-xl-3"
-            >
-              <a
-                href="javascript:void(0)"
-                class="img-link img-link-simple img-link-zoom-in img-lightbox"
-                @click="showPhoto(index)"
-              >
+            <div v-for="(photo, index) in gallery.photos" :key="index" class="col-md-6 col-lg-4 col-xl-3">
+              <a href="javascript:void(0)" class="img-link img-link-simple img-link-zoom-in img-lightbox"
+                @click="showPhoto(index)">
                 <img class="img-fluid" :src="`${photo}`" alt="Photo" />
               </a>
             </div>
           </div>
-          <VueEasyLightbox
-            :visible="gallery.visible"
-            :index="gallery.index"
-            :imgs="gallery.photos"
-            @hide="handleHide"
-          />
+          <VueEasyLightbox :visible="gallery.visible" :index="gallery.index" :imgs="gallery.photos"
+            @hide="handleHide" />
         </BaseBlock>
       </li>
       <!-- END Photos Event -->
@@ -120,26 +98,20 @@ function handleHide() {
         </div>
         <BaseBlock title="Update" class="timeline-event-block">
           <template #options>
-            <div
-              class="timeline-event-time block-options-item fs-sm fw-semibold"
-            >
+            <div class="timeline-event-time block-options-item fs-sm fw-semibold">
               10 min ago
             </div>
           </template>
 
           <div class="d-flex fs-sm">
             <a class="flex-shrink-0 img-link me-2" href="javascript:void(0)">
-              <img
-                class="img-avatar img-avatar48 img-avatar-thumb"
-                src="/assets/media/avatars/avatar6.jpg"
-                alt="Example Avatar"
-              />
+              <img class="img-avatar img-avatar48 img-avatar-thumb"
+                src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar6.jpg"
+                alt="Example Avatar" />
             </a>
             <div class="flex-grow-1">
               <p>
-                <a class="fw-semibold" href="javascript:void(0)"
-                  >Amanda Powell</a
-                >
+                <a class="fw-semibold" href="javascript:void(0)">Amanda Powell</a>
                 Vestibulum in vulputate at, tempus viverra turpis. Fusce
                 condimentum nunc ac nisi vulputate fringilla. Lorem ipsum dolor
                 sit amet, consectetur adipiscing elit. Aliquam tincidunt
@@ -169,9 +141,7 @@ function handleHide() {
         </div>
         <BaseBlock title="New Friends" class="timeline-event-block">
           <template #options>
-            <div
-              class="timeline-event-time block-options-item fs-sm fw-semibold"
-            >
+            <div class="timeline-event-time block-options-item fs-sm fw-semibold">
               42 min ago
             </div>
           </template>
@@ -179,20 +149,13 @@ function handleHide() {
           <div class="row">
             <div class="col-md-6">
               <ul class="nav-items push">
-                <li
-                  v-for="(user, index) in users.slice(0, 3)"
-                  :key="`userlist1-${index}`"
-                >
+                <li v-for="(user, index) in users.slice(0, 3)" :key="`userlist1-${index}`">
                   <a class="d-flex py-2" :href="`${user.href}`">
                     <div class="me-3 ms-2 overlay-container overlay-left">
-                      <img
-                        class="img-avatar img-avatar48"
-                        :src="`/assets/media/avatars/${user.avatar}.jpg`"
-                        alt="User Photo"
-                      />
+                      <img class="img-avatar img-avatar48" :src="`/assets/media/avatars/${user.avatar}.jpg`"
+                        alt="User Photo" />
                       <span
-                        :class="`overlay-item item item-tiny item-circle border border-2 border-white bg-${user.statusColor}`"
-                      ></span>
+                        :class="`overlay-item item item-tiny item-circle border border-2 border-white bg-${user.statusColor}`"></span>
                     </div>
                     <div class="flex-grow-1 fs-sm">
                       <div class="fw-semibold">{{ user.name }}</div>
@@ -204,20 +167,13 @@ function handleHide() {
             </div>
             <div class="col-md-6">
               <ul class="nav-items push">
-                <li
-                  v-for="(user, index) in users.slice(2, 5)"
-                  :key="`userlist2-${index}`"
-                >
+                <li v-for="(user, index) in users.slice(2, 5)" :key="`userlist2-${index}`">
                   <a class="d-flex py-2" :href="`${user.href}`">
                     <div class="me-3 ms-2 overlay-container overlay-left">
-                      <img
-                        class="img-avatar img-avatar48"
-                        :src="`/assets/media/avatars/${user.avatar}.jpg`"
-                        alt="User Photo"
-                      />
+                      <img class="img-avatar img-avatar48" :src="`/assets/media/avatars/${user.avatar}.jpg`"
+                        alt="User Photo" />
                       <span
-                        :class="`overlay-item item item-tiny item-circle border border-2 border-white bg-${user.statusColor}`"
-                      ></span>
+                        :class="`overlay-item item item-tiny item-circle border border-2 border-white bg-${user.statusColor}`"></span>
                     </div>
                     <div class="flex-grow-1 fs-sm">
                       <div class="fw-semibold">{{ user.name }}</div>
@@ -239,9 +195,7 @@ function handleHide() {
         </div>
         <BaseBlock title="Meeting" class="timeline-event-block">
           <template #options>
-            <div
-              class="timeline-event-time block-options-item fs-sm fw-semibold"
-            >
+            <div class="timeline-event-time block-options-item fs-sm fw-semibold">
               3 hrs ago
             </div>
           </template>
@@ -269,17 +223,12 @@ function handleHide() {
         </div>
         <BaseBlock title="System" class="timeline-event-block">
           <template #options>
-            <div
-              class="timeline-event-time block-options-item fs-sm fw-semibold"
-            >
+            <div class="timeline-event-time block-options-item fs-sm fw-semibold">
               1 day ago
             </div>
           </template>
 
-          <div
-            class="alert alert-success d-flex align-items-center justify-content-between"
-            role="alert"
-          >
+          <div class="alert alert-success d-flex align-items-center justify-content-between" role="alert">
             <div class="flex-grow-1 me-3">
               <p class="mb-0">
                 OneUI successfully
@@ -301,9 +250,7 @@ function handleHide() {
         </div>
         <BaseBlock title="Article" class="timeline-event-block">
           <template #options>
-            <div
-              class="timeline-event-time block-options-item fs-sm fw-semibold"
-            >
+            <div class="timeline-event-time block-options-item fs-sm fw-semibold">
               2 days ago
             </div>
           </template>
@@ -322,9 +269,7 @@ function handleHide() {
             himenaeos habitant quis dictumst proin odio sagittis purus mi, nec
             taciti vestibulum quis in sit varius lorem sit metus mi.
           </p>
-          <a class="btn btn-sm btn-alt-secondary push" href="javascript:void(0)"
-            >Read More..</a
-          >
+          <a class="btn btn-sm btn-alt-secondary push" href="javascript:void(0)">Read More..</a>
         </BaseBlock>
       </li>
       <!-- END Article -->

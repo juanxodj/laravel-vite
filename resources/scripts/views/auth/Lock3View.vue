@@ -48,15 +48,10 @@ async function onSubmit() {
   <div class="bg-danger">
     <div class="row g-0 bg-primary-dark-op">
       <!-- Meta Info Section -->
-      <div
-        class="hero-static col-lg-4 d-none d-lg-flex flex-column justify-content-center"
-      >
+      <div class="hero-static col-lg-4 d-none d-lg-flex flex-column justify-content-center">
         <div class="p-4 p-xl-5 flex-grow-1 d-flex align-items-center">
           <div class="w-100">
-            <RouterLink
-              :to="{ name: 'landing' }"
-              class="link-fx fw-semibold fs-2 text-white"
-            >
+            <RouterLink :to="{ name: 'landing' }" class="link-fx fw-semibold fs-2 text-white">
               One<span class="fw-normal">UI</span>
             </RouterLink>
             <p class="text-white-75 me-xl-8 mt-2">
@@ -65,28 +60,20 @@ async function onSubmit() {
             </p>
           </div>
         </div>
-        <div
-          class="p-4 p-xl-5 d-xl-flex justify-content-between align-items-center fs-sm"
-        >
+        <div class="p-4 p-xl-5 d-xl-flex justify-content-between align-items-center fs-sm">
           <p class="fw-medium text-white-50 mb-0">
             <strong>{{ store.app.name + " " + store.app.version }}</strong>
             &copy; {{ store.app.copyright }}
           </p>
           <ul class="list list-inline mb-0 py-2">
             <li class="list-inline-item">
-              <a class="text-white-75 fw-medium" href="javascript:void(0)"
-                >Legal</a
-              >
+              <a class="text-white-75 fw-medium" href="javascript:void(0)">Legal</a>
             </li>
             <li class="list-inline-item">
-              <a class="text-white-75 fw-medium" href="javascript:void(0)"
-                >Contact</a
-              >
+              <a class="text-white-75 fw-medium" href="javascript:void(0)">Contact</a>
             </li>
             <li class="list-inline-item">
-              <a class="text-white-75 fw-medium" href="javascript:void(0)"
-                >Terms</a
-              >
+              <a class="text-white-75 fw-medium" href="javascript:void(0)">Terms</a>
             </li>
           </ul>
         </div>
@@ -94,14 +81,9 @@ async function onSubmit() {
       <!-- END Meta Info Section -->
 
       <!-- Main Section -->
-      <div
-        class="hero-static col-lg-8 d-flex flex-column align-items-center bg-body-extra-light"
-      >
+      <div class="hero-static col-lg-8 d-flex flex-column align-items-center bg-body-extra-light">
         <div class="p-3 w-100 d-lg-none text-center">
-          <RouterLink
-            :to="{ name: 'landing' }"
-            class="link-fx fw-semibold fs-3 text-dark"
-          >
+          <RouterLink :to="{ name: 'landing' }" class="link-fx fw-semibold fs-3 text-dark">
             One<span class="fw-normal">UI</span>
           </RouterLink>
         </div>
@@ -116,11 +98,8 @@ async function onSubmit() {
               <p class="fw-medium text-muted mb-5">
                 Please enter your password to unlock your account
               </p>
-              <img
-                class="img-avatar img-avatar96"
-                src="/assets/media/avatars/avatar10.jpg"
-                alt=""
-              />
+              <img class="img-avatar img-avatar96"
+                src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar10.jpg" alt="" />
               <p class="fw-semibold text-center my-2">user@example.com</p>
             </div>
             <!-- END Header -->
@@ -130,22 +109,11 @@ async function onSubmit() {
               <div class="col-sm-8 col-xl-4">
                 <form @submit.prevent="onSubmit">
                   <div class="mb-4">
-                    <input
-                      type="password"
-                      class="form-control form-control-lg form-control-alt py-3"
-                      id="lock-password"
-                      name="lock-password"
-                      placeholder="Password.."
-                      :class="{
+                    <input type="password" class="form-control form-control-lg form-control-alt py-3" id="lock-password"
+                      name="lock-password" placeholder="Password.." :class="{
                         'is-invalid': v$.password.$errors.length,
-                      }"
-                      v-model="state.password"
-                      @blur="v$.password.$touch"
-                    />
-                    <div
-                      v-if="v$.password.$errors.length"
-                      class="invalid-feedback animated fadeIn"
-                    >
+                      }" v-model="state.password" @blur="v$.password.$touch" />
+                    <div v-if="v$.password.$errors.length" class="invalid-feedback animated fadeIn">
                       Please enter your password
                     </div>
                   </div>
@@ -162,27 +130,20 @@ async function onSubmit() {
           </div>
         </div>
         <div
-          class="px-4 py-3 w-100 d-lg-none d-flex flex-column flex-sm-row justify-content-between fs-sm text-center text-sm-start"
-        >
+          class="px-4 py-3 w-100 d-lg-none d-flex flex-column flex-sm-row justify-content-between fs-sm text-center text-sm-start">
           <p class="fw-medium text-black-50 py-2 mb-0">
             <strong>{{ store.app.name + " " + store.app.version }}</strong>
             &copy; {{ store.app.copyright }}
           </p>
           <ul class="list list-inline py-2 mb-0">
             <li class="list-inline-item">
-              <a class="text-muted fw-medium" href="javascript:void(0)"
-                >Legal</a
-              >
+              <a class="text-muted fw-medium" href="javascript:void(0)">Legal</a>
             </li>
             <li class="list-inline-item">
-              <a class="text-muted fw-medium" href="javascript:void(0)"
-                >Contact</a
-              >
+              <a class="text-muted fw-medium" href="javascript:void(0)">Contact</a>
             </li>
             <li class="list-inline-item">
-              <a class="text-muted fw-medium" href="javascript:void(0)"
-                >Terms</a
-              >
+              <a class="text-muted fw-medium" href="javascript:void(0)">Terms</a>
             </li>
           </ul>
         </div>

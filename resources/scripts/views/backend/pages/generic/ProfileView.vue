@@ -3,7 +3,8 @@
   <BaseBackground image="/assets/media/photos/photo12@2x.jpg" inner-class="bg-black-50">
     <div class="content content-full text-center">
       <div class="my-3">
-        <img class="img-avatar img-avatar-thumb" src="/assets/media/avatars/avatar13.jpg" alt="Avatar" />
+        <img class="img-avatar img-avatar-thumb"
+          src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar13.jpg" alt="Avatar" />
       </div>
       <h1 class="h2 text-white mb-0">John Parker</h1>
       <span class="text-white-75">UI Designer</span>
@@ -294,7 +295,8 @@
             <li>
               <a class="d-flex py-2" href="javascript:void(0)">
                 <div class="flex-shrink-0 me-3 ms-2 overlay-container overlay-bottom">
-                  <img class="img-avatar img-avatar48" src="/assets/media/avatars/avatar6.jpg" alt="" />
+                  <img class="img-avatar img-avatar48"
+                    src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar6.jpg" alt="" />
                   <span class="overlay-item item item-tiny item-circle border border-2 border-white bg-success"></span>
                 </div>
                 <div class="flex-grow-1">
@@ -306,7 +308,8 @@
             <li>
               <a class="d-flex py-2" href="javascript:void(0)">
                 <div class="flex-shrink-0 me-3 ms-2 overlay-container overlay-bottom">
-                  <img class="img-avatar img-avatar48" src="/assets/media/avatars/avatar11.jpg" alt="" />
+                  <img class="img-avatar img-avatar48"
+                    src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar11.jpg" alt="" />
                   <span class="overlay-item item item-tiny item-circle border border-2 border-white bg-success"></span>
                 </div>
                 <div class="flex-grow-1">
@@ -318,7 +321,8 @@
             <li>
               <a class="d-flex py-2" href="javascript:void(0)">
                 <div class="flex-shrink-0 me-3 ms-2 overlay-container overlay-bottom">
-                  <img class="img-avatar img-avatar48" src="/assets/media/avatars/avatar3.jpg" alt="" />
+                  <img class="img-avatar img-avatar48"
+                    src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar3.jpg" alt="" />
                   <span class="overlay-item item item-tiny item-circle border border-2 border-white bg-warning"></span>
                 </div>
                 <div class="flex-grow-1">

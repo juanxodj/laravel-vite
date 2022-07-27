@@ -39,10 +39,7 @@ const codeHtml2 = ref(`<div id="id-name" class="class-name">
 
 <template>
   <!-- Hero Content -->
-  <BaseBackground
-    image="/assets/media/various/promo-code.png"
-    inner-class="bg-primary-dark-op"
-  >
+  <BaseBackground image="/assets/media/various/promo-code.png" inner-class="bg-primary-dark-op">
     <div class="content content-full text-center py-7 pb-5">
       <h1 class="h2 text-white mb-2">
         Learn HTML5 in 10 simple and easy to follow steps
@@ -58,18 +55,10 @@ const codeHtml2 = ref(`<div id="id-name" class="class-name">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-alt">
           <li class="breadcrumb-item">
-            <RouterLink
-              :to="{ name: 'backend-elearning-courses' }"
-              class="link-fx"
-              >Courses</RouterLink
-            >
+            <RouterLink :to="{ name: 'backend-elearning-courses' }" class="link-fx">Courses</RouterLink>
           </li>
           <li class="breadcrumb-item">
-            <RouterLink
-              :to="{ name: 'backend-elearning-course' }"
-              class="link-fx"
-              >Learn HTML5</RouterLink
-            >
+            <RouterLink :to="{ name: 'backend-elearning-course' }" class="link-fx">Learn HTML5</RouterLink>
           </li>
           <li class="breadcrumb-item" aria-current="page">1.1 HTML5 Intro</li>
         </ol>
@@ -156,19 +145,12 @@ const codeHtml2 = ref(`<div id="id-name" class="class-name">
       <div class="col-xl-4">
         <!-- Subscribe -->
         <BaseBlock>
-          <a class="btn btn-primary w-100 mb-2" href="javascript:void(0)"
-            >Subscribe from $9/month</a
-          >
+          <a class="btn btn-primary w-100 mb-2" href="javascript:void(0)">Subscribe from $9/month</a>
           <p class="fs-sm text-center">
             or
-            <a class="link-effect fw-medium" href="javascript:void(0)"
-              >buy this course for $28</a
-            >
+            <a class="link-effect fw-medium" href="javascript:void(0)">buy this course for $28</a>
           </p>
-          <a
-            class="btn btn-primary w-100 disabled push"
-            href="javascript:void(0)"
-          >
+          <a class="btn btn-primary w-100 disabled push" href="javascript:void(0)">
             <i class="fa fa-download me-1"></i> Download
           </a>
         </BaseBlock>
@@ -193,21 +175,9 @@ const codeHtml2 = ref(`<div id="id-name" class="class-name">
               <tr>
                 <td>
                   <i class="fa fa-fw fa-tags me-1"></i>
-                  <a
-                    class="fw-semibold link-fx text-primary"
-                    href="javascript:void(0)"
-                    >HTML</a
-                  >,
-                  <a
-                    class="fw-semibold link-fx text-primary"
-                    href="javascript:void(0)"
-                    >CSS</a
-                  >,
-                  <a
-                    class="fw-semibold link-fx text-primary"
-                    href="javascript:void(0)"
-                    >JavaScript</a
-                  >
+                  <a class="fw-semibold link-fx text-primary" href="javascript:void(0)">HTML</a>,
+                  <a class="fw-semibold link-fx text-primary" href="javascript:void(0)">CSS</a>,
+                  <a class="fw-semibold link-fx text-primary" href="javascript:void(0)">JavaScript</a>
                 </td>
               </tr>
             </tbody>
@@ -216,21 +186,13 @@ const codeHtml2 = ref(`<div id="id-name" class="class-name">
         <!-- END Course Info -->
 
         <!-- About Instructor -->
-        <BaseBlock
-          tag="a"
-          href="javascript:void(0)"
-          link-shadow
-          title="About The Instructor"
-          header-class="text-center"
-        >
+        <BaseBlock tag="a" href="javascript:void(0)" link-shadow title="About The Instructor"
+          header-class="text-center">
           <template #content>
             <div class="block-content block-content-full text-center">
               <div class="push">
-                <img
-                  class="img-avatar"
-                  src="/assets/media/avatars/avatar14.jpg"
-                  alt=""
-                />
+                <img class="img-avatar"
+                  src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar14.jpg" alt="" />
               </div>
               <div class="fw-semibold mb-1">Ralph Murray</div>
               <div class="fs-sm text-muted">Front-end Developer</div>
@@ -247,9 +209,7 @@ const codeHtml2 = ref(`<div id="id-name" class="class-name">
   <div class="bg-body-dark">
     <div class="content content-full text-center py-6">
       <h3 class="h4 mb-4">Subscribe today and learn HTML5 in under 3 hours.</h3>
-      <a class="btn btn-primary px-4 py-2" href="javascript:void(0)"
-        >Subscribe from $9/month</a
-      >
+      <a class="btn btn-primary px-4 py-2" href="javascript:void(0)">Subscribe from $9/month</a>
     </div>
   </div>
   <!-- END Get Started -->

@@ -53,41 +53,24 @@ async function onSubmit() {
             <!-- Unlock Block -->
             <BaseBlock title="Account Locked" class="shadow-none mb-0">
               <template #options>
-                <RouterLink
-                  :to="{ name: 'auth-signin' }"
-                  class="btn-block-option"
-                >
+                <RouterLink :to="{ name: 'auth-signin' }" class="btn-block-option">
                   <i class="fa fa-sign-in-alt"></i>
                 </RouterLink>
               </template>
 
               <div class="p-sm-3 px-lg-4 px-xxl-5 py-lg-5 text-center">
-                <img
-                  class="img-avatar img-avatar96"
-                  src="/assets/media/avatars/avatar10.jpg"
-                  alt=""
-                />
+                <img class="img-avatar img-avatar96"
+                  src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar10.jpg" alt="" />
                 <p class="fw-semibold my-2">user@example.com</p>
 
                 <!-- Unlock Form -->
                 <form @submit.prevent="onSubmit">
                   <div class="mb-4">
-                    <input
-                      type="password"
-                      class="form-control form-control-lg form-control-alt"
-                      id="lock-password"
-                      name="lock-password"
-                      placeholder="Password.."
-                      :class="{
+                    <input type="password" class="form-control form-control-lg form-control-alt" id="lock-password"
+                      name="lock-password" placeholder="Password.." :class="{
                         'is-invalid': v$.password.$errors.length,
-                      }"
-                      v-model="state.password"
-                      @blur="v$.password.$touch"
-                    />
-                    <div
-                      v-if="v$.password.$errors.length"
-                      class="invalid-feedback animated fadeIn"
-                    >
+                      }" v-model="state.password" @blur="v$.password.$touch" />
+                    <div v-if="v$.password.$errors.length" class="invalid-feedback animated fadeIn">
                       Please enter your password
                     </div>
                   </div>
@@ -108,7 +91,7 @@ async function onSubmit() {
         </div>
         <div class="fs-sm text-center text-white">
           <span class="fw-medium">{{
-            store.app.name + " " + store.app.version
+              store.app.name + " " + store.app.version
           }}</span>
           &copy; {{ store.app.copyright }}
         </div>

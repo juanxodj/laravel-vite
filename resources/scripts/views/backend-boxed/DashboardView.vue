@@ -146,7 +146,8 @@
                   <span class="fw-semibold">#01368</span>
                 </td>
                 <td class="d-none d-sm-table-cell text-center">
-                  <img class="img-avatar img-avatar32" src="/assets/media/avatars/avatar13.jpg" alt="" />
+                  <img class="img-avatar img-avatar32"
+                    src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar13.jpg" alt="" />
                 </td>
                 <td class="fw-semibold">Jose Wagner</td>
                 <td class="d-none d-sm-table-cell text-center">
@@ -163,7 +164,8 @@
                   <span class="fw-semibold">#01368</span>
                 </td>
                 <td class="d-none d-sm-table-cell text-center">
-                  <img class="img-avatar img-avatar32" src="/assets/media/avatars/avatar8.jpg" alt="" />
+                  <img class="img-avatar img-avatar32"
+                    src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar8.jpg" alt="" />
                 </td>
                 <td class="fw-semibold">Amanda Powell</td>
                 <td class="d-none d-sm-table-cell text-center">
@@ -180,7 +182,8 @@
                   <span class="fw-semibold">#01368</span>
                 </td>
                 <td class="d-none d-sm-table-cell text-center">
-                  <img class="img-avatar img-avatar32" src="/assets/media/avatars/avatar9.jpg" alt="" />
+                  <img class="img-avatar img-avatar32"
+                    src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar9.jpg" alt="" />
                 </td>
                 <td class="fw-semibold">Jack Greene</td>
                 <td class="d-none d-sm-table-cell text-center">
@@ -197,7 +200,8 @@
                   <span class="fw-semibold">#01368</span>
                 </td>
                 <td class="d-none d-sm-table-cell text-center">
-                  <img class="img-avatar img-avatar32" src="/assets/media/avatars/avatar7.jpg" alt="" />
+                  <img class="img-avatar img-avatar32"
+                    src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar7.jpg" alt="" />
                 </td>
                 <td class="fw-semibold">Carol Ray</td>
                 <td class="d-none d-sm-table-cell text-center">
@@ -214,7 +218,8 @@
                   <span class="fw-semibold">#01368</span>
                 </td>
                 <td class="d-none d-sm-table-cell text-center">
-                  <img class="img-avatar img-avatar32" src="/assets/media/avatars/avatar16.jpg" alt="" />
+                  <img class="img-avatar img-avatar32"
+                    src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar16.jpg" alt="" />
                 </td>
                 <td class="fw-semibold">Jack Estrada</td>
                 <td class="d-none d-sm-table-cell text-center">
@@ -231,7 +236,8 @@
                   <span class="fw-semibold">#01368</span>
                 </td>
                 <td class="d-none d-sm-table-cell text-center">
-                  <img class="img-avatar img-avatar32" src="/assets/media/avatars/avatar2.jpg" alt="" />
+                  <img class="img-avatar img-avatar32"
+                    src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar2.jpg" alt="" />
                 </td>
                 <td class="fw-semibold">Amanda Powell</td>
                 <td class="d-none d-sm-table-cell text-center">
@@ -248,7 +254,8 @@
                   <span class="fw-semibold">#01368</span>
                 </td>
                 <td class="d-none d-sm-table-cell text-center">
-                  <img class="img-avatar img-avatar32" src="/assets/media/avatars/avatar9.jpg" alt="" />
+                  <img class="img-avatar img-avatar32"
+                    src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar9.jpg" alt="" />
                 </td>
                 <td class="fw-semibold">Jesse Fisher</td>
                 <td class="d-none d-sm-table-cell text-center">

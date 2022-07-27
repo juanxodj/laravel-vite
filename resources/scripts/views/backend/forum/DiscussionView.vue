@@ -24,9 +24,7 @@ const editorConfig = ref({});
             <a class="link-fx" href="javascript:void(0)">Forum</a>
           </li>
           <li class="breadcrumb-item">
-            <RouterLink :to="{ name: 'backend-forum-topics' }" class="link-fx"
-              >Topics</RouterLink
-            >
+            <RouterLink :to="{ name: 'backend-forum-topics' }" class="link-fx">Topics</RouterLink>
           </li>
           <li class="breadcrumb-item" aria-current="page">Discussion</li>
         </ol>
@@ -50,11 +48,7 @@ const editorConfig = ref({});
           <tr class="bg-body-light">
             <td class="d-none d-sm-table-cell"></td>
             <td class="fs-sm text-muted">
-              <RouterLink
-                :to="{ name: 'backend-pages-generic-profile' }"
-                class="fw-semibold"
-                >Laura Carr</RouterLink
-              >
+              <RouterLink :to="{ name: 'backend-pages-generic-profile' }" class="fw-semibold">Laura Carr</RouterLink>
               on <span class="text-muted">July 1, 2019 16:15</span>
             </td>
           </tr>
@@ -62,11 +56,8 @@ const editorConfig = ref({});
             <td class="d-none d-sm-table-cell text-center" style="width: 140px">
               <p>
                 <a href="javascript:void(0)">
-                  <img
-                    class="img-avatar"
-                    src="/assets/media/avatars/avatar3.jpg"
-                    alt=""
-                  />
+                  <img class="img-avatar"
+                    src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar3.jpg" alt="" />
                 </a>
               </p>
               <p class="fs-sm fw-medium">267 Posts<br />Level 1</p>
@@ -108,11 +99,7 @@ const editorConfig = ref({});
           <tr class="bg-body-light">
             <td class="d-none d-sm-table-cell"></td>
             <td class="fs-sm text-muted">
-              <RouterLink
-                :to="{ name: 'backend-pages-generic-profile' }"
-                class="fw-semibold"
-                >Brian Cruz</RouterLink
-              >
+              <RouterLink :to="{ name: 'backend-pages-generic-profile' }" class="fw-semibold">Brian Cruz</RouterLink>
               on <span class="text-muted">July 10, 2019 10:09</span>
             </td>
           </tr>
@@ -120,11 +107,8 @@ const editorConfig = ref({});
             <td class="d-none d-sm-table-cell text-center" style="width: 140px">
               <p>
                 <a href="javascript:void(0)">
-                  <img
-                    class="img-avatar"
-                    src="/assets/media/avatars/avatar12.jpg"
-                    alt=""
-                  />
+                  <img class="img-avatar"
+                    src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar12.jpg" alt="" />
                 </a>
               </p>
               <p class="fs-sm fw-medium">157 Posts<br />Level 9</p>
@@ -163,11 +147,8 @@ const editorConfig = ref({});
           <tr class="bg-body-light">
             <td class="d-none d-sm-table-cell"></td>
             <td class="fs-sm text-muted">
-              <RouterLink
-                :to="{ name: 'backend-pages-generic-profile' }"
-                class="fw-semibold"
-                >Henry Harrison</RouterLink
-              >
+              <RouterLink :to="{ name: 'backend-pages-generic-profile' }" class="fw-semibold">Henry Harrison
+              </RouterLink>
               on <span class="text-muted">July 15, 2019 20:17</span>
             </td>
           </tr>
@@ -175,11 +156,8 @@ const editorConfig = ref({});
             <td class="d-none d-sm-table-cell text-center" style="width: 140px">
               <p>
                 <a href="javascript:void(0)">
-                  <img
-                    class="img-avatar"
-                    src="/assets/media/avatars/avatar14.jpg"
-                    alt=""
-                  />
+                  <img class="img-avatar"
+                    src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar14.jpg" alt="" />
                 </a>
               </p>
               <p class="fs-sm fw-medium">290 Posts<br />Level 8</p>
@@ -233,11 +211,7 @@ const editorConfig = ref({});
           <tr class="bg-body-light">
             <td class="d-none d-sm-table-cell"></td>
             <td class="fs-sm text-muted">
-              <RouterLink
-                :to="{ name: 'backend-pages-generic-profile' }"
-                class="fw-semibold"
-                >Laura Carr</RouterLink
-              >
+              <RouterLink :to="{ name: 'backend-pages-generic-profile' }" class="fw-semibold">Laura Carr</RouterLink>
               on <span class="text-muted">July 20, 2019 20:29</span>
             </td>
           </tr>
@@ -245,11 +219,8 @@ const editorConfig = ref({});
             <td class="d-none d-sm-table-cell text-center" style="width: 140px">
               <p>
                 <a href="javascript:void(0)">
-                  <img
-                    class="img-avatar"
-                    src="/assets/media/avatars/avatar7.jpg"
-                    alt=""
-                  />
+                  <img class="img-avatar"
+                    src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar7.jpg" alt="" />
                 </a>
               </p>
               <p class="fs-sm fw-medium">367 Posts<br />Level 4</p>
@@ -290,11 +261,7 @@ const editorConfig = ref({});
           <tr class="table-active" id="forum-reply-form">
             <td class="d-none d-sm-table-cell"></td>
             <td class="fs-sm text-muted">
-              <RouterLink
-                :to="{ name: 'backend-pages-generic-profile' }"
-                class="fw-semibold"
-                >Carl Wells</RouterLink
-              >
+              <RouterLink :to="{ name: 'backend-pages-generic-profile' }" class="fw-semibold">Carl Wells</RouterLink>
               Just now
             </td>
           </tr>
@@ -302,11 +269,8 @@ const editorConfig = ref({});
             <td class="d-none d-sm-table-cell text-center">
               <p>
                 <a href="javascript:void(0)">
-                  <img
-                    class="img-avatar"
-                    src="/assets/media/avatars/avatar10.jpg"
-                    alt=""
-                  />
+                  <img class="img-avatar"
+                    src="https://demo.pixelcave.com/oneui-vue-edition/assets/media/avatars/avatar10.jpg" alt="" />
                 </a>
               </p>
               <p class="fs-sm fw-medium">303 Posts<br />Level 5</p>
@@ -315,11 +279,7 @@ const editorConfig = ref({});
               <form @submit.prevent>
                 <div class="mb-4">
                   <!-- CKEditor 5 -->
-                  <ckeditor
-                    :editor="ClassicEditor"
-                    :config="editorConfig"
-                    v-model="editorData"
-                  />
+                  <ckeditor :editor="ClassicEditor" :config="editorConfig" v-model="editorData" />
                 </div>
                 <div class="mb-4">
                   <button type="submit" class="btn btn-alt-primary">
