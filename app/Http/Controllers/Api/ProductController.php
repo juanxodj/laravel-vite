@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $product = Product::all();
+        $product = Product::orderByDesc('id')->get();
 
         return response()->json($product);
     }

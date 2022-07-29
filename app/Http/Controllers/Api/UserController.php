@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $cash = User::all();
+        $cash = User::orderByDesc('id')->get();
 
         return response()->json($cash);
     }

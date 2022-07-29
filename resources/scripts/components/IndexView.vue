@@ -17,7 +17,7 @@
 
   <div class="content">
     <BaseBlock :title="titleBlock" content-full>
-      <Dataset v-slot="{ ds }" :ds-data="dataFetched.reverse()" :ds-sortby="sortBy" :ds-search-in="fieldsSearch">
+      <Dataset v-slot="{ ds }" :ds-data="dataFetched" :ds-sortby="sortBy" :ds-search-in="fieldsSearch">
         <div class="row" :data-page-count="ds.dsPagecount">
           <div id="datasetLength" class="col-md-8 py-2">
             <DatasetShow />
@@ -300,7 +300,6 @@ const props = defineProps({
 })
 const route = useRoute()
 
-/* const dataFetched: Ref<CashRegister[]> = ref([]) */
 const dataFetched = ref([])
 
 const initialFormCashRegister = {

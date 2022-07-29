@@ -2,6 +2,8 @@ import { createApp } from 'vue'
 import { createPinia } from "pinia"
 import App from '@/scripts/App.vue'
 
+// You can use the following starter router instead of the default one as a clean starting point
+// import router from "./router/starter";
 import router from "@/scripts/router/workana"
 
 // Template components
@@ -16,6 +18,7 @@ import clickRipple from "@/scripts/directives/clickRipple";
 import * as bootstrap from "bootstrap";
 window.bootstrap = bootstrap;
 
+// Craft new application
 const app = createApp(App)
 
 // Register global components
@@ -26,6 +29,9 @@ app.component("BasePageHeading", BasePageHeading);
 // Register global directives
 app.directive("click-ripple", clickRipple);
 
-app.use(router)
-app.use(createPinia())
+// Use Pinia and Vue Router
+app.use(createPinia());
+app.use(router);
+
+// ..and finally mount it!
 app.mount('#app')

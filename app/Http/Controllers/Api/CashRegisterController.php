@@ -19,7 +19,7 @@ class CashRegisterController extends Controller
 {
     public function index()
     {
-        $cash = CashRegister::all();
+        $cash = CashRegister::orderByDesc('id')->get();
 
         return response()->json($cash);
     }

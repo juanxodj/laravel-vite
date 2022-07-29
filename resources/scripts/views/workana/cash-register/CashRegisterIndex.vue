@@ -24,4 +24,7 @@ const columns = [
     sort: "",
   },
 ];
+const fieldsForSearch = computed(() =>
+  columns.filter((a) => a.field != "action").map((a) => a.field)
+);
 </script>
