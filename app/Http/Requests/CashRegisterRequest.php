@@ -23,6 +23,7 @@ class CashRegisterRequest extends FormRequest
     {
         return [
             'description' => __('request.description'),
+            'user_id' => __('request.user'),
         ];
     }
 }

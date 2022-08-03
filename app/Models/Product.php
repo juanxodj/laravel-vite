@@ -16,6 +16,7 @@ class Product extends Model
     ];
 
     public static $rules = [
+        'type' => 'required',
         'description' => 'required|string|max:100',
         'price' => 'required|numeric',
     ];

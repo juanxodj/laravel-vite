@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\CashRegisterController;
 use App\Http\Controllers\Api\MovementController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ReportController;
+use App\Http\Controllers\Api\SelectListController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +34,11 @@ Route::middleware('localization')->group(function () {
         Route::apiResource('products', ProductController::class)->except(['create', 'edit']);
         Route::apiResource('movements', MovementController::class)->except(['create', 'edit']);
         Route::apiResource('users', UserController::class)->except(['create', 'edit']);
+
+        //Lists
+        Route::get('lists/{type}', [SelectListController::class, 'index']);
+        Route::get('lists/{type}/{id}', [SelectListController::class, 'show']);
+
 
         /* Route::prefix('reports')->group(function () {
             Route::controller(ReportController::class)->group(function () {

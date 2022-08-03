@@ -17,12 +17,10 @@ class Movement extends Model
     ];
 
     public static $rules = [
-        'type' => 'required',
-        'quantity' => 'required',
-        'amount' => 'required',
-        'total' => 'required',
         'cash_register_detail_id' => 'required',
-        'product_id' => 'required',
+        'movements' => 'required|array',
+        'total_expenses' => 'required',
+        'total_incomes' => 'required',
     ];
 
     public function product()

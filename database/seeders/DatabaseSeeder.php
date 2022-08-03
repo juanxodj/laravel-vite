@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
         Product::create(['description' => 'rec Nexcel', 'price' => 0]);
         Product::create(['description' => 'Dep BI', 'price' => 0]);
 
-        CashRegisterDetail::create(
+        /* CashRegisterDetail::create(
             [
                 'opening' => Carbon::now(),
                 'initial_balance' => 150,
@@ -54,7 +54,6 @@ class DatabaseSeeder extends Seeder
                 'cash_register_id' => 1,
             ]
         );
-
-        Movement::factory(50)->create();
+        Movement::factory(50)->create(); */
     }
 }

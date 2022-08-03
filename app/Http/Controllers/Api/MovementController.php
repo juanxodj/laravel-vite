@@ -17,22 +17,35 @@ class MovementController extends Controller
     {
         $product = Product::all();
 
+        $userAuth = Auth::id();
+
         $cashRegister = CashRegisterDetail::with('cashRegister')
             ->where('status', 'open')
+            ->where('user_open_id', Auth::id())
             ->orderByDesc('id')
             ->get();
 
-        return response()->json(compact('product', 'cashRegister'));
+        return response()->json(compact('product', 'cashRegister', 'userAuth'));
     }
 
-    public function store(MovementRequest $request): JsonResource
+    public function store(MovementRequest $request)
     {
-        $movement = new Movement();
-        $movement->fill($request->all());
-        $movement->user_id = Auth::id();
-        $movement->save();
+        $detail = [];
 
-        return new MovementResource($movement);
+        foreach ($request->movements as $mov) {
+            $movement = new Movement();
+            $movement->type = $mov['type'];
+            $movement->quantity = $mov['quantity'];
+            $movement->amount = $mov['amount'];
+            $movement->total = $mov['quantity'] * $mov['amount'];
+            $movement->cash_register_detail_id = $request->cash_register_detail_id;
+            $movement->product_id = $mov['product_id'];
+            $movement->user_id = Auth::id();
+            $movement->save();
+            $detail[] = $movement;
+        }
+
+        return response()->json($detail);
     }
 
     public function show(Movement $movement): JsonResource

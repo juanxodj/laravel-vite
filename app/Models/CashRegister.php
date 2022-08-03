@@ -16,6 +16,7 @@ class CashRegister extends Model
 
     public static $rules = [
         'description' => 'required|string|max:100',
+        'user_id' => 'required',
     ];
 
     protected $appends = [

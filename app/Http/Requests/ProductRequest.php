@@ -20,6 +20,7 @@ class ProductRequest extends FormRequest
     public function attributes()
     {
         return [
+            'type' => __('request.type'),
             'description' => __('request.description'),
             'price' => __('request.price'),
         ];
