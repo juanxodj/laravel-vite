@@ -19,7 +19,7 @@ class CashRegisterDetail extends Model
     ];
 
     protected $appends = [
-        'match'
+        'match',
     ];
 
     public function cashRegister(): BelongsTo
@@ -45,6 +45,6 @@ class CashRegisterDetail extends Model
             $totalSettlement = $this->settlement->total;
         }
 
-        return doubleval($totalSettlement) - doubleval($this->ending_balance);
+        return floatval($totalSettlement) - floatval($this->ending_balance);
     }
 }

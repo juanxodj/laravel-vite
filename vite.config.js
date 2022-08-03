@@ -1,12 +1,12 @@
 import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
-import laravel from "vite-plugin-laravel";
+import Vue from "@vitejs/plugin-vue";
+import Laravel from "vite-plugin-laravel";
 import AutoImport from "unplugin-auto-import/vite";
 
 export default defineConfig({
   plugins: [
-    vue(),
-    laravel(),
+    Vue(),
+    Laravel(),
     AutoImport({
       imports: ["vue", "vue-router"],
       dts: "resources/scripts/auto-imports.d.ts",

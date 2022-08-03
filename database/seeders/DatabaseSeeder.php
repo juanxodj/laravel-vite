@@ -29,14 +29,14 @@ class DatabaseSeeder extends Seeder
         }
         User::factory(4)->create();
 
-        CashRegister::create(['description' => 'Caja 01']);
-        CashRegister::create(['description' => 'Caja 02']);
-        CashRegister::create(['description' => 'Caja 03']);
-        CashRegister::create(['description' => 'Caja 04']);
+        CashRegister::create(['description' => 'Caja 01', 'user_id' => 1]);
+        CashRegister::create(['description' => 'Caja 02', 'user_id' => 2]);
+        CashRegister::create(['description' => 'Caja 03', 'user_id' => 3]);
+        CashRegister::create(['description' => 'Caja 04', 'user_id' => 4]);
 
         Product::create(['description' => 'Intermex', 'price' => 0]);
         Product::create(['description' => 'rural', 'price' => 0]);
-        Product::create(['description' => 'Depósito Gyt', 'price' => 0]);
+        Product::create(['description' => 'Deposito Gyt', 'price' => 0]);
         Product::create(['description' => 'DEOCSA', 'price' => 0]);
         Product::create(['description' => 'INDUSTRIAL', 'price' => 0]);
         Product::create(['description' => 'G&T', 'price' => 0]);

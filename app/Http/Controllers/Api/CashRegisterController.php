@@ -41,6 +41,7 @@ class CashRegisterController extends Controller
     public function detail(CashRegister $cash_register)
     {
         $details = $cash_register->details()->with('movements.product', 'movements.user', 'settlement')->get();
+
         return response()->json($details);
     }
 

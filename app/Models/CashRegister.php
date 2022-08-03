@@ -11,15 +11,29 @@ class CashRegister extends Model
     use HasFactory;
 
     protected $fillable = [
-        'description',
+        'description', 'user_id',
     ];
 
     public static $rules = [
         'description' => 'required|string|max:100',
     ];
 
+    protected $appends = [
+        'user_name',
+    ];
+
     public function details(): HasMany
     {
         return $this->hasMany(CashRegisterDetail::class);
+    }
+
+    public function getUsernameAttribute()
+    {
+        return $this->user->name;
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

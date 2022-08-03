@@ -14,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('app');
+    return 'API LARAVEL VITE';
 });
 
-Route::view('/{any}', 'app')->where('any', '.*');
+/* Route::get('/', function () {
+    return view('app');
+});
+Route::view('/{any}', 'app')->where('any', '.*'); */
+
+Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
