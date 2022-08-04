@@ -18,6 +18,16 @@ class CashRegister extends Model
 
     public const P_DELETE = 'delete cash register';
 
+    public const P_DETAIL = 'show cash register detail';
+
+    public const P_OPEN = 'open cash register';
+
+    public const P_CLOSE = 'close cash register';
+
+    public const P_SETTLEMENT = 'create cash register settlement';
+
+    public const P_EXPORT = 'create cash register report';
+
     protected $fillable = [
         'description', 'user_id',
     ];

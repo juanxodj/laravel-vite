@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\CashRegisterController;
 use App\Http\Controllers\Api\MovementController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ReportController;
+use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\SelectListController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\AuthController;
@@ -38,6 +39,11 @@ Route::middleware('localization')->group(function () {
         //Lists
         Route::get('lists/{type}', [SelectListController::class, 'index']);
         Route::get('lists/{type}/{id}', [SelectListController::class, 'show']);
+
+        //Roles
+        Route::apiResource('roles', RoleController::class)->except(['create', 'edit']);
+        Route::patch('roles/{role}/permissions', [RoleController::class, 'updatePermissions']);
+        Route::get('roles/{role}/users', [RoleController::class, 'userList']);
 
         /* Route::prefix('reports')->group(function () {
             Route::controller(ReportController::class)->group(function () {

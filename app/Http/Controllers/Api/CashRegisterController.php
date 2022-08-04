@@ -98,10 +98,10 @@ class CashRegisterController extends Controller
         $expenses = 0;
 
         foreach ($movements->toArray() as $value) {
-            if ($value->type === 'expenses') {
-                $expenses += $value->total;
+            if ($value['type'] === 'expenses') {
+                $expenses += $value['total'];
             } else {
-                $income += $value->total;
+                $income += $value['total'];
             }
         }
 
