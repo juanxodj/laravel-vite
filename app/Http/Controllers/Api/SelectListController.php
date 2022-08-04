@@ -43,8 +43,8 @@ class SelectListController extends Controller
     {
         $query = Role::select('id', 'name');
 
-        if (!empty($search)) {
-            $query->where('name', 'like', '%' . $search . '%');
+        if (! empty($search)) {
+            $query->where('name', 'like', '%'.$search.'%');
         }
 
         return $query->get();
@@ -54,8 +54,8 @@ class SelectListController extends Controller
     {
         $query = User::select('id', 'name');
 
-        if (!empty($search)) {
-            $query->where('name', 'like', '%' . $search . '%');
+        if (! empty($search)) {
+            $query->where('name', 'like', '%'.$search.'%');
         }
 
         return $query->get();

@@ -17,15 +17,20 @@ class MovementController extends Controller
     {
         $product = Product::all();
 
-        $userAuth = Auth::id();
+        if (auth()->user()->is_super_admin) {
+            $cashRegister = CashRegisterDetail::with('cashRegister')
+                ->where('status', 'open')
+                ->orderByDesc('id')
+                ->get();
+        } else {
+            $cashRegister = CashRegisterDetail::with('cashRegister')
+                ->where('status', 'open')
+                ->where('user_open_id', Auth::id())
+                ->orderByDesc('id')
+                ->get();
+        }
 
-        $cashRegister = CashRegisterDetail::with('cashRegister')
-            ->where('status', 'open')
-            ->where('user_open_id', Auth::id())
-            ->orderByDesc('id')
-            ->get();
-
-        return response()->json(compact('product', 'cashRegister', 'userAuth'));
+        return response()->json(compact('product', 'cashRegister'));
     }
 
     public function store(MovementRequest $request)

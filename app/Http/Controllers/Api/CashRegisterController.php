@@ -22,7 +22,7 @@ class CashRegisterController extends Controller
         if (auth()->user()->is_super_admin) {
             $cash = CashRegister::orderByDesc('id')->get();
         } else {
-            $cash = CashRegister::orderByDesc('id')->where('user_id', auth()->user()->id)->get();
+            $cash = CashRegister::orderByDesc('id')->where('user_id', Auth::id())->get();
         }
 
         return response()->json($cash);
@@ -44,7 +44,10 @@ class CashRegisterController extends Controller
 
     public function detail(CashRegister $cash_register)
     {
-        $details = $cash_register->details()->with('movements.product', 'movements.user', 'settlement')->get();
+        $details = $cash_register->details()
+            ->with('movements.product', 'movements.user', 'settlement')
+            ->orderByDesc('id')
+            ->get();
 
         return response()->json($details);
     }
