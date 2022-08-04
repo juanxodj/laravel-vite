@@ -9,6 +9,14 @@ class Product extends Model
 {
     use HasFactory;
 
+    public const P_CREATE = 'create product';
+
+    public const P_READ = 'read product';
+
+    public const P_UPDATE = 'update product';
+
+    public const P_DELETE = 'delete product';
+
     protected $fillable = [
         'type',
         'description',

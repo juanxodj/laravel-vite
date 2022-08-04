@@ -10,6 +10,14 @@ class CashRegister extends Model
 {
     use HasFactory;
 
+    public const P_CREATE = 'create cash register';
+
+    public const P_READ = 'read cash register';
+
+    public const P_UPDATE = 'update cash register';
+
+    public const P_DELETE = 'delete cash register';
+
     protected $fillable = [
         'description', 'user_id',
     ];

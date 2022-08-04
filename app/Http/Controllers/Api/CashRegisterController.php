@@ -9,6 +9,7 @@ use App\Models\CashRegister;
 use App\Models\CashRegisterDetail;
 use App\Models\CashSettlement;
 use App\Models\Movement;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -19,7 +20,11 @@ class CashRegisterController extends Controller
 {
     public function index()
     {
-        $cash = CashRegister::orderByDesc('id')->get();
+        if (auth()->user()->is_super_admin) {
+            $cash = CashRegister::orderByDesc('id')->get();
+        } else {
+            $cash = CashRegister::orderByDesc('id')->where('user_id', auth()->user()->id)->get();
+        }
 
         return response()->json($cash);
     }
@@ -68,6 +73,7 @@ class CashRegisterController extends Controller
         $details = DB::table('cash_register_details')
             ->where('cash_register_id', $cash_register->id)
             ->where('status', 'open')
+            ->where('user_open_id', Auth::id())
             ->get();
 
         if ($details->contains('status', 'open')) {

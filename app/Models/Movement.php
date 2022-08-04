@@ -9,6 +9,14 @@ class Movement extends Model
 {
     use HasFactory;
 
+    public const P_CREATE = 'create movement';
+
+    public const P_READ = 'read movement';
+
+    public const P_UPDATE = 'update movement';
+
+    public const P_DELETE = 'delete movement';
+
     protected $fillable = [
         'type', 'quantity',
         'amount', 'total',

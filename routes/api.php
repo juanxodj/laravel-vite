@@ -39,7 +39,6 @@ Route::middleware('localization')->group(function () {
         Route::get('lists/{type}', [SelectListController::class, 'index']);
         Route::get('lists/{type}/{id}', [SelectListController::class, 'show']);
 
-
         /* Route::prefix('reports')->group(function () {
             Route::controller(ReportController::class)->group(function () {
                 Route::get('/cash-register/{detail}', 'byCashRegister');

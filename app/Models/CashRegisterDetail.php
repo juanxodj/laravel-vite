@@ -12,6 +12,14 @@ class CashRegisterDetail extends Model
 {
     use HasFactory;
 
+    public const P_CREATE = 'create cash register detail';
+
+    public const P_READ = 'read cash register detail';
+
+    public const P_UPDATE = 'update cash register detail';
+
+    public const P_DELETE = 'delete cash register detail';
+
     protected $fillable = [
         'opening', 'closing',
         'initial_balance', 'ending_balance',

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -39,8 +38,8 @@ class SelectListController extends Controller
     {
         $query = User::select('id', 'name');
 
-        if (!empty($search)) {
-            $query->where('name', 'like', '%' . $search . '%');
+        if (! empty($search)) {
+            $query->where('name', 'like', '%'.$search.'%');
         }
 
         return $query->get();

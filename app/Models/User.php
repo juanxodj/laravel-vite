@@ -10,7 +10,15 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use Notifiable, HasFactory, HasApiTokens, HasRoles;
+
+    public const P_CREATE = 'create user';
+
+    public const P_READ = 'read user';
+
+    public const P_UPDATE = 'update user';
+
+    public const P_DELETE = 'delete user';
 
     protected $fillable = [
         'name',
@@ -28,19 +36,36 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public static $rules = [
-        'name' => 'required|string|max:100',
-        'email' => 'required|email|unique:users,email',
-        'password' => 'required|string',
+    protected $appends = [
+        'is_super_admin',
     ];
+
+    public function getAclAttribute()
+    {
+        return [
+            'show' => auth()->user()->can(self::P_READ),
+            'update' => auth()->user()->can(self::P_UPDATE),
+            'delete' => auth()->user()->can(self::P_DELETE),
+        ];
+    }
 
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);
     }
 
+    public function getIsSuperAdminAttribute()
+    {
+        return $this->hasRole(Role::ROLE_SUPER_ADMIN);
+    }
+
     public function getIsActiveAttribute()
     {
         return $this->attributes['is_active'] ? true : false;
+    }
+
+    public function getRoleAttribute()
+    {
+        return optional($this->roles()->first())->name;
     }
 }
