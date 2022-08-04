@@ -136,23 +136,13 @@ class RoleController extends Controller
         ];
 
         $modules[] = [
-            'name' => 'Módulo Detalle Cajas',
-            'permissions' => Helper::getPermissionsFromModel(CashRegisterDetail::class),
-        ];
-
-        $modules[] = [
-            'name' => 'Módulo Liquidación',
-            'permissions' => Helper::getPermissionsFromModel(CashSettlement::class),
+            'name' => 'Módulo Producto',
+            'permissions' => Helper::getPermissionsFromModel(Product::class),
         ];
 
         $modules[] = [
             'name' => 'Módulo Movimientos',
             'permissions' => Helper::getPermissionsFromModel(Movement::class),
-        ];
-
-        $modules[] = [
-            'name' => 'Módulo Producto',
-            'permissions' => Helper::getPermissionsFromModel(Product::class),
         ];
 
         return $modules;
