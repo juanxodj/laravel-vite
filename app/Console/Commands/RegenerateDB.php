@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Models\User;
 use Illuminate\Console\Command;
 
 class RegenerateDB extends Command
@@ -17,6 +16,6 @@ class RegenerateDB extends Command
         $this->call('migrate:fresh');
         $this->call('db:seed');
         $this->call('passport:install');
-        echo "RESET COMPLETE";
+        echo 'RESET COMPLETE';
     }
 }

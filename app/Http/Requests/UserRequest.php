@@ -15,7 +15,7 @@ class UserRequest extends FormRequest
     {
         $rules = [
             'name' => 'required|string|max:190',
-            'email' => 'required|email|unique:users,email,' . $this->id,
+            'email' => 'required|email|unique:users,email,'.$this->id,
             'password' => 'string|min:6|max:200',
             'is_active' => 'required|boolean',
         ];

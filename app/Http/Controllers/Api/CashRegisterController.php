@@ -9,7 +9,6 @@ use App\Models\CashRegister;
 use App\Models\CashRegisterDetail;
 use App\Models\CashSettlement;
 use App\Models\Movement;
-use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;

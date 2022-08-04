@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Helper;
 use App\Http\Controllers\Controller;
 use App\Models\CashRegister;
-use App\Models\CashRegisterDetail;
-use App\Models\CashSettlement;
 use App\Models\Movement;
 use App\Models\Product;
 use App\Models\Role;

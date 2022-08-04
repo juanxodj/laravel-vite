@@ -26,12 +26,14 @@ Route::middleware('localization')->group(function () {
     Route::post('register', [AuthController::class, 'register']);
 
     Route::middleware('auth:api')->group(function () {
+        Route::post('logout', [AuthController::class, 'logout']);
+
         Route::apiResource('cash-registers', CashRegisterController::class)->except(['create', 'edit']);
-        Route::post('cash-registers/{cash_register}/open', [CashRegisterController::class, 'open'])->name('cash-registers.open');
-        Route::post('cash-registers/{cash_register}/close', [CashRegisterController::class, 'close'])->name('cash-registers.close');
-        Route::post('cash-registers/{cash_register}/settlement', [CashRegisterController::class, 'settlement'])->name('cash-registers.settlement');
-        Route::get('cash-registers/{cash_register}/detail', [CashRegisterController::class, 'detail'])->name('cash-registers.detail');
-        Route::get('cash-registers/{cash_register}/report', [CashRegisterController::class, 'report'])->name('cash-registers.report');
+        Route::post('cash-registers/{cash_register}/open', [CashRegisterController::class, 'open']);
+        Route::post('cash-registers/{cash_register}/close', [CashRegisterController::class, 'close']);
+        Route::post('cash-registers/{cash_register}/settlement', [CashRegisterController::class, 'settlement']);
+        Route::get('cash-registers/{cash_register}/detail', [CashRegisterController::class, 'detail']);
+        Route::get('cash-registers/{cash_register}/report', [CashRegisterController::class, 'report']);
         Route::apiResource('products', ProductController::class)->except(['create', 'edit']);
         Route::apiResource('movements', MovementController::class)->except(['create', 'edit']);
         Route::apiResource('users', UserController::class)->except(['create', 'edit']);
