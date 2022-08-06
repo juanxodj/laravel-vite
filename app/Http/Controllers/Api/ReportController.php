@@ -42,49 +42,30 @@ class ReportController extends Controller
 
         switch ($period) {
             case 'date':
-                $date_end = $date_start;
-                $data = Movement::where('product_id', $product_id)
-                    ->when($user_id, function ($query) use ($user_id) {
-                        return $query->where('user_id', $user_id);
-                    })
-                    ->whereDate('created_at', '>=', $date_start)
-                    ->whereDate('created_at', '<=', $date_end)
-                    ->get();
+                $initial_date = $date_start;
+                $final_date = $date_start;
                 break;
             case 'between_dates':
-                $data = Movement::where('product_id', $product_id)
-                    ->when($user_id, function ($query) use ($user_id) {
-                        return $query->where('user_id', $user_id);
-                    })
-                    ->whereDate('created_at', '>=', $date_start)
-                    ->whereDate('created_at', '<=', $date_end)
-                    ->get();
+                $initial_date = $date_start;
+                $final_date = $date_end;
                 break;
             case 'month':
-                $month_start = Carbon::parse($month_start . '-01')->format('Y-m-d');
-                $month_end = Carbon::parse($month_start . '-01')->endOfMonth()->format('Y-m-d');
-
-                $data = Movement::where('product_id', $product_id)
-                    ->when($user_id, function ($query) use ($user_id) {
-                        return $query->where('user_id', $user_id);
-                    })
-                    ->whereDate('created_at', '>=', $month_start)
-                    ->whereDate('created_at', '<=', $month_end)
-                    ->get();
+                $initial_date = Carbon::parse($month_start . '-01')->format('Y-m-d');
+                $final_date = Carbon::parse($month_start . '-01')->endOfMonth()->format('Y-m-d');
                 break;
             case 'between_months':
-                $month_start = Carbon::parse($month_start . '-01')->format('Y-m-d');
-                $month_end = Carbon::parse($month_end . '-01')->endOfMonth()->format('Y-m-d');
-
-                $data = Movement::where('product_id', $product_id)
-                    ->when($user_id, function ($query) use ($user_id) {
-                        return $query->where('user_id', $user_id);
-                    })
-                    ->whereDate('created_at', '>=', $month_start)
-                    ->whereDate('created_at', '<=', $month_end)
-                    ->get();
+                $initial_date = Carbon::parse($month_start . '-01')->format('Y-m-d');
+                $final_date = Carbon::parse($month_end . '-01')->endOfMonth()->format('Y-m-d');
                 break;
         }
+
+        $data = Movement::where('product_id', $product_id)
+            ->when($user_id, function ($query) use ($user_id) {
+                return $query->where('user_id', $user_id);
+            })
+            ->whereDate('created_at', '>=', $initial_date)
+            ->whereDate('created_at', '<=', $final_date)
+            ->get();
 
         return $data;
     }
