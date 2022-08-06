@@ -47,10 +47,14 @@ Route::middleware('localization')->group(function () {
         Route::patch('roles/{role}/permissions', [RoleController::class, 'updatePermissions']);
         Route::get('roles/{role}/users', [RoleController::class, 'userList']);
 
-        /* Route::prefix('reports')->group(function () {
+        //Reports
+        Route::get('report', [ReportController::class, 'index']);
+
+        Route::prefix('reports')->group(function () {
             Route::controller(ReportController::class)->group(function () {
-                Route::get('/cash-register/{detail}', 'byCashRegister');
+                Route::get('/cash-register/{cash_register}', 'byCashRegister');
+                Route::get('/product', 'byProduct');
             });
-        }); */
+        });
     });
 });

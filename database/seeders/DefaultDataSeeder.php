@@ -43,9 +43,9 @@ class DefaultDataSeeder extends Seeder
 
     protected function createMoreData()
     {
-        User::factory(8)->create()->each(
+        User::factory(3)->create()->each(
             function ($user) {
-                $user->assignRole('User');
+                $user->assignRole(Role::ROLE_USER);
             }
         );
 

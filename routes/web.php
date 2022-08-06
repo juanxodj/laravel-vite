@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,10 @@ Route::get('/', function () {
 Route::view('/{any}', 'app')->where('any', '.*'); */
 
 Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
+
+Route::prefix('reports')->group(function () {
+    Route::controller(ReportController::class)->group(function () {
+        Route::get('/cash-register/{cash_register}', 'byCashRegister');
+        Route::get('/product', 'byProduct');
+    });
+});

@@ -39,7 +39,7 @@ class MovementController extends Controller
 
         foreach ($request->movements as $mov) {
             $movement = new Movement();
-            $movement->type = $mov['type'];
+            $movement->type = $mov['type'] === 'Ingreso' ? 'income' : 'expenses';
             $movement->quantity = $mov['quantity'];
             $movement->amount = $mov['amount'];
             $movement->total = $mov['quantity'] * $mov['amount'];

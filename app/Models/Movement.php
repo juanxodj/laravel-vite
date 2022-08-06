@@ -34,4 +34,13 @@ class Movement extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getTypeAttribute($value)
+    {
+        if ($value === 'income') {
+            return 'Ingreso';
+        } else {
+            return 'Egreso';
+        }
+    }
 }

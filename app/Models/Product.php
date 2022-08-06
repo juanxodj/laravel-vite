@@ -33,4 +33,22 @@ class Product extends Model
     {
         $this->attributes['description'] = strtoupper($value);
     }
+
+    public function getTypeAttribute($value)
+    {
+        if ($value === 'income') {
+            return 'Ingreso';
+        } else {
+            return 'Egreso';
+        }
+    }
+
+    public function setTypeAttribute($value)
+    {
+        if ($value === 'Ingreso') {
+            $this->attributes['type'] = 'income';
+        } else {
+            $this->attributes['type'] = 'expenses';
+        }
+    }
 }

@@ -19,7 +19,7 @@ class Role extends RoleBase
 
     public const ROLE_ADMIN = 'Admin';
 
-    public const ROLE_USER = 'User';
+    public const ROLE_USER = 'Vendedor';
 
     protected static $lockedRoles = [
         self::ROLE_SUPER_ADMIN,

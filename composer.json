@@ -9,6 +9,7 @@
   "license": "MIT",
   "require": {
     "php": "^8.0.2",
+    "barryvdh/laravel-dompdf": "^2.0",
     "bestmomo/nice-artisan": "1.6",
     "guzzlehttp/guzzle": "^7.2",
     "innocenzi/laravel-vite": "0.2.*",

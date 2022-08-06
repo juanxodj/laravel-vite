@@ -16,6 +16,7 @@ class CashRegisterDetail extends Model
         'opening', 'closing',
         'initial_balance', 'ending_balance',
         'status', 'cash_register_id',
+        'user_open_id', 'user_close_id',
     ];
 
     protected $appends = [
@@ -46,5 +47,15 @@ class CashRegisterDetail extends Model
         }
 
         return floatval($totalSettlement) - floatval($this->ending_balance);
+    }
+
+    public function userOpen()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function userClose()
+    {
+        return $this->belongsTo(User::class);
     }
 }
