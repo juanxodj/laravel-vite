@@ -52,7 +52,7 @@ Route::middleware('localization')->group(function () {
 
         Route::prefix('reports')->group(function () {
             Route::controller(ReportController::class)->group(function () {
-                Route::get('/cash-register/{cash_register}', 'byCashRegister');
+                Route::get('/cash-register', 'byCashRegister');
                 Route::get('/product', 'byProduct');
             });
         });

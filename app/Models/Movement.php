@@ -25,6 +25,11 @@ class Movement extends Model
         'total_incomes' => 'required',
     ];
 
+    public function cashRegisterDetail()
+    {
+        return $this->belongsTo(CashRegisterDetail::class);
+    }
+
     public function product()
     {
         return $this->belongsTo(Product::class);

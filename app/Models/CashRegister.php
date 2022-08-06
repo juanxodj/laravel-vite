@@ -48,7 +48,7 @@ class CashRegister extends Model
 
     public function getUsernameAttribute()
     {
-        return $this->user->name;
+        return $this->user->name ?? '-';
     }
 
     public function user()
